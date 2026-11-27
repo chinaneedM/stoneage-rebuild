@@ -1,0 +1,137 @@
+name: PET atlas R13 CN85 original visual
+on:
+  push:
+    branches: [pet-atlas-r13-cn85-original-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r13_cn85_original.py'
+      - '.github/workflows/pet-atlas-r13-cn85-original.yml'
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r13_cn85_original --plan-only
+  source:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: sudo apt-get update -qq && sudo apt-get install -y unshield
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r13_cn85_original --output "$RUNNER_TEMP/r13" --public-key research/pets/PET-ATLAS-R8-SESSION-PUBLIC.pem
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-0
+          path: |
+            ${{ runner.temp }}/r13/batch-0/private.enc
+            ${{ runner.temp }}/r13/batch-0/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-1
+          path: |
+            ${{ runner.temp }}/r13/batch-1/private.enc
+            ${{ runner.temp }}/r13/batch-1/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-2
+          path: |
+            ${{ runner.temp }}/r13/batch-2/private.enc
+            ${{ runner.temp }}/r13/batch-2/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-3
+          path: |
+            ${{ runner.temp }}/r13/batch-3/private.enc
+            ${{ runner.temp }}/r13/batch-3/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-4
+          path: |
+            ${{ runner.temp }}/r13/batch-4/private.enc
+            ${{ runner.temp }}/r13/batch-4/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-5
+          path: |
+            ${{ runner.temp }}/r13/batch-5/private.enc
+            ${{ runner.temp }}/r13/batch-5/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-6
+          path: |
+            ${{ runner.temp }}/r13/batch-6/private.enc
+            ${{ runner.temp }}/r13/batch-6/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-7
+          path: |
+            ${{ runner.temp }}/r13/batch-7/private.enc
+            ${{ runner.temp }}/r13/batch-7/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-8
+          path: |
+            ${{ runner.temp }}/r13/batch-8/private.enc
+            ${{ runner.temp }}/r13/batch-8/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-9
+          path: |
+            ${{ runner.temp }}/r13/batch-9/private.enc
+            ${{ runner.temp }}/r13/batch-9/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-10
+          path: |
+            ${{ runner.temp }}/r13/batch-10/private.enc
+            ${{ runner.temp }}/r13/batch-10/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-11
+          path: |
+            ${{ runner.temp }}/r13/batch-11/private.enc
+            ${{ runner.temp }}/r13/batch-11/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r13-cn85-private-batch-12
+          path: |
+            ${{ runner.temp }}/r13/batch-12/private.enc
+            ${{ runner.temp }}/r13/batch-12/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - if: always()
+        run: rm -rf "$RUNNER_TEMP/r13"
