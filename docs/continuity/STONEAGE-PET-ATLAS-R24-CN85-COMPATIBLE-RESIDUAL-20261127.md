@@ -279,3 +279,8 @@ Fresh main 6d1323d8560e60953657fa963cf6bc663fec82d9/tree f9a6269907df052e3a4e997
 ## Actual R72 TW75 cross-version visual references (2026-11-27)
 
 [Separate R72 checkpoint](STONEAGE-PET-ATLAS-R72-TW75-CROSS-VERSION-VISUAL-REFERENCES-20261127.md). 15 additional two-lane named actual previews, all46 program references original RD portrait hash match, 14 without same-name reference; all29 strict qualification gaps retained. Private integrated 467-profile R72 with 331 preview frame positions verified. NEXT 14 remaining named gaps and original source fields; preserve all official boundaries.
+
+
+## Actual R73 TW75 configuration graphics and quest roles (2026-11-27)
+
+[Separate R73 checkpoint](STONEAGE-PET-ATLAS-R73-TW75-CONFIGURATION-GRAPHICS-20261127.md). 12 exact-number conditional source previews/143 frames/90 PNGs,2 original index-only, five shared-master graphics not identity merges. All467 profiles and2624 prior files retained. 14 same-name and29 strict gaps unchanged. NEXT original group15/18 material and master/skill/acquisition gaps.
