@@ -1,0 +1,178 @@
+{
+  "schema": "stoneage.pet-atlas-r49.portal-catalogue-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "29928d311cd56bc40efd7590755263cd0d3eef92",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "source_grade": "LEGACY_PC_PORTAL_UNDATED_BUILD_UNVERIFIED",
+  "sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow05.htm",
+      "range": [
+        33,
+        40
+      ],
+      "family": "大舌头"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow06.htm",
+      "range": [
+        41,
+        48
+      ],
+      "family": "乌龟"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow07.htm",
+      "range": [
+        49,
+        56
+      ],
+      "family": "特洛昆"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow08.htm",
+      "range": [
+        57,
+        64
+      ],
+      "family": "呼拔拔"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow09.htm",
+      "range": [
+        65,
+        72
+      ],
+      "family": "穿山甲"
+    }
+  ],
+  "summary": {
+    "new_catalogue_positions": 40,
+    "cumulative_catalogue_positions": 96,
+    "birth_range_rows": 19,
+    "birth_mixed_rows": 5,
+    "birth_missing_rows": 2,
+    "birth_scalar_rows": 14,
+    "full_growth_endpoint_rows": 12,
+    "growth_scalar_rows": 3,
+    "partial_growth_rows": 7,
+    "unknown_growth_rows": 18,
+    "lv1_location_reward_rows": 28,
+    "capacity_known": 40,
+    "reference_edges": 184,
+    "linked_positions": 179,
+    "by_lane": {
+      "tw10": 25,
+      "cn50": 39,
+      "tw75": 42,
+      "sina2003": 39,
+      "cn85_original": 39
+    },
+    "by_grade": {
+      "normalized_detail_name": 57,
+      "literal_detail_name": 117,
+      "quarantined_duplicate_name_conflict": 10
+    },
+    "element_comparison": {
+      "unknown": 103,
+      "equal": 76,
+      "conflict": 5
+    },
+    "unmatched_numbers": [
+      63
+    ]
+  },
+  "conflicts": {
+    "duplicate_name": {
+      "numbers": [
+        68,
+        72
+      ],
+      "label": "洛奇安",
+      "elements": [
+        "地5风5",
+        "地8风2"
+      ],
+      "qualification": "both quarantined, no merge"
+    },
+    "ascending_growth_endpoint": {
+      "number": 65,
+      "field": "defense",
+      "source_order": [
+        "2.421",
+        "2.59"
+      ],
+      "qualification": "retain, not verified extrema"
+    },
+    "missing_birth": [
+      46,
+      70
+    ],
+    "ambiguous_coordinate": {
+      "numbers": [
+        58,
+        60
+      ],
+      "source": "535135",
+      "qualification": "not split into guessed coordinates"
+    }
+  },
+  "private_files": [
+    [
+      "StoneAge-PET-R49-Portal-Catalogue.zip",
+      4982287,
+      "a65bac0bb29c151dfb5097991ec873235c6df5f7a885f072482c568b2f4f8886"
+    ],
+    [
+      "R49-portal-catalogue.json",
+      null,
+      "a36001ea2ed104b12f5167c5791e5b0cda3122bd7aa839053364cc51b039b58d"
+    ],
+    [
+      "r49-facts.tsv",
+      null,
+      "ecdf8002f50985b7c2a3c37ec075c739da6090cac500c59887cf12eeb42ee901"
+    ],
+    [
+      "build_r49.py",
+      null,
+      "87de4ece0bcbaa48571d61156405641a6af9d17fb603f8fc7dd9c5e4dde17c2c"
+    ],
+    [
+      "test_r49.py",
+      null,
+      "dc919e5012856723c174ebf3542ad9287f9937983a400445b47f8b905063d96a"
+    ],
+    [
+      "R49-build.log",
+      null,
+      "dfbabe6f979f6946a877785227be7485b6764ee8f5a7cea788349225a3daf027"
+    ],
+    [
+      "R49-browser.log",
+      null,
+      "8c626737f1f92928dd4885173712be27acdec204cad7924548d85fa090c6a0b9"
+    ]
+  ],
+  "prior_zip": "d252bf44b71a23269c291efeda4466cdf0ab0773e2f65dfe600d02bc0736f887",
+  "custody": "private Library /石器时代",
+  "verification": {
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_count": 96,
+    "number_checks": 12,
+    "duplicate_name_search": 1,
+    "profile_checks": 3,
+    "requests_aborted": true,
+    "windows_direct_launch": false
+  },
+  "raw_source_bytes_authenticated": false,
+  "official_closures": 0,
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Continue previously unprocessed accessible portal pages 11–15 then subsequent pages; 10,24,26 already captured. Review catalogue index candidates for 63 and 68/72 only with actual corroboration, preserve missing fields. No blocked bulk retry."
+}
