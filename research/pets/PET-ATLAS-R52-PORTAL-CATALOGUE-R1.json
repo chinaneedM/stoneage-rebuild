@@ -1,0 +1,196 @@
+{
+  "schema": "stoneage.pet-atlas-r52.portal-catalogue-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "10384b74e4f46d4f7331dcac0edca9e082653688",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "source_grade": "LEGACY_PC_PORTAL_UNDATED_BUILD_UNVERIFIED",
+  "sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow21.htm",
+      "range": [
+        161,
+        168
+      ],
+      "family": "雷龙",
+      "access": "DIRECT_RENDERED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow22.htm",
+      "range": [
+        169,
+        176
+      ],
+      "family": "大象",
+      "access": "DIRECT_RENDERED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow23.htm",
+      "range": [
+        177,
+        184
+      ],
+      "family": "飞龙",
+      "access": "DIRECT_RENDERED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow25.htm",
+      "range": [
+        193,
+        200
+      ],
+      "family": "暴龙",
+      "access": "DIRECT_RENDERED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow27.htm",
+      "range": [
+        209,
+        216
+      ],
+      "family": "鱼龙",
+      "access": "DIRECT_RENDERED"
+    }
+  ],
+  "summary": {
+    "new_catalogue_positions": 40,
+    "cumulative_catalogue_positions": 216,
+    "birth_range_rows": 22,
+    "birth_mixed_rows": 1,
+    "birth_missing_rows": 1,
+    "birth_scalar_rows": 16,
+    "full_growth_endpoint_rows": 15,
+    "growth_scalar_rows": 0,
+    "partial_growth_rows": 6,
+    "unknown_growth_rows": 19,
+    "lv1_location_reward_rows": 30,
+    "capacity_known": 40,
+    "reference_edges": 178,
+    "linked_positions": 178,
+    "by_lane": {
+      "tw10": 23,
+      "cn50": 38,
+      "tw75": 42,
+      "sina2003": 37,
+      "cn85_original": 38
+    },
+    "by_grade": {
+      "quarantined_index_detail_name_conflict": 5,
+      "literal_detail_name": 137,
+      "normalized_detail_name": 28,
+      "index_name_candidate": 8
+    },
+    "element_comparison": {
+      "unknown": 99,
+      "equal": 75,
+      "conflict": 4
+    },
+    "unmatched_numbers": [
+      162,
+      197,
+      198,
+      200
+    ]
+  },
+  "prior_candidates": [
+    {
+      "number": 63,
+      "detail": "拉鲁其斯",
+      "index": "鲁拉其斯",
+      "template": 752,
+      "elements": "equal",
+      "all_four_overlap": true
+    },
+    {
+      "number": 72,
+      "detail": "洛奇安",
+      "index": "朵洛将恩",
+      "template": 88,
+      "elements": "conflict",
+      "all_four_overlap": true
+    },
+    {
+      "number": 72,
+      "detail": "洛奇安",
+      "template": 84,
+      "elements": "equal",
+      "all_four_overlap": true,
+      "qualification": "quarantined duplicate-name conflict"
+    }
+  ],
+  "conflicts": {
+    "duplicate_growth": [
+      177,
+      178
+    ],
+    "birth_missing": [
+      214
+    ],
+    "calendar_literal": {
+      "number": 200,
+      "literal": "91.11",
+      "qualification": "unverified calendar convention"
+    },
+    "encounter_only": [
+      167,
+      181
+    ]
+  },
+  "private_files": [
+    [
+      "StoneAge-PET-R52-Portal-Catalogue.zip",
+      5010910,
+      "c96d7328abad35953cd27d2705bbd47ac6dc7effe69927c5e36c9e5b3d01e8cc"
+    ],
+    [
+      "R52-portal-catalogue.json",
+      null,
+      "690c3aa7482b26803e56f2ee003b32a75aa3be76e6319c80137acd2d364d7dc2"
+    ],
+    [
+      "r52-facts.tsv",
+      null,
+      "ab0fc4e2a172a722eb4e0c68bfb25d7cbf1aef3724dfe20cde863b61d6b791f0"
+    ],
+    [
+      "build_r52.py",
+      null,
+      "30a84b5a82f3ea957c534b804e93115471357d9517bf3293ff042b13884fd5c9"
+    ],
+    [
+      "test_r52.py",
+      null,
+      "8b17da8ba501ba654522bf3507d369fa57ca3ff801cbab1b97e09715daffd59b"
+    ],
+    [
+      "R52-build.log",
+      null,
+      "ddcf38728ba46414ffe908aef25264a60944ce88146dadb1faef58a971c7c198"
+    ],
+    [
+      "R52-browser.log",
+      null,
+      "08bd02ad6b919c0d3f96056fb42a4515c1128b35182086c8e804ec566f894077"
+    ]
+  ],
+  "prior_zip": "d5e7fc5dd22ae1288629d1e00bb38bd9b1c58ee16b77b7f76e9e7e15e60a704a",
+  "custody": "private Library /石器时代",
+  "verification": {
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_count": 216,
+    "number_checks": 16,
+    "profile_checks": 4,
+    "prior_candidate_checks": 2,
+    "requests_aborted": true,
+    "windows_direct_launch": false
+  },
+  "raw_source_bytes_authenticated": false,
+  "official_closures": 0,
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Continue actual legacy portal pages 28 onward; pages 01–27 now covered. Inspect irregular printed numbers, gaps and final page boundaries rather than assume eight entries. Compare unmatched 162,197,198,200 only with qualified evidence. No blocked bulk retry."
+}
