@@ -1,0 +1,90 @@
+{
+  "schema": "stoneage.pet.atlas_r86.guagua_retained_tw10_motion.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "58952b1e12e0d445c9d87d49e3dd3ff989b0a33d",
+  "pins": {
+    "char11": "0d66dda72bfe4e65c47f9d39d356576dc496438b",
+    "r28": "df6ca18070f1c5cf5371a340698be90d51318507",
+    "module01": "5c4864e87f717711eac3c10cd9cefd27970484e6",
+    "cn85_pet122": "a6ed895e5b6b18ebaa1c02e809da5a17937dd176",
+    "r73": "19ee6316b43c4c9d205368f4abdd5d5803b4cf77",
+    "r77": "723e10975e5659925573f937279c26e0b1b74b2e"
+  },
+  "source_custody": {
+    "tw10_char11_zip_bytes": 196001785,
+    "tw10_char11_zip_sha256": "257f0920b841a26439b128a3784a4702c3b95cea31a1207fc8735c0c4bc4ca10",
+    "pixel_receipts_sha256": "549852595d35551c2fc723f89b1d38b26a54d95527430c1b43abae6a6aa4e4a5",
+    "r77_zip_bytes": 14270432,
+    "r77_zip_sha256": "4580d8a60efd45a7926254dd78b6272dd01ea331f45df476a6167540dbac8ecf",
+    "all_input_hashes_matched": true
+  },
+  "rows": [
+    {
+      "template_id": 913,
+      "graphic": 100015,
+      "group_index": 15,
+      "segment_sha256": "5c0ee051075500b27707f13b3d57326b8719acf2b21a7b4cc654a05cb4236233",
+      "sequences": 104,
+      "frame_positions": 488,
+      "distinct_bitmaps": 344
+    },
+    {
+      "template_id": 914,
+      "graphic": 100018,
+      "group_index": 18,
+      "segment_sha256": "450072691294679e510c0e58c764e8606a73bc35e7424e7edcee9492efd641af",
+      "sequences": 104,
+      "frame_positions": 488,
+      "distinct_bitmaps": 344
+    }
+  ],
+  "summary": {
+    "profiles": 467,
+    "additional_conditional_preview_profiles": 2,
+    "source_sequences": 208,
+    "frame_positions": 976,
+    "unique_strict_bitmap_files": 640,
+    "shared_bitmap_keys": 48,
+    "prior_members_byte_identical": 2720,
+    "new_members": 642,
+    "configuration_number_preview_profiles": 14,
+    "configuration_number_index_only_without_any_preview": 0,
+    "strict_original_visual_gaps": 29,
+    "same_name_visual_gaps": 14,
+    "official_closures": 0
+  },
+  "private_artifact": {
+    "name": "StoneAge-PET-R86-TW75-Guagua-Actions.zip",
+    "bytes": 16867109,
+    "sha256": "b2dd48471a03c8301f3be0f037dc809e2c173457188871537cf98779b6601bdd",
+    "addon_sha256": "821a75b7e8e809fcaf19da7091cbfc19636eda1e6873874b5df32a8a1f193ebd",
+    "asset_manifest_sha256": "0808ae1455b74e6249ba1247c2b7eb7d46fee68338941ca0feb78486b935d5c3",
+    "build_receipt_sha256": "d38c7e7611e83bd9c8e11843a5c46b4ad1534e44bcf7420749a4081e6b982c95",
+    "logic_receipt_sha256": "059f9d35a20d90eb0b0d5e3921d5916e86fa134a5edc7c97cfabf01c965af601",
+    "build_script_sha256": "c358ceebd5951d60e863e89c1fe44a9fd6bb0547719089d25fcbf957b477bdce",
+    "logic_script_sha256": "6b7fc3974a71ab0c34c8a0b7720165baeca2ca5bab7d294f9616073f2215dfce",
+    "library_readback_byte_identical": true,
+    "crc": "PASS",
+    "entrypoint": "gallery-r86-tw75-guagua-actions.html"
+  },
+  "validation": {
+    "all_640_png_sha_and_reversed_index_sha_verified": true,
+    "all_prior_members_and_structured_fields_identical": true,
+    "js_syntax": "PASS",
+    "node_exact_function_dom_timer_doubles": "PASS 208 sequences / 976 frame paths, previous next timer, negative profile",
+    "actual_browser": "BLOCKED_BY_ADMINISTRATOR local file navigation; no workaround attempted",
+    "windows_direct_launch": false,
+    "user_local_inspection": false
+  },
+  "boundaries": [
+    "TW10 retained candidate pixels only; exact SPR segment identity across carriers not RD/palette identity or same-deployment pet identity",
+    "No new original client download or pixels newly decoded; actual prior private source images reused and reverified",
+    "R74 original CN85 pixel transfer failure and R24 actual browser gate not closed",
+    "No original assets committed to public Git; no official species/field promotion"
+  ],
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Retain two Guagua distinct task-stage profiles; seek original same-build identity/field evidence and 29 strict visual gaps; obtain legitimate browser/user inspection and integrated atlas acceptance. Avoid repeating R74 transfer absent new source need."
+}
