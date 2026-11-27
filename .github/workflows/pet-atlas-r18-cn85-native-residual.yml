@@ -1,0 +1,81 @@
+name: PET atlas R18 CN85 native residual source
+on:
+  push:
+    branches: [pet-atlas-r18-cn85-native-residual-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r18_cn85_native_residual.py'
+      - '.github/workflows/pet-atlas-r18-cn85-native-residual.yml'
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r18_cn85_native_residual --plan-only
+  source:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: sudo apt-get update -qq && sudo apt-get install -y unshield
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r18_cn85_native_residual --output "$RUNNER_TEMP/r18" --public-key research/pets/PET-ATLAS-20261127-RECOVERY-PUBLIC.pem
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r18-cn85-private-originals
+          path: |
+            ${{ runner.temp }}/r18/originals/private.enc
+            ${{ runner.temp }}/r18/originals/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r18-cn85-private-batch-1
+          path: |
+            ${{ runner.temp }}/r18/batch-1/private.enc
+            ${{ runner.temp }}/r18/batch-1/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r18-cn85-private-batch-2
+          path: |
+            ${{ runner.temp }}/r18/batch-2/private.enc
+            ${{ runner.temp }}/r18/batch-2/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r18-cn85-private-batch-3
+          path: |
+            ${{ runner.temp }}/r18/batch-3/private.enc
+            ${{ runner.temp }}/r18/batch-3/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r18-cn85-private-batch-4
+          path: |
+            ${{ runner.temp }}/r18/batch-4/private.enc
+            ${{ runner.temp }}/r18/batch-4/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r18-cn85-private-batch-5
+          path: |
+            ${{ runner.temp }}/r18/batch-5/private.enc
+            ${{ runner.temp }}/r18/batch-5/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - if: always()
+        run: rm -rf "$RUNNER_TEMP/r18"
