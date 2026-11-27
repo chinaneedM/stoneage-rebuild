@@ -1,0 +1,105 @@
+{
+  "schema": "stoneage.pet-atlas-r65.cn50-compact-visual-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "7a9e015c383bbc7bd5c9328f7a67703e1e2efd4a",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "base_tree": "f9a6269907df052e3a4e997ad018c64b318ba23f",
+  "prior_ci": [
+    46007177601,
+    46007177556,
+    46007177535
+  ],
+  "summary": {
+    "named_positions": 305,
+    "portrait_refs": 309,
+    "multiple_portrait_positions": 4,
+    "animated_previews": 305,
+    "preview_frames": 3749,
+    "distinct_selected_group_ids": 305,
+    "positions_without_preview": 0,
+    "strict_all_sequence_positions": 274,
+    "unique_copied_pngs": 2405,
+    "frame_provider_labels": {
+      "EXACT_PIXEL_MATCH": 2674,
+      "TW10_SCOPE_ACTUAL_PNG": 1075
+    },
+    "original_identity_promotions": 0
+  },
+  "inputs": [
+    [
+      "StoneAge-PET-R64-CN85-Visual-Gallery.zip",
+      27236638,
+      "dce77bd8dea23cc3eaba946d02361475dff050d1d00f646019feb2b4b8502582"
+    ],
+    [
+      "StoneAge-PET-R14-CN50.zip",
+      6668384,
+      "60b616cf3931d5314b1af601a18bb434853d130cb5cbb2ceaccbd9e279ee1821"
+    ],
+    [
+      "StoneAge-PET-R15-CN50-Motion.zip",
+      6745614,
+      "4932e023075755d20b78f793f8a011169ae556f92ca6ae38d15947a1e926018b"
+    ],
+    [
+      "StoneAge-PET-R6-Assets-4.zip",
+      113711095,
+      "6c19845357067bdadb688917ad497aedccff088ebc2177a202e52bf54bd126a5"
+    ]
+  ],
+  "private_files": [
+    [
+      "StoneAge-PET-R65-CN50-Visual-Gallery.zip",
+      35142501,
+      "55304a4be294437ec19468be0f1b87fb3c52d3365bea5e1c04e4794184717adb"
+    ],
+    [
+      "R65-cn50-visual-gallery.json",
+      2146040,
+      "3ef63b569d9e0ddbb5e3c6187fed8e7387b60019f7720423babd7d625ee61395"
+    ],
+    [
+      "build_r65.py",
+      12560,
+      "82c6d6864c7ed06113324e1c4d27b31411a6081038b80fa9107a4c20a956fd0a"
+    ],
+    [
+      "test_r65.py",
+      2633,
+      "066d30134810fd4200f79fab8149956007a1492c623c22667bb28ae0fc3d2b50"
+    ]
+  ],
+  "qualification": "305 CN50 compiled named source positions, not official species or native runtime. All309 portrait byte/pixel/geometry receipts verified against R14. R15 594 group id/graphic/SPR metadata matched, selected strict multiframe sequences; exact path/provider archive binding to previously authenticated PNG or direct R6 selected member. 1075 frame positions early TW10 scope provider not independently decoded CN50; other2674 R15 exact-pixel match label. No palette, native motion selector/timing or official field closure. R64 548 previews retained, integrated index exact bytes unchanged, only reciprocal gallery navigation link added. Full atlas requires older assets.",
+  "verification": {
+    "prior_r64_r14_r15_full_crc": true,
+    "r6_asset4_pinned_hash_selected_member_crc": true,
+    "all_594_group_metadata_matched": true,
+    "all_portrait_png_pixel_receipts_match": true,
+    "all_selected_png_decode_byte_hash": true,
+    "output_zip_crc": true,
+    "prior_integrated_index_exact_bytes": true,
+    "chromium_zip_document_replay": "PASS",
+    "rendered_image_references_decoded": 614,
+    "pagination": 13,
+    "filters": [
+      "dual",
+      "missing",
+      "partial"
+    ],
+    "normalized_name_search": true,
+    "exact_source_id_search": true,
+    "step_play_pause": true,
+    "external_requests": 0,
+    "js_errors": 0,
+    "harness_csp_and_base_changed_only": true,
+    "windows_direct_launch": false,
+    "native_motion_retested": false,
+    "user_local_inspection": false,
+    "initial_build": "ID string/int assertion corrected; provider labels and R4 archive mapping corrected; first successful package 295 previews, then pinned R6-4 and corrected R4 mapping yield 305; final clean replay PASS"
+  },
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Continue actual per-pet field evidence (original master/skills/capture/growth) and Taiwan/earlier source compact gallery using exact source paths; no duplicate official identity promotions; retain 31 CN50 positions with non-strict candidate sequences and original native selector unknown. User local inspection and closure remain outstanding."
+}
