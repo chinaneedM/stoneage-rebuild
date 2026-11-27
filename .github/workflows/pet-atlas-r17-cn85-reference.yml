@@ -1,0 +1,21 @@
+name: PET atlas R17 CN85 cross-version reference
+on:
+  push:
+    branches: [pet-atlas-r17-cn85-reference-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r17_cn85_reference.py'
+      - '.github/workflows/pet-atlas-r17-cn85-reference.yml'
+permissions:
+  contents: read
+jobs:
+  reference:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python tools/stoneage_pet_residual_visual_review.py
+      - run: python -m tools.stoneage_pet_atlas_r17_cn85_reference
