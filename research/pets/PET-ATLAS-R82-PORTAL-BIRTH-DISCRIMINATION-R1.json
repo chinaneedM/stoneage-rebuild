@@ -1,0 +1,704 @@
+{
+  "schema": "stoneage.pet.atlas_r82.portal_birth_variant_discrimination.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "958cb674e2d5bbfe2447a46565878c7c45c4eaf4",
+  "r81_blob": "49a3cbdfcccd8f3f95dbfbb853e7329ccb7d493f",
+  "summary": {
+    "CLAIMED_ONLY": 2,
+    "BOTH": 3,
+    "NEITHER": 2,
+    "SIMULATOR_ONLY": 1,
+    "rows": 8,
+    "range_rows": 6,
+    "scalar_rows": 2,
+    "official_closures": 0
+  },
+  "source_grade": "DIRECT_RENDERED_LEGACY_PC_PORTAL_UNDATED_DEPLOYMENT_UNVERIFIED; R47-R55 prior portal family, new comparison not new independent catalogue",
+  "method": "Compare every reported marginal endpoint with R81 claimed and duplicated simulator 0/1 conditional marginal bounds. Scalar rows test marginal inclusion only; no claim of joint panel reachability. Reported ranges are not certified extrema. Name candidate only; keep element literals distinct and do not equate source IDs.",
+  "rows": [
+    {
+      "template": 23,
+      "template_name": "加比奧",
+      "claimed_row_sha256": "592a0aad47a67d9bd1fffab2ab71462264d1b99bc5f8ad6151a533d107cff69d",
+      "source": {
+        "url": "https://news.17173.com/z/stoneage/chongwu/petshow03.htm",
+        "number": 19,
+        "name": "加比奥",
+        "element_literal": "风10",
+        "kind": "RANGE",
+        "reported_marginals": [
+          [
+            28,
+            34
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ]
+      },
+      "association": "NAME_CANDIDATE_ONLY; no source-specific identity or same-deployment proof",
+      "claimed_bounds": [
+        [
+          27,
+          37
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "simulator_0_1_bounds": [
+        [
+          28,
+          39
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "claimed_outside": [],
+      "simulator_outside": [
+        {
+          "stat": "ATK",
+          "edge": "low",
+          "reported": 4,
+          "bound": 6
+        }
+      ],
+      "classification": "CLAIMED_ONLY"
+    },
+    {
+      "template": 141,
+      "template_name": "格爾頓",
+      "claimed_row_sha256": "0745807f664cca6283a8291da80685ea6aedb71b0bbd0cd6f0a1f6d4b443f6fb",
+      "source": {
+        "url": "https://news.17173.com/z/stoneage/chongwu/petshow13.htm",
+        "number": 97,
+        "name": "格尔顿",
+        "element_literal": "地10",
+        "kind": "RANGE",
+        "reported_marginals": [
+          [
+            53,
+            61
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      },
+      "association": "NAME_CANDIDATE_ONLY; no source-specific identity or same-deployment proof",
+      "claimed_bounds": [
+        [
+          50,
+          66
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          4,
+          8
+        ]
+      ],
+      "simulator_0_1_bounds": [
+        [
+          49,
+          65
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          4,
+          8
+        ]
+      ],
+      "claimed_outside": [],
+      "simulator_outside": [
+        {
+          "stat": "ATK",
+          "edge": "low",
+          "reported": 9,
+          "bound": 11
+        },
+        {
+          "stat": "DEF",
+          "edge": "high",
+          "reported": 11,
+          "bound": 10
+        }
+      ],
+      "classification": "CLAIMED_ONLY"
+    },
+    {
+      "template": 191,
+      "template_name": "貝魯卡",
+      "claimed_row_sha256": "3ff2c38a75d61a71a5a4c1c955efe41f1664f14c5e79b7cb02fadc00d95c0fba",
+      "source": {
+        "url": "https://news.17173.com/z/stoneage/chongwu/petshow16.htm",
+        "number": 121,
+        "name": "贝鲁卡",
+        "element_literal": "地6水4",
+        "kind": "RANGE",
+        "reported_marginals": [
+          [
+            38,
+            48
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            5,
+            8
+          ]
+        ]
+      },
+      "association": "NAME_CANDIDATE_ONLY; no source-specific identity or same-deployment proof",
+      "claimed_bounds": [
+        [
+          37,
+          51
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ]
+      ],
+      "simulator_0_1_bounds": [
+        [
+          37,
+          51
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          8
+        ]
+      ],
+      "claimed_outside": [],
+      "simulator_outside": [],
+      "classification": "BOTH"
+    },
+    {
+      "template": 222,
+      "template_name": "加克拉",
+      "claimed_row_sha256": "a724f79541aeca8d02fc727edff79e530d84ab35c6d98f98c4dc2c66073fa4a6",
+      "source": {
+        "url": "https://news.17173.com/z/stoneage/chongwu/petshow18.htm",
+        "number": 138,
+        "name": "加克拉",
+        "element_literal": "水5火5",
+        "kind": "RANGE",
+        "reported_marginals": [
+          [
+            36,
+            45
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "association": "NAME_CANDIDATE_ONLY; no source-specific identity or same-deployment proof",
+      "claimed_bounds": [
+        [
+          35,
+          47
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "simulator_0_1_bounds": [
+        [
+          35,
+          48
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "claimed_outside": [],
+      "simulator_outside": [],
+      "classification": "BOTH"
+    },
+    {
+      "template": 223,
+      "template_name": "加格",
+      "claimed_row_sha256": "b292f36aba1f7f3ccb993c4c0be6a6dd8af50853b1847d92e9f146a6c6d4f1a8",
+      "source": {
+        "url": "https://news.17173.com/z/stoneage/chongwu/petshow18.htm",
+        "number": 139,
+        "name": "加格",
+        "element_literal": "水10",
+        "kind": "RANGE",
+        "reported_marginals": [
+          [
+            39,
+            49
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "association": "NAME_CANDIDATE_ONLY; no source-specific identity or same-deployment proof",
+      "claimed_bounds": [
+        [
+          39,
+          52
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "simulator_0_1_bounds": [
+        [
+          42,
+          56
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "claimed_outside": [
+        {
+          "stat": "DEF",
+          "edge": "low",
+          "reported": 3,
+          "bound": 4
+        }
+      ],
+      "simulator_outside": [
+        {
+          "stat": "HP",
+          "edge": "low",
+          "reported": 39,
+          "bound": 42
+        },
+        {
+          "stat": "ATK",
+          "edge": "low",
+          "reported": 6,
+          "bound": 7
+        },
+        {
+          "stat": "DEF",
+          "edge": "low",
+          "reported": 3,
+          "bound": 4
+        }
+      ],
+      "classification": "NEITHER"
+    },
+    {
+      "template": 754,
+      "template_name": "邦諾斯娜",
+      "claimed_row_sha256": "5ac8e4e08ac204c4516acaada9ee7b7233bf612c46be06d495e651feba0f05f0",
+      "source": {
+        "url": "https://news.17173.com/z/stoneage/chongwu/petshow10.htm",
+        "number": 78,
+        "name": "邦诺斯娜",
+        "element_literal": "水5火5",
+        "kind": "SCALAR",
+        "reported_marginals": [
+          [
+            54,
+            54
+          ],
+          [
+            13,
+            13
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            5,
+            5
+          ]
+        ]
+      },
+      "association": "NAME_CANDIDATE_ONLY; no source-specific identity or same-deployment proof",
+      "claimed_bounds": [
+        [
+          65,
+          84
+        ],
+        [
+          16,
+          21
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          8,
+          13
+        ]
+      ],
+      "simulator_0_1_bounds": [
+        [
+          57,
+          75
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          6,
+          11
+        ]
+      ],
+      "claimed_outside": [
+        {
+          "stat": "HP",
+          "edge": "low",
+          "reported": 54,
+          "bound": 65
+        },
+        {
+          "stat": "ATK",
+          "edge": "low",
+          "reported": 13,
+          "bound": 16
+        },
+        {
+          "stat": "AGI",
+          "edge": "low",
+          "reported": 5,
+          "bound": 8
+        }
+      ],
+      "simulator_outside": [
+        {
+          "stat": "HP",
+          "edge": "low",
+          "reported": 54,
+          "bound": 57
+        },
+        {
+          "stat": "ATK",
+          "edge": "low",
+          "reported": 13,
+          "bound": 14
+        },
+        {
+          "stat": "AGI",
+          "edge": "low",
+          "reported": 5,
+          "bound": 6
+        }
+      ],
+      "classification": "NEITHER"
+    },
+    {
+      "template": 756,
+      "template_name": "迪基格斯",
+      "claimed_row_sha256": "6c98a6be8ff0ff1b48d702a48fab69016f1681055538ea2a13afa11cf0445607",
+      "source": {
+        "url": "https://news.17173.com/z/stoneage/chongwu/petshow10.htm",
+        "number": 80,
+        "name": "迪基格斯",
+        "element_literal": "地2水8",
+        "kind": "RANGE",
+        "reported_marginals": [
+          [
+            53,
+            67
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            5,
+            8
+          ]
+        ]
+      },
+      "association": "NAME_CANDIDATE_ONLY; no source-specific identity or same-deployment proof",
+      "claimed_bounds": [
+        [
+          51,
+          66
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          5,
+          8
+        ]
+      ],
+      "simulator_0_1_bounds": [
+        [
+          52,
+          67
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          5,
+          8
+        ]
+      ],
+      "claimed_outside": [
+        {
+          "stat": "HP",
+          "edge": "high",
+          "reported": 67,
+          "bound": 66
+        }
+      ],
+      "simulator_outside": [],
+      "classification": "SIMULATOR_ONLY"
+    },
+    {
+      "template": 777,
+      "template_name": "佩露夏",
+      "claimed_row_sha256": "9f185b4be2c6dfdb35185995764239be26a4aab819794b939ace04d9360978b7",
+      "source": {
+        "url": "https://news.17173.com/z/stoneage/chongwu/petshow16.htm",
+        "number": 126,
+        "name": "佩露夏",
+        "element_literal": "水10",
+        "kind": "SCALAR",
+        "reported_marginals": [
+          [
+            66,
+            66
+          ],
+          [
+            14,
+            14
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      },
+      "association": "NAME_CANDIDATE_ONLY; no source-specific identity or same-deployment proof",
+      "claimed_bounds": [
+        [
+          58,
+          75
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          12
+        ]
+      ],
+      "simulator_0_1_bounds": [
+        [
+          62,
+          80
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          8,
+          12
+        ]
+      ],
+      "claimed_outside": [],
+      "simulator_outside": [],
+      "classification": "BOTH"
+    }
+  ],
+  "excluded": [
+    {
+      "template": 755,
+      "portal_number": 79,
+      "reason": "楊格斯 versus 扬格斯 alias not established; R47 recorded no exact reference"
+    }
+  ],
+  "period_references": [
+    {
+      "date": "2002-06-06",
+      "url": "https://news.17173.com/z/stoneage/content/2002-6-6/n503_420082.html",
+      "grade": "DATED_PLAYER_REPORT",
+      "observations": [
+        {
+          "template": 23,
+          "reported_total_growth": [
+            4.5,
+            4.7
+          ]
+        },
+        {
+          "template": 223,
+          "reported_total_growth_approx": 4.7
+        }
+      ],
+      "qualification": "Qualitative historical cross-reference only; not measured endpoints or official model proof; novelty versus existing source registry not established."
+    }
+  ],
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Seek dated individual Lv1 panels or authenticated same-deployment master for 23/141/223/754/756. Retain R74 zero-byte failure and R24 browser gate; no repeated transfer without new access."
+}
