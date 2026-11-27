@@ -1,0 +1,156 @@
+{
+  "schema": "stoneage.pet-atlas-r62.numbered-residual-reference-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "ca1827ec8aa8aed49a11620900c67b34987aab19",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "prior_ci": [
+    46001958554,
+    46001958537,
+    46001958494
+  ],
+  "summary": {
+    "control_details": 338,
+    "control_grades": {
+      "NUMBER_AND_NAME": 293,
+      "NUMBER_NAME_MISMATCH": 45
+    },
+    "residual_names": 27,
+    "number_name_matches": 25,
+    "number_conflicts": 2,
+    "tw75_conditional_templates": 25,
+    "tw85_grid_references": 104,
+    "tw85_matching_ordinal_face": 100,
+    "prior_period_reports_linked": 4,
+    "event_linked_names": 6,
+    "portal_details_unchanged": 338,
+    "official_closures": 0
+  },
+  "number_conflicts": [
+    {
+      "portal": 368,
+      "portal_name": "巴吉欧",
+      "cn_compiled_slot": 367,
+      "cn_name": "贝瑞里",
+      "cn_ordinal": 424
+    },
+    {
+      "portal": 370,
+      "portal_name": "史内克",
+      "cn_compiled_slot": 369,
+      "cn_name": "史菲洛",
+      "cn_ordinal": 426
+    }
+  ],
+  "duplicate_name_quarantine": {
+    "portal": 358,
+    "name": "菲奇亚",
+    "other_portal": 239,
+    "other_cn_position": 5614
+  },
+  "source_pins": {
+    "research/recovered/STONEAGE-PET85-YEAR2011-CN85-TW-OFFICIAL-PET-EVENT-CANDIDATES-R1.json": "e6a6fce5f548203c09d9a8c1caca4a2c4dd0dbf4"
+  },
+  "sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow.htm",
+      "lines": [
+        53,
+        82
+      ],
+      "grade": "DIRECT_RENDERED_INDEX_RECHECK"
+    },
+    {
+      "url": "https://news.17173.com/content/2011-01-27/20110127101602072.shtml",
+      "lines": [
+        40,
+        46
+      ],
+      "grade": "DATED_OPERATOR_PROMOTION_REUSED_PET85"
+    },
+    {
+      "url": "https://news.17173.com/content/2011-01-25/20110125114727721.shtml",
+      "lines": [
+        23,
+        34
+      ],
+      "grade": "SAME_EVENT_ADDITIONAL_EFFECT_CLAIMS_NOT_INDEPENDENT_GRANT"
+    },
+    {
+      "url": "https://news.17173.com/content/2011-06-20/20110620094300212.shtml",
+      "lines": [
+        19,
+        32
+      ],
+      "grade": "DATED_OPERATOR_FUTURE_SHOP_EXAMPLE_REUSED_PET85"
+    },
+    {
+      "url": "https://news.17173.com/content/2011-08-10/20110810143407560.shtml",
+      "lines": [
+        19,
+        25
+      ],
+      "grade": "DATED_PORTAL_PROMOTION_USAGE_CLAIM"
+    }
+  ],
+  "qualification": "One-based portal to zero-based compiled slot is only a candidate check; controls show 45 mismatches, never assume IDs. All 27 original details still missing, 25 conditional TW75 templates and four previous period reports now aggregated, 100/104 same-name TW85 grid candidate positions agree ordinal and face; no original native selector or identity proof. Reuse PET85 event terms and supplement same-event skill descriptions; 2011 announcements do not establish earlier release, actual grant, innate skill, or runtime. No new official closure.",
+  "blockers": [
+    "Exact raw May fusion HTML not recovered: local DNS resolution failed; public rendered version does not reauthenticate prior bytes.",
+    "巴吉欧 and 史内克 original details and qualified identity still absent; modern/private-server copies not accepted."
+  ],
+  "prior_zip": "7b54068e896618ea88adcd68a77f52ef8bd9ef48dc9a51118c6ec0b41a094af2",
+  "private_files": [
+    [
+      "StoneAge-PET-R62-Numbered-Residuals.zip",
+      5215235,
+      "762b30fdd58f1d450dd7a78b818dba8d2f9ac9a168020d1ce9aabb9c38d2309a"
+    ],
+    [
+      "R62-numbered-residuals.json",
+      147994,
+      "40b398adf4a4d71f80fa18a16693fb5fe1d69383f156a31692257d07bcd02f77"
+    ],
+    [
+      "build_r62.py",
+      12517,
+      "e1d3f2723c04a1ab4ac7a838c664f2c51dc9747c5d2d8083675c0db8bcbc0262"
+    ],
+    [
+      "test_r62.py",
+      2953,
+      "967c4f9080248cc286fab6142f4fedecf27c478581a93be8f1775b148423bbdc"
+    ],
+    [
+      "R62-build.log",
+      622,
+      "e0e050b84acdacae5e416ecf8a42dc28e3d0e9d03e98ad50efbe6812eaeec969"
+    ],
+    [
+      "R62-browser.log",
+      158,
+      "ad69ec19739a5aaf67a2c46511d6d26f1e416a8aa34474012b109324fc2622fb"
+    ]
+  ],
+  "verification": {
+    "prior_zip_hash": "PASS",
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_entries": 27,
+    "conflict_filter": 2,
+    "event_filter": 6,
+    "same_name_quarantine": true,
+    "linked_conditional_profile": true,
+    "r61_regression": true,
+    "network_requests_aborted": true,
+    "initial_test_failure": "Simplified search did not select traditional original label 歐西摩米; changed test to actual label, rerun passed. Search normalization remains improvement gap.",
+    "windows_direct_launch": false,
+    "native_motion_retested": false
+  },
+  "source_positions": 6207,
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Prioritize original pet master or authentic dated independent evidence, not repetitive residual search. Audit the 45 control number/name mismatches to distinguish documented alias, index-detail disagreement, and slot differences; preserve duplicate 菲奇亚 and 368/370 conflicts. Obtain verified prior raw fusion table bytes if available. Continue actual integrated profile field completion, including robust traditional/simplified lookup and original local visual assets."
+}
