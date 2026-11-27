@@ -1,0 +1,108 @@
+{
+  "schema": "stoneage.pet-atlas-r56.dated-maritime-references-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "ff6cf4202648ad63bd063d87c76a590374c9a2ed",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "prior_ci": [
+    45992381717,
+    45992381683,
+    45992381703
+  ],
+  "sources": [
+    {
+      "url": "https://games.sina.com.cn/z/sta/2003-06-16/12870.shtml?from=wap",
+      "date": "2003-06-16",
+      "lines": [
+        24,
+        24
+      ],
+      "grade": "DATED_PLAYER_GUIDE_ENCOUNTER_REPORT"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2003-12-25/n137_53826.html",
+      "date": "2003-12-25",
+      "lines": [
+        205,
+        249
+      ],
+      "grade": "DATED_PLAYER_COMPILATION_LV1_REPORT"
+    }
+  ],
+  "summary": {
+    "reports": 27,
+    "encounter_only": 12,
+    "lv1_location": 14,
+    "quest": 1,
+    "panel_samples": 13,
+    "skill_slot_reports": 3,
+    "portal_positions": 15,
+    "additional_names": 10,
+    "linked_positions": 52,
+    "reference_edges": 56,
+    "by_lane": {
+      "cn50": 1,
+      "tw75": 28,
+      "cn85_original": 27
+    },
+    "unmatched_names": []
+  },
+  "qualification": "6.0 encounters are not capture reports; 7.0 staged availability is explicitly reported, not exact first release; Lv1 samples are not ranges. Only name-based links, no same-deployment identity or official capture/acquisition closure. Prior 302 rows unchanged. No modern/private-server source substitution.",
+  "prior_zip": "d12e3bc9b03bdc8eb6f34de574b8d5b3ced2a21c44385267a0a12d630c3a3509",
+  "private_files": [
+    [
+      "StoneAge-PET-R56-Maritime-References.zip",
+      5015077,
+      "693b4bb4465f71d972aa658b0c1e02a310a66b117f87269636e391b089f14297"
+    ],
+    [
+      "R56-maritime-references.json",
+      24050,
+      "f9e080c6f168f149c4bfd869be51987b2d9e33cb35490f217e4a950314e0c6ea"
+    ],
+    [
+      "r56-facts.tsv",
+      null,
+      "74ae7164b57731b1b481a32e968e27fae8f8399298257e5f2bc19240b44e4148"
+    ],
+    [
+      "build_r56.py",
+      null,
+      "95de775fb4bd9e31cd7b06a771a8dea6e00000aa54e0d7c447d5d0ebc9c5c6c0"
+    ],
+    [
+      "test_r56.py",
+      null,
+      "c5b0224149275342705c3523368bb53f1c346fbb5e29782401199a8539a20d89"
+    ],
+    [
+      "R56-build.log",
+      null,
+      "5e89c8af3d9f18bbf968688301174dba629a2a6c9a57aa9c4f4f45a6f4b3e34f"
+    ],
+    [
+      "R56-browser.log",
+      null,
+      "eecf95d1d2adbc901b5ab89b0915d9baa37b2ac96af736c847dc39bdf237d7a2"
+    ]
+  ],
+  "verification": {
+    "prior_zip_hash": "PASS",
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "standalone_filters": 5,
+    "legacy_combined_checks": 3,
+    "linked_profiles": 2,
+    "initial_test_failure": "substring search selected unrelated 卡卡特; exact name locator corrected and clean rerun",
+    "windows_direct_launch": false,
+    "native_motion_retested": false
+  },
+  "source_positions": 6207,
+  "portal_positions_unchanged": 302,
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Find dated official operator event/quest documentation corroborating maritime Lv1 reports and gifts, and original source data for missing stats/growth/skills. Seek positive index evidence before further portal page retries; retain prior blocked pages. Do not count samples as intervals."
+}
