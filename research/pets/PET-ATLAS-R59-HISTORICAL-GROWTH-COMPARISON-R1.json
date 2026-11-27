@@ -1,0 +1,143 @@
+{
+  "schema": "stoneage.pet-atlas-r59.historical-conditional-comparison-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "925ebfbcdc85bc2008cb0949a44112b9d9510fc9",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "prior_ci": [
+    45998766911,
+    45998766814,
+    45998766782
+  ],
+  "summary": {
+    "growth_reference_pairs": 123,
+    "growth_portal_rows": 106,
+    "growth_rows_with_data": 108,
+    "element_equal_name_pairs": 118,
+    "quarantined_pairs": 5,
+    "growth_pairs_all_endpoints_within": 119,
+    "growth_pairs_outside": 4,
+    "growth_endpoints": 823,
+    "growth_endpoints_outside": 5,
+    "growth_endpoints_beyond_one": 0,
+    "element_equal_pairs_all_within": 115,
+    "sample_reference_pairs": 16,
+    "sample_joint_reachable": 15,
+    "sample_marginal_but_not_joint": 0,
+    "sample_marginal_outside": 1,
+    "sample_explicit_level_one": 14,
+    "distinct_birth_offset_allocation_sums": 14270,
+    "official_closures": 0
+  },
+  "discrepancies": [
+    {
+      "portal": 3,
+      "template": 3,
+      "field": "DEF",
+      "reported": "1.177",
+      "gap": "0.0135"
+    },
+    {
+      "portal": 3,
+      "template": 586,
+      "field": "DEF",
+      "reported": "1.177",
+      "gap": "0.0135"
+    },
+    {
+      "portal": 3,
+      "template": 6,
+      "field": "DEF",
+      "reported": "1.177",
+      "gap": "0.240",
+      "quarantined": true
+    },
+    {
+      "portal": 146,
+      "template": 232,
+      "field": "DEF",
+      "reported": [
+        "1.383",
+        "1.20"
+      ],
+      "gaps": [
+        "0.2155",
+        "0.3985"
+      ]
+    }
+  ],
+  "joint_sample_conflict": {
+    "name": "艾柏瑞",
+    "sample": [
+      69,
+      13,
+      10,
+      12
+    ],
+    "reachable_template": 121,
+    "unreachable_template": 995,
+    "element_conflict": true
+  },
+  "method": "Use only already preserved name reference links and independently compare elements; deduplicate portal number/template pairs, preserve source pointers and quarantined edges. Exact decimal endpoint distance from R58 rational interval; one-point sensitivity not calibrated error bound. For each historical sample/template, enumerate all 625 offset vectors and 286 allocation compositions, collapse to 14270 distinct combined vectors; replay C baseline panel HP float32 and double STR/TOUGH/DEX; assert stored marginal bounds and replay each constructive witness. R57 two samples level-one assumption only.",
+  "qualification": "Compatibility with conditional descendant model does not establish original deployment, identity, observed rolls, historical correctness or original official growth; endpoint observations may have unknown duration, rounding, gear, rebirth or version. No joint growth endpoint or total inferred. No source field promoted.",
+  "prior_zip": "9f281c55368c51c451b7f6998e645ed721338aca0d668d4871b0407f642432d0",
+  "private_files": [
+    [
+      "StoneAge-PET-R59-Growth-Comparison.zip",
+      5143398,
+      "a2b67ef15bc52eedd0a885d97cc7e5bf2ab680b0a72b000ba39e971c030fb802"
+    ],
+    [
+      "R59-growth-comparison.json",
+      null,
+      "0caca787dddcc7a1c92f8a73d1afb8669d1cafa8f063f415ed1ad10c7093656e"
+    ],
+    [
+      "build_r59.py",
+      null,
+      "83bf9416b19310af40b520cba909a21240c76a3df16288c902179a1f673d3631"
+    ],
+    [
+      "test_r59.py",
+      null,
+      "9d950ac3ec65df3d56025360cbf8cf926c11b097296e58a02d5e1740699c8505"
+    ],
+    [
+      "R59-build.log",
+      null,
+      "722e1f9448bbc61d851b509df54c80ff1e607d8535280430406ae2716ee67827"
+    ],
+    [
+      "R59-browser.log",
+      null,
+      "3368bd1d0de251c06d36589496aba955bbb3b9fafb267f01cfc77168e0a46e64"
+    ]
+  ],
+  "verification": {
+    "prior_zip_hash": "PASS",
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_entries": 139,
+    "filters": [
+      "outside",
+      "equal",
+      "sample"
+    ],
+    "exact_discrepancy": true,
+    "duplicate_name_conflict": true,
+    "level_assumption": true,
+    "linked_profile": true,
+    "r58_regression": true,
+    "network_requests_aborted": true,
+    "windows_direct_launch": false,
+    "native_motion_retested": false
+  },
+  "source_positions": 6207,
+  "portal_positions_unchanged": 302,
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Prioritize unintegrated original skill, growth and acquisition evidence; explicitly audit the two portal growth records without a qualified TW75 link and the 73 full-endpoint portal rows for provenance, without reusing overlapping sources as independent observations. Resolve candidate identity conflicts only with evidence, not numerical compatibility alone."
+}
