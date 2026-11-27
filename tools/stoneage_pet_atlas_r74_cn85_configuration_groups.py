@@ -8,7 +8,7 @@ from tools import stoneage_pet_atlas_r18_cn85_native_residual as r18
 from tools.stoneage_pet_atlas_r13_cn85_original import (
     transfer,native,secure,parse_adrn_record,gray_png,sha,load,stable,group_sequences,pixel,PINS
 )
-from tools import stoneage_pet_atlas_r74_cn85_compatible_residual as r24
+from tools import stoneage_pet_atlas_r24_cn85_compatible_residual as r24
 from tools import stoneage_pet_atlas_r25_cn85_runtime_residual as r25
 REF="PET-ATLAS-R73-TW75-CONFIGURATION-GRAPHICS-R1.json"
 PIN="19ee6316b43c4c9d205368f4abdd5d5803b4cf77"
