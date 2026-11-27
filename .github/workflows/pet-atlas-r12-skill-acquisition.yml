@@ -1,0 +1,28 @@
+name: PET atlas R12 skill acquisition
+on:
+  push:
+    branches: [pet-atlas-r12-acquisition-skills-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r12_skill_acquisition.py'
+      - '.github/workflows/pet-atlas-r12-skill-acquisition.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_atlas_r12_skill_acquisition.py'
+      - '.github/workflows/pet-atlas-r12-skill-acquisition.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_atlas_r12_skill_acquisition --output "$RUNNER_TEMP/r12-skill-acquisition.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-r12-derived-skill-acquisition
+          path: ${{ runner.temp }}/r12-skill-acquisition.json
+          if-no-files-found: error
