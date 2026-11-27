@@ -1,0 +1,26 @@
+name: PET atlas R15 CN50 native motion manifest
+on:
+  push:
+    branches: [pet-atlas-r15-cn50-motion-manifest-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r15_cn50_motion_manifest.py'
+      - '.github/workflows/pet-atlas-r15-cn50-motion-manifest.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_atlas_r15_cn50_motion_manifest --selftest
+      - run: python -m tools.stoneage_pet_atlas_r15_cn50_motion_manifest --output "$RUNNER_TEMP/cn50-motion.json.gz"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r15-cn50-native-motion-manifest
+          path: ${{ runner.temp }}/cn50-motion.json.gz
+          if-no-files-found: error
+          retention-days: 14
