@@ -1,0 +1,75 @@
+name: PET atlas R10 private full-motion batches
+on:
+  push:
+    branches: [pet-atlas-r10-bounded-motion-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r10_bounded_motion.py'
+      - '.github/workflows/pet-atlas-r10-bounded-motion.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_atlas_r10_bounded_motion.py'
+      - '.github/workflows/pet-atlas-r10-bounded-motion.yml'
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r10_bounded_motion --plan-only
+  source:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/pet-atlas-r10-bounded-motion-20261127'
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install Pillow cryptography==46.0.4
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq msitools p7zip-full
+      - run: python -m tools.stoneage_wayi85_sixpart_acquisition --work "$RUNNER_TEMP/tw85" --output "$RUNNER_TEMP/tw85-acquisition.json"
+      - run: |
+          python -m tools.stoneage_pet_atlas_r10_bounded_motion --source "$RUNNER_TEMP/tw85/msi-client/Program Files/WAYI/石器時代 魔域大冒險/data" --acquisition "$RUNNER_TEMP/tw85-acquisition.json" --private "$RUNNER_TEMP/r10-plain" --public-key research/pets/PET-ATLAS-R8-SESSION-PUBLIC.pem --output "$RUNNER_TEMP/r10-sealed"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r10-private-encrypted-batch-1
+          path: |
+            ${{ runner.temp }}/r10-sealed/batch-1/private.enc
+            ${{ runner.temp }}/r10-sealed/batch-1/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r10-private-encrypted-batch-2
+          path: |
+            ${{ runner.temp }}/r10-sealed/batch-2/private.enc
+            ${{ runner.temp }}/r10-sealed/batch-2/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r10-private-encrypted-batch-3
+          path: |
+            ${{ runner.temp }}/r10-sealed/batch-3/private.enc
+            ${{ runner.temp }}/r10-sealed/batch-3/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r10-private-encrypted-batch-4
+          path: |
+            ${{ runner.temp }}/r10-sealed/batch-4/private.enc
+            ${{ runner.temp }}/r10-sealed/batch-4/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - if: always()
+        run: rm -rf "$RUNNER_TEMP/tw85" "$RUNNER_TEMP/r10-plain" "$RUNNER_TEMP/r10-sealed"
