@@ -2,7 +2,6 @@
 import argparse, base64, hashlib, io, json, tempfile, time, urllib.request
 from pathlib import Path
 from PIL import Image
-from tools.stoneage_pet_atlas_r4_private_source import seal
 
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "research/pets/PET-ATLAS-R38-JP-KR-GIF-CUSTODY-PLAN-R1.json"
@@ -78,6 +77,78 @@ def selftest():
         else:
             raise AssertionError("invalid payload accepted")
 
+
+def seal_gifs(private, public, out):
+    """R38-specific strict GIF allowlist; leave R4's PNG policy untouched."""
+    import re, secrets, zipfile
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+    from cryptography.hazmat.primitives.asymmetric import padding
+    from cryptography.hazmat.primitives import hashes, serialization
+    receipt=json.loads((private/"receipt.json").read_text(encoding="utf-8"))
+    expected={"receipt.json"}
+    for x in receipt["results"]:
+        if x["verified"]:
+            name=x["path"]
+            assert re.fullmatch(r"(jp|kr)-[0-9]{3}\.gif",name)
+            assert name not in expected
+            expected.add(name)
+            verify((private/name).read_bytes(),x["target"])
+    files=list(private.iterdir())
+    assert {x.name for x in files}==expected
+    assert all(x.is_file() and not x.is_symlink() for x in files)
+    buf=io.BytesIO()
+    with zipfile.ZipFile(buf,"w",compression=zipfile.ZIP_DEFLATED) as z:
+        for p in sorted(files):
+            z.write(p,p.name)
+    raw=buf.getvalue()
+    pub=serialization.load_pem_public_key(public.read_bytes())
+    key=AESGCM.generate_key(bit_length=256)
+    nonce=secrets.token_bytes(12)
+    aad=b"stoneage-pet-atlas-r4-private-source"
+    enc=AESGCM(key).encrypt(nonce,raw,aad)
+    wrapped=pub.encrypt(key,padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA256()),algorithm=hashes.SHA256(),label=None))
+    envelope=dict(schema="stoneage.pet.atlas_r4.envelope.r1",cipher_sha256=hashlib.sha256(enc).hexdigest(),plain_sha256=hashlib.sha256(raw).hexdigest(),plain_bytes=len(raw),cipher_bytes=len(enc),nonce=base64.b64encode(nonce).decode(),wrapped_key=base64.b64encode(wrapped).decode(),aad=aad.decode())
+    out.mkdir(parents=True,exist_ok=False)
+    (out/"private.enc").write_bytes(enc)
+    (out/"envelope.json").write_text(json.dumps(envelope,sort_keys=True))
+    return envelope
+
+def seal_selftest():
+    import zipfile
+    from cryptography.hazmat.primitives.asymmetric import rsa,padding
+    from cryptography.hazmat.primitives import hashes,serialization
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+    f=io.BytesIO()
+    Image.new("P",(2,3)).save(f,format="GIF")
+    raw=f.getvalue()
+    row={"sha256":hashlib.sha256(raw).hexdigest(),"width":2,"height":3,"frames":1}
+    with tempfile.TemporaryDirectory() as tmp:
+        root=Path(tmp)
+        source=root/"source"
+        source.mkdir()
+        (source/"jp-001.gif").write_bytes(raw)
+        (source/"receipt.json").write_text(json.dumps({"results":[{"verified":True,"path":"jp-001.gif","target":row}]}))
+        priv=rsa.generate_private_key(public_exponent=65537,key_size=2048)
+        pub=root/"public.pem"
+        pub.write_bytes(priv.public_key().public_bytes(serialization.Encoding.PEM,serialization.PublicFormat.SubjectPublicKeyInfo))
+        out=root/"sealed"
+        e=seal_gifs(source,pub,out)
+        cipher=(out/"private.enc").read_bytes()
+        assert len(cipher)==e["cipher_bytes"] and hashlib.sha256(cipher).hexdigest()==e["cipher_sha256"]
+        key=priv.decrypt(base64.b64decode(e["wrapped_key"]),padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA256()),algorithm=hashes.SHA256(),label=None))
+        plain=AESGCM(key).decrypt(base64.b64decode(e["nonce"]),cipher,e["aad"].encode())
+        assert len(plain)==e["plain_bytes"] and hashlib.sha256(plain).hexdigest()==e["plain_sha256"]
+        with zipfile.ZipFile(io.BytesIO(plain)) as z:
+            assert z.testzip() is None and set(z.namelist())=={"receipt.json","jp-001.gif"} and z.read("jp-001.gif")==raw
+        (source/"unexpected.exe").write_bytes(b"x")
+        try:
+            seal_gifs(source,pub,root/"rejected")
+        except AssertionError:
+            assert not (root/"rejected").exists()
+        else:
+            raise AssertionError("unexpected member accepted")
+    print("R38_SEAL_ROUNDTRIP=PASS",flush=True)
+
 class ExactRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         # Exact capture only; archive redirects are not evidence of this target.
@@ -86,11 +157,15 @@ class ExactRedirect(urllib.request.HTTPRedirectHandler):
 def export(region, out, pub):
     assert blob(pub.read_bytes())==KEY_PIN
     rows=[x for x in targets() if x["region"]==region]
+    # Only re-fetch bytes actually read but lost due to the packaging defect.
+    selected={"JP":set(range(1,21)),"KR":set(range(1,9))|set(range(19,25))}[region]
     opener=urllib.request.build_opener(ExactRedirect())
     results=[]
     with tempfile.TemporaryDirectory(prefix="pet-r38-") as tmp:
         folder=Path(tmp)
         for i,row in enumerate(rows,1):
+            if i not in selected:
+                continue
             url="https://web.archive.org/web/"+row["timestamp"]+"id_/"+row["original"]
             entry={"target":row,"capture_url":url,"verified":False,"path":None}
             try:
@@ -109,7 +184,7 @@ def export(region, out, pub):
             time.sleep(1)
         receipt={"schema":"stoneage.pet.atlas_r38.private_web_gif_receipt.r1","region":region,"plan_blob":PLAN_PIN,"results":results,"native_client_identity_verified":False,"original_assets_published":False}
         (folder/"receipt.json").write_text(json.dumps(receipt,ensure_ascii=False,sort_keys=True),encoding="utf-8")
-        envelope=seal(folder,pub,out)
+        envelope=seal_gifs(folder,pub,out)
         print("R38_SEALED="+json.dumps({"region":region,"verified":sum(x["verified"] for x in results),"target_count":len(rows),"cipher_sha256":envelope["cipher_sha256"]}),flush=True)
 
 def main():
@@ -120,6 +195,7 @@ def main():
     p.add_argument("--public-key",type=Path)
     args=p.parse_args()
     selftest()
+    seal_selftest()
     rows=targets()
     print("R38_PLAN="+json.dumps({"JP":38,"KR":32,"count":len(rows),"plan_blob":PLAN_PIN}),flush=True)
     if not args.plan_only:
