@@ -1,0 +1,146 @@
+{
+  "schema": "stoneage.pet-atlas-r64.compact-cn85-gallery-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "657f87af28327f078a3c9efb91614b863f52f53c",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "prior_ci": [
+    46004081813,
+    46004081709,
+    46004081695
+  ],
+  "summary": {
+    "named_positions": 548,
+    "strict_portrait_refs": 551,
+    "bounded_portrait_refs": 1,
+    "multi_portrait_rows": 4,
+    "animated_previews": 548,
+    "preview_frames": 5948,
+    "distinct_selected_group_ids": 548,
+    "selected_group_grades": {
+      "STATIC_ALBUM_KEY_COMPATIBLE": 548
+    },
+    "all_candidate_sequences_strict_rows": 393,
+    "rows_with_non_strict_candidates": 155,
+    "template_reference_rows": 401,
+    "template_reference_edges": 424,
+    "unique_copied_pngs": 5163,
+    "distinct_source_png_paths": 5215,
+    "source_archives_used": 30,
+    "full_groups_indexed": 1504,
+    "r24_volume_count": 11,
+    "r24_frame_positions": 163897,
+    "r24_unique_bitmap_paths": 113653,
+    "r24_alternative_paths": 128,
+    "r24_missing_paths": 0,
+    "official_identity_promotions": 0
+  },
+  "preview_sources": {
+    "images": 1075,
+    "tw85-r4": 68,
+    "tw85-r5": 999,
+    "tw85-r10": 109,
+    "tw85-r6": 990,
+    "tw85-r7": 282,
+    "cn85-r24": 2024,
+    "cn85-r18": 401
+  },
+  "r24_sequence_grades": {
+    "STRICT_COMPLETE": 18071,
+    "BOUNDED_COMPLETE": 165,
+    "SENTINEL_MIXED": 4,
+    "UNRESOLVED": 2,
+    "AMBIGUOUS_ADRN": 8
+  },
+  "qualification": "548 compiled named source positions, not official species count. All 552 physical portrait candidate references present, 551 strict and one bounded original RD recovery; four dual candidates retained. One strict complete multi-frame sequence per row, from static-album-compatible source group, exact original SPR/frame fields and unchanged retained PNG bytes; candidate color/grayscale previews, not original runtime palette, default selector, native timing or all actions. Gallery alone requires only new ZIP, full atlas all-actions needs prior assets. 401 positions with 424 qualified name+graphic conditional template references, no official stats or skills promotion. No new original client retrieval; copied previously authenticated private assets only. All selected PNG CRC, SHA256, geometry, decoded pixels recorded; 551 strict + bounded portrait pixel/geometry receipt comparisons matched. Entire 11 R24 volume pinned hashes/CRC verified, other archives selected member checks and archive hashes only.",
+  "prior_zip": "fbfa2b285811acfd723edddc94e082d28c44a4f11cdb7ff510ee7d41bc9fc326",
+  "private_files": [
+    [
+      "StoneAge-PET-R64-CN85-Visual-Gallery.zip",
+      27236638,
+      "dce77bd8dea23cc3eaba946d02361475dff050d1d00f646019feb2b4b8502582"
+    ],
+    [
+      "R64-cn85-visual-gallery.json",
+      5099407,
+      "964917a564f9d85ee03bbc18c263e990c581f760673ca4765a31e4d707cb4ecb"
+    ],
+    [
+      "build_r64.py",
+      26944,
+      "895a68523b9ea45a395b08687a3f6ebb4c4b21317f94b5baf9926f7618d6c4b4"
+    ],
+    [
+      "test_r64.py",
+      6995,
+      "5f3bdfb92315955b1dcc6506d74f614526b1ab0e3124be8810e3c64b66b61465"
+    ],
+    [
+      "test_r64_full.py",
+      1961,
+      "cc5d74bd2c2ecce951b1180188e3709a92a8477d2e85305e6dbdf3d49aad456c"
+    ],
+    [
+      "R64-build.log",
+      1310,
+      "ebeba7bb4e6e283ca904e3222b04ce922a9c7d612df36876b5ab5d1e69d647b2"
+    ],
+    [
+      "R64-browser.log",
+      619,
+      "02608d19e26da09286bbf869b65397db6ffc26d236cf6ffaa759b1cab8c87a78"
+    ],
+    [
+      "R64-full-browser.log",
+      164,
+      "7b84f919fe1a1c704c3e5b413a0a8da58fc8d7d0f483ec8483bcb4f9a3e71f0a"
+    ],
+    [
+      "R64-browser-initial.log",
+      1835,
+      "059d50e0e17e64533860bcddca9dc20c3756e387a052ff319e6d6a4a190758f2"
+    ]
+  ],
+  "verification": {
+    "prior_zip_hash": "PASS",
+    "output_zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "all_1504_group_segment_hashes": true,
+    "all_11_r24_zip_sha256_crc": true,
+    "all_selected_png_decode_and_byte_hashes": true,
+    "chromium_zip_document_replay_gallery": "PASS",
+    "rendered_image_references_decoded": 1100,
+    "all_548_first_pose_and_552_portrait_refs": true,
+    "pagination": 18,
+    "filters": [
+      "dual",
+      "bounded",
+      "partial",
+      "template",
+      "no-template"
+    ],
+    "normalized_search": true,
+    "ordinal_query": true,
+    "manual_step_and_play_pause": true,
+    "conditional_fields": true,
+    "deep_link_href_verified": true,
+    "chromium_integrated_profile_replay": "PASS",
+    "r63_index_retained": true,
+    "network_external_blocked": true,
+    "full_old_assets_blocked_in_integrated_replay": true,
+    "direct_file_and_http_navigation": "BLOCKED_BY_ADMINISTRATOR",
+    "test_harness_base_and_csp_only_changed": true,
+    "initial_combined_test": "gallery checks passed, subsequent integrated replay timed out; isolated clean reruns passed; initial log retained",
+    "windows_direct_launch": false,
+    "native_motion_retested": false,
+    "user_local_inspection": false
+  },
+  "source_positions": 6207,
+  "portal_details_unchanged": 338,
+  "residual_detail_missing": 27,
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Prioritize remaining authentic per-pet fields and original source evidence; extend independent compact local preview to Taiwan and earlier source lanes using retained originals with no duplicate identity merges; investigate original runtime bitmap remap/805 targets and 8 residual groups only if new source access, avoid repetitive full archive retry. User local inspection of gallery is still necessary for acceptance; no PET closure."
+}
