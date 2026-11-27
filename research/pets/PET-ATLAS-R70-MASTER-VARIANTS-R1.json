@@ -1,0 +1,208 @@
+{
+  "schema": "stoneage.pet-atlas-r70.master-variant-receipt.r1",
+  "date": "2026-11-27",
+  "parent": "c73e048228644fb08fa902204a7a350539bdf21d",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "base_tree": "f9a6269907df052e3a4e997ad018c64b318ba23f",
+  "prior_ci": [
+    46012986223,
+    46012986285,
+    46012986287
+  ],
+  "summary": {
+    "profiles": 27,
+    "selected_equal_projected": 20,
+    "selected_base_diff": 6,
+    "selected_absent": 1,
+    "alternate_equal_projected": 18,
+    "alternate_diff": 1,
+    "alternate_absent": 8,
+    "later_status": {
+      "EXACT_NONNAME_50_FIELD_TAIL": 19,
+      "SAME_ID_DIFFERENT_TAIL": 4,
+      "NO_SAME_ID": 4
+    },
+    "direct_report_distinct_claims": 6,
+    "direct_report_template_links": 8,
+    "index_only_samples": 9,
+    "index_only_samples_joint_both": 9,
+    "official_closures": 0
+  },
+  "source_pins": {
+    "r69_sha256": "3c179fa244d4850f8962b6da34c2b90b4197205abc4c864e5ada22e7c8ec1ef6",
+    "master_blob": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "selected_blob": "0005e7d7943907c01024f5dd24132b126e4bb3f3",
+    "original_mixed25_projection_blob": "25a37aeb134fb180e322e7dc335029b7374452d8",
+    "gap_blob": "dbbd61460cee2edd4ba2722ab90e8889fe5268e2",
+    "projection_fnv64_noncryptographic": "b5959dfc56fa905d",
+    "birth_model_blob": "29910ff8b5e59fcd1a7ee306dd624ac467769853",
+    "panel_blob": "364005a85983a93a286873bcd2f94b71a14da06b"
+  },
+  "variant_809": {
+    "claimed_base": [
+      24,
+      34,
+      16,
+      49
+    ],
+    "alternate_base": [
+      24,
+      28,
+      15,
+      49
+    ],
+    "alternate_row_sha256": "e430efc282e890e5a50d0cf0658ced428e82922f14a7a1820cef61144a424e65",
+    "claimed_slots": [
+      1,
+      2,
+      210,
+      null,
+      null,
+      null,
+      null
+    ],
+    "alternate_slots": [
+      1,
+      2,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "claimed_level1": [
+      [
+        47,
+        62
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        11,
+        15
+      ]
+    ],
+    "alternate_level1": [
+      [
+        46,
+        60
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        11,
+        15
+      ]
+    ],
+    "alternate_growth_numerators": [
+      [
+        16540,
+        24200
+      ],
+      [
+        2910,
+        4685
+      ],
+      [
+        1848,
+        3515
+      ],
+      [
+        4220,
+        6100
+      ],
+      [
+        9068,
+        12400
+      ]
+    ],
+    "denominator": 2000,
+    "prior_legacy_initial_panel": [
+      36,
+      5,
+      5,
+      8
+    ],
+    "joint_reachable_in_any": false
+  },
+  "historical_sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2002-8-28/n738_654198.html?_platform=PC",
+      "date": "2002-08-28",
+      "access": "DIRECT_RENDERED_PLAYER_REPORT",
+      "lines": [
+        "16–31",
+        "70–73",
+        "118–121"
+      ],
+      "qualification": "Six qualitative high/approximate growth claims, eight name+element template reference edges; not samples or certified bounds."
+    },
+    {
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1310015071.A.E53.html",
+      "date": "2011-07-07",
+      "access": "SEARCH_INDEX_ONLY_DIRECT_403",
+      "qualification": "Nine indexed panels, repost origin and equipment/rebirth unknown; initial level1 assumed; joint birth and average growth compatibility cannot adjudicate variants."
+    }
+  ],
+  "private_files": [
+    [
+      "StoneAge-PET-R70-Master-Variants.zip",
+      19681,
+      "cb9d29488897418ac262cdb7c82947f139f327fa8ecbb10b0b64d6dfe2ff1753"
+    ],
+    [
+      "R70-master-variants.json",
+      38575,
+      "3669be0535566238ad9bf79103098943f0dd82c8de5d733b19e5d7d0a0945f3c"
+    ],
+    [
+      "build_r70.py",
+      14443,
+      "927cbc488783216f739c62abc143bfcf4b411a74ad6a67a08b8093b57198875a"
+    ],
+    [
+      "test_r70.py",
+      1471,
+      "8979be04cf81a826cdc9760de6a91c8c96d590e89ca9fba59d394603c9edb695"
+    ],
+    [
+      "R70-build.log",
+      2089,
+      "c06cac287ab823783e37416a2530649f9cfed5227c0698a538ff734dd787b49b"
+    ],
+    [
+      "R70-browser.log",
+      142,
+      "9755aa33d38bf3dd5803ab67db357b6f9b263de3fad88e452bfd336b5ca1237f"
+    ]
+  ],
+  "verification": {
+    "prior_zip_sha256_crc": true,
+    "remote_projection_fingerprint_equal": true,
+    "all27_claimed_growth_ranges_reproduced": true,
+    "seven_variant_profiles_joint_birth_checked": true,
+    "prior_six_saved_variant_bounds_reproduced": true,
+    "output_zip_crc": true,
+    "private_library_download_byte_equal": true,
+    "browser_document_replay": "PASS 27 profiles, 5 filters, 809 alternate variant, 901 indexed sample; no JS errors or network requests",
+    "windows_direct_launch": false,
+    "user_local_inspection": false
+  },
+  "qualification": "Existing full-row conflicts not resolved; new alternate conditional model and historical comparisons only. No new original master bytes, no official field closure. R69 unchanged; additive standalone supplement without original graphics. Prior 809 legacy sample remains outside all three conditional models.",
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Seek actual source for 29 missing qualified visual references and material new master/innate/learning/acquisition evidence; preserve 27 whole-row differences and 1187 missing selected/alternate ID. Do not repeat model comparison without new evidence."
+}
