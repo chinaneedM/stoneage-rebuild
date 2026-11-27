@@ -1,0 +1,72 @@
+{
+  "schema": "stoneage.pet.atlas_r79.drop_generation_static.r1",
+  "date": "2026-11-27",
+  "parent": "cd10af5cce9c5ebd8ce6bcf119119a7a56e7d8e7",
+  "comparison": {
+    "repository": "gavinlinasd/StoneAge",
+    "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "pins": {
+      "gmsv/src/char/enemy.c": "65e5a2e352253a214407f07425427f539db5e863",
+      "gmsv/src/include/version.h": "af6c866fd609a39e2960236275f6bf39e7f47b2c",
+      "gmsv/src/battle/battle.c": "df5a04b94cbd7bbdab0da3cf91f9b0fa01327c6c",
+      "gmsv/src/item/item.c": "ff3d18514367905c8dd72316908508dd60272018",
+      "gmsv/setup.cf": "bd834cd1a7dfa3af6e14210d0cdf15b217b0e72f",
+      "gmsv/data/itemset6.txt": "eac985796b59286c547db2abce7b3d604a5e6226"
+    }
+  },
+  "generation": {
+    "source_lines": [
+      1228,
+      1242
+    ],
+    "macro_line": 159,
+    "macro": "_FIX_ITEMPROB",
+    "enabled": true,
+    "thresholds": [
+      13,
+      10,
+      8
+    ],
+    "rand_range": [
+      0,
+      999
+    ],
+    "comparison": "strict less than",
+    "conditional_uniform_inclusive_percent": [
+      1.3,
+      1,
+      0.8
+    ],
+    "fallback_range": [
+      0,
+      99
+    ],
+    "stage": "enemy creation, attempts item creation, not final award"
+  },
+  "allocation": {
+    "source_lines": [
+      4988,
+      5036
+    ],
+    "conditions": "opposing enemy HP<=0 and CHAR_ISDIE false; profit flag; valid enemy-held item; owner guard",
+    "recipient": "random eligible battle entry mapped to player; three pending reward slots; when full, random replacement or deletion",
+    "actual_player_drop_rate": "unknown"
+  },
+  "item_read": {
+    "source_lines": [
+      1048,
+      1074
+    ],
+    "macro_enabled": "_ITEMSET2_ITEM",
+    "one_based_id_token": 17,
+    "bytes_expected": 2777181,
+    "connector_result": "empty content; blob decode error non-UTF8",
+    "local_fetch": "DNS failure",
+    "private_item06": "different bounded visual subset; not authenticated same table",
+    "probe": "candidate workflow fetch exact file, verify Git blob and size, emit 12 targeted derived IDs only; pending execution"
+  },
+  "strict67": "unchanged",
+  "official_closures": 0,
+  "pet": "ACTIVE",
+  "npc": "LOCKED"
+}
