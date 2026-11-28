@@ -1,0 +1,196 @@
+{
+  "schema": "stoneage.pet.atlas_r92.configuration_actions.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "3cfd22ef4eccdd951c548eedbf19b966afd5f013",
+  "prior_ci": [
+    46100675724,
+    46100675678,
+    46100675647
+  ],
+  "pins": {
+    "r73": "19ee6316b43c4c9d205368f4abdd5d5803b4cf77",
+    "r86": "95ce898885d2b72c5bfbe16670e821709758568e",
+    "r16_index_zip": "388b4a547f04e8360856b27914e3ccd80cb69e10c7db183cc6adf09cbbb89562",
+    "r13_assets_zip": "ffd0e50af64de8a45de42d538a130d17b45b81cd187f69b2d3b03b50cd4200a2",
+    "r8_assets_zip": "4bcb94205441e73fc3d9f89defbe87975971c0869f40e41fe5e0071544be3d59",
+    "r91_zip": "aeb34f245cf5550e854bc2ce72cfc34343ec0f0a938d8679ced7ee96a560796f"
+  },
+  "rows": [
+    {
+      "template": 401,
+      "group": 417,
+      "graphic": 100454,
+      "sequences": 104,
+      "frames": 408,
+      "bitmap_keys": 344,
+      "strict": 104,
+      "bounded": 0,
+      "segment_sha256": "13d1f6017a55d85d57af7b5a14b577ec30c50c9e48625c8b565e71d09325119a",
+      "index_sha256": "4839ca64f7bcb23d9e369051acd382576cd76ac8ae2aaf6be485e15361c75daf"
+    },
+    {
+      "template": 718,
+      "group": 414,
+      "graphic": 100451,
+      "sequences": 104,
+      "frames": 560,
+      "bitmap_keys": 344,
+      "strict": 104,
+      "bounded": 0,
+      "segment_sha256": "01b99009142ed6ddecdc467a324ee89b4ea5b28dfe7a8b488b8dee8a3c0d6df6",
+      "index_sha256": "63e61f9f6b877549e0cb9b9396edf4d8388d9fe4f5ae0d3208c702fb6901cdd0"
+    },
+    {
+      "template": 719,
+      "group": 364,
+      "graphic": 100401,
+      "sequences": 104,
+      "frames": 496,
+      "bitmap_keys": 344,
+      "strict": 103,
+      "bounded": 1,
+      "segment_sha256": "0284af96efdff07da2b5b73ccc3f8a84a2a4158e9c653e3a4f3977293f3ec2a4",
+      "index_sha256": "f036ac77f6268a252d6f82c99b7fd7713c0a2c30a3a8716f43edb7e1bd4ff8"
+    },
+    {
+      "template": 720,
+      "group": 395,
+      "graphic": 100432,
+      "sequences": 104,
+      "frames": 472,
+      "bitmap_keys": 344,
+      "strict": 104,
+      "bounded": 0,
+      "segment_sha256": "d5e4f229a3f71457d000c8d07e7406423d97b321be00d587c671836d656690d1",
+      "index_sha256": "c17b3c92dc644f638f40513b6d16d1efb4794dd4ac717cd0572a2fce6dc511a7"
+    },
+    {
+      "template": 1145,
+      "group": 1173,
+      "graphic": 101489,
+      "sequences": 56,
+      "frames": 255,
+      "bitmap_keys": 247,
+      "strict": 56,
+      "bounded": 0,
+      "segment_sha256": "81080bab3410a81a2fe6b722a9a59677215c52dae580a152750e1d4561dbc008",
+      "index_sha256": "a69a73d3a166f9294015985ce1715f1feb7581d1614fbbeca9f78973638fbf42"
+    }
+  ],
+  "summary": {
+    "templates": 467,
+    "added_full_config_action_profiles": 5,
+    "prior_r86_full_config_action_profiles": 2,
+    "total_full_config_action_profiles_of_14": 7,
+    "remaining_preview_only": 7,
+    "source_sequences": 472,
+    "frame_positions": 2191,
+    "bitmap_keys": 1623,
+    "unique_pngs": 1561,
+    "strict_complete": 471,
+    "bounded_complete": 1,
+    "strict_pixel_keys": 1622,
+    "bounded_canvas_keys": 1,
+    "strict_visual_gaps": 29,
+    "named_visual_gaps": 14,
+    "official_closures": 0
+  },
+  "remaining": [
+    {
+      "template": 854,
+      "group": 617,
+      "providers": [
+        "tw85-r5",
+        "cn50-r14"
+      ]
+    },
+    {
+      "template": 905,
+      "group": 589,
+      "providers": [
+        "tw85-r5"
+      ]
+    },
+    {
+      "template": 953,
+      "group": 965,
+      "providers": [
+        "tw85-r7"
+      ]
+    },
+    {
+      "template": 961,
+      "group": 964,
+      "providers": [
+        "tw85-r7"
+      ]
+    },
+    {
+      "template": 962,
+      "group": 963,
+      "providers": [
+        "tw85-r7"
+      ]
+    },
+    {
+      "template": 966,
+      "group": 585,
+      "providers": [
+        "tw85-r5"
+      ]
+    },
+    {
+      "template": 1042,
+      "group": 672,
+      "providers": [
+        "tw85-r5",
+        "cn50-r14"
+      ]
+    }
+  ],
+  "private_artifact": {
+    "name": "StoneAge-PET-R92-Configuration-Actions.zip",
+    "bytes": 26645698,
+    "sha256": "8bdbf0750063fb79df542d0004d183212a3799116f23a1734a860b27a2c25769",
+    "entrypoint": "gallery-r92-tw75-configuration-actions.html",
+    "addon_sha256": "69f5d0e4c84ecf45f861c2f46994430ab2fe0ce503bb5c53ffebfa154489a2aa",
+    "build_script_sha256": "af96ecde69d942dca16e89365c1f29774dad1a0e96af970bff83cd9507272ec1",
+    "test_script_sha256": "60ae29c35d052087d200e4b8fdede3d73c74f49ae0388378ba982c0a340049d2",
+    "build_receipt_sha256": "9743e5bcc9e765662d404fef6c8b4bff33fb18c713f2e7af2a8a9587bd25db99",
+    "logic_receipt_sha256": "9a207d40633f7fca923aa2372ebbb5ed82b577fff972518956d29fb4429727a2",
+    "library_readback_byte_identical": true
+  },
+  "validation": {
+    "prior_members_byte_identical": 3374,
+    "output_members": 4938,
+    "prior_structured_fields_identical": true,
+    "all_input_archive_sha256_match": true,
+    "r91_r16_crc_pass": true,
+    "selected_png_crc_decode_pixel_and_byte_sha_recorded": true,
+    "all_source_keys_referenced": true,
+    "all_output_asset_hashes_pass": true,
+    "output_crc": "PASS",
+    "js_syntax": "PASS",
+    "node_vm_dom_doubles": "PASS",
+    "positive_profiles": 5,
+    "negative_profiles": 462,
+    "all_sequences_and_frame_positions_tested": true,
+    "filters": 19,
+    "step_wrap_timer_search": true,
+    "initial_test_harness_failures": "Wrong startup marker and Option double traversal; corrected harness only, final replay passed.",
+    "actual_browser": false,
+    "user_local_inspection": false
+  },
+  "limits": [
+    "Previously retained source pixels copied, not new original extraction or native runtime observation.",
+    "CN85 index metadata and pinned provider archive selected member CRC; no new original RD byte or palette verification.",
+    "Configuration number association only, no same-name or same-deployment pet identity. Bounded sequence remains separately labeled.",
+    "Seven remaining preview-only groups require other pinned asset volumes. Not downloaded this turn.",
+    "No original assets public; no official field closure."
+  ],
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Complete remaining seven configuration-number groups from pinned R5/R7/R14 provider volumes. Reuse R16 index, keep strict/bounded grades and independent pet identity qualification. Then continue actual original name links and field evidence; no repeated empty download. Actual browser/user acceptance gates remain open."
+}
