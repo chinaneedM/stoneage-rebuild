@@ -1,0 +1,601 @@
+{
+  "schema": "stoneage.pet.atlas_r89.skill52_capacity_source_replay.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "8e9cb38355c674d35561bf57741a76d91a2b1377",
+  "pins": {
+    "r81": "49a3cbdfcccd8f3f95dbfbb853e7329ccb7d493f",
+    "simulator": {
+      "repo": "zii/pet-sim",
+      "commit": "8860e6740e7ec9e7fb1d6fa70e1ff4b76c2b2446",
+      "files": {
+        "bin/data/enemybase.txt": "1dc33610f528fae4250c2e0d572e7c69bf0fa3c3",
+        "bin/data/enemybase1.txt": "1b74b6d18b4f6e5a3b47e28ec5798f1813d7fec9",
+        "bin/data/enemybase2.txt": "8c2b818d38186d18b22fe4d9588858b8a0ddae56",
+        "bin/data/petskill.txt": "b153fe30dcfebcfeffc7b87aa88d62e53651f01f",
+        "bin/data/petskill2.txt": "eb183307c3bb1a2d96e125ed3297ce770ead6df4",
+        "biz/enemy.go": "e9704e4df61b27513bc22e11eb8de94973172d49",
+        "biz/skill.go": "999fa932e142cebdf4606ac269ac262392aa6bbf",
+        "cmd/main.go": "c594060d449ecd708e720b7b09d6b20a64d4b165"
+      }
+    },
+    "comparison": {
+      "repo": "gavinlinasd/StoneAge",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "files": {
+        "gmsv/data/enemybase1.txt": "a19a508975e3a982fada323861b35b2edab79349",
+        "gmsv/data/petskill.txt": "846d379f0c7977b3e74d5a5a9580a35a85cafc51",
+        "gmsv/data/petskill2.txt": "83d2daeb9e57b089a304f127361f88514386b870",
+        "gmsv/data/skillcode.txt": "44c59d8498c42a685bbf2ab0049b2f9cdeef04a2",
+        "gmsv/src/include/version.h": "af6c866fd609a39e2960236275f6bf39e7f47b2c",
+        "gmsv/src/include/char_base.h": "f23de0fa77b1853c4ea1a49c90237ee6e2737de0",
+        "gmsv/src/char/enemy.c": "65e5a2e352253a214407f07425427f539db5e863",
+        "gmsv/src/char/char_base.c": "783b8803333bf3a63320b4379519a69b377e9037",
+        "gmsv/src/npc/npc_freepetskillshop.c": "4cb21a6581fd9a657476319401c01b36473dae0d",
+        "gmsv/src/battle/pet_skill.c": "a510c713ba3cb6c85a6738040928299b3d93ce88"
+      }
+    }
+  },
+  "summary": {
+    "profiles": 52,
+    "alternate_capacity": 7,
+    "default_capacity_distribution": {
+      "4": 32,
+      "5": 15,
+      "6": 5
+    },
+    "default_matches_comparison": 52,
+    "default_matches_alternate": 0,
+    "default_missing": 0,
+    "official_closures": 0
+  },
+  "row_columns": [
+    "template_id",
+    "sim0_line",
+    "sim1_line",
+    "sim2_default_capacity",
+    "comparison_capacity"
+  ],
+  "rows": [
+    [
+      1,
+      1,
+      1,
+      6,
+      6
+    ],
+    [
+      2,
+      2,
+      2,
+      6,
+      6
+    ],
+    [
+      3,
+      3,
+      3,
+      6,
+      6
+    ],
+    [
+      23,
+      23,
+      23,
+      5,
+      5
+    ],
+    [
+      24,
+      24,
+      24,
+      5,
+      5
+    ],
+    [
+      41,
+      41,
+      37,
+      5,
+      5
+    ],
+    [
+      71,
+      71,
+      66,
+      5,
+      5
+    ],
+    [
+      72,
+      72,
+      67,
+      5,
+      5
+    ],
+    [
+      73,
+      73,
+      68,
+      4,
+      4
+    ],
+    [
+      74,
+      74,
+      69,
+      5,
+      5
+    ],
+    [
+      81,
+      81,
+      76,
+      5,
+      5
+    ],
+    [
+      91,
+      91,
+      86,
+      4,
+      4
+    ],
+    [
+      92,
+      92,
+      87,
+      4,
+      4
+    ],
+    [
+      93,
+      93,
+      88,
+      4,
+      4
+    ],
+    [
+      94,
+      94,
+      89,
+      4,
+      4
+    ],
+    [
+      95,
+      95,
+      90,
+      4,
+      4
+    ],
+    [
+      100,
+      100,
+      95,
+      4,
+      4
+    ],
+    [
+      105,
+      105,
+      100,
+      4,
+      4
+    ],
+    [
+      106,
+      106,
+      101,
+      4,
+      4
+    ],
+    [
+      141,
+      141,
+      134,
+      4,
+      4
+    ],
+    [
+      142,
+      142,
+      135,
+      4,
+      4
+    ],
+    [
+      143,
+      143,
+      136,
+      4,
+      4
+    ],
+    [
+      144,
+      144,
+      137,
+      4,
+      4
+    ],
+    [
+      191,
+      184,
+      172,
+      5,
+      5
+    ],
+    [
+      192,
+      185,
+      173,
+      5,
+      5
+    ],
+    [
+      193,
+      186,
+      174,
+      5,
+      5
+    ],
+    [
+      194,
+      187,
+      175,
+      6,
+      6
+    ],
+    [
+      222,
+      202,
+      190,
+      5,
+      5
+    ],
+    [
+      223,
+      203,
+      191,
+      5,
+      5
+    ],
+    [
+      231,
+      205,
+      193,
+      4,
+      4
+    ],
+    [
+      232,
+      206,
+      194,
+      4,
+      4
+    ],
+    [
+      233,
+      207,
+      195,
+      4,
+      4
+    ],
+    [
+      234,
+      208,
+      196,
+      4,
+      4
+    ],
+    [
+      251,
+      213,
+      201,
+      4,
+      4
+    ],
+    [
+      252,
+      214,
+      202,
+      4,
+      4
+    ],
+    [
+      253,
+      215,
+      203,
+      4,
+      4
+    ],
+    [
+      254,
+      216,
+      204,
+      4,
+      4
+    ],
+    [
+      255,
+      217,
+      205,
+      4,
+      4
+    ],
+    [
+      261,
+      220,
+      208,
+      4,
+      4
+    ],
+    [
+      262,
+      221,
+      209,
+      4,
+      4
+    ],
+    [
+      263,
+      222,
+      210,
+      4,
+      4
+    ],
+    [
+      264,
+      223,
+      211,
+      4,
+      4
+    ],
+    [
+      271,
+      224,
+      212,
+      4,
+      4
+    ],
+    [
+      292,
+      230,
+      218,
+      5,
+      5
+    ],
+    [
+      294,
+      232,
+      220,
+      6,
+      6
+    ],
+    [
+      301,
+      233,
+      221,
+      4,
+      4
+    ],
+    [
+      302,
+      234,
+      222,
+      4,
+      4
+    ],
+    [
+      303,
+      235,
+      223,
+      4,
+      4
+    ],
+    [
+      753,
+      552,
+      475,
+      5,
+      5
+    ],
+    [
+      754,
+      553,
+      476,
+      4,
+      4
+    ],
+    [
+      755,
+      554,
+      477,
+      5,
+      5
+    ],
+    [
+      756,
+      555,
+      478,
+      4,
+      4
+    ]
+  ],
+  "template754": {
+    "name": "邦諾斯娜",
+    "graphic": 100849,
+    "sim0": {
+      "line": 553,
+      "capacity": 7,
+      "slots": [
+        1,
+        2,
+        52,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "sim1": {
+      "line": 476,
+      "capacity": 7,
+      "slots": [
+        1,
+        2,
+        52,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "sim2_default": {
+      "line": 485,
+      "capacity": 4,
+      "slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "comparison": {
+      "line": 543,
+      "capacity": 4,
+      "slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  },
+  "skill52": {
+    "handler": "PETSKILL_PowerBalance",
+    "attack_work_delta_percent": 80,
+    "defence_work_delta_percent": -50,
+    "listed_cost": 30000,
+    "definition_lines": {
+      "sim_legacy": 16,
+      "sim_extended": 20,
+      "comparison_legacy": 16,
+      "comparison_extended": 20
+    },
+    "extended_kind": "Tb",
+    "prefix": "T",
+    "comparison_gate_ids": [
+      304,
+      1306,
+      1408,
+      1404,
+      1405,
+      1406,
+      1407,
+      203
+    ],
+    "template754_in_gate": false
+  },
+  "static_paths": [
+    [
+      "simulator",
+      "cmd/main.go",
+      35,
+      39,
+      "Default selects enemybase2 and petskill2."
+    ],
+    [
+      "simulator",
+      "biz/enemy.go",
+      238,
+      246,
+      "Configured capacity and seven source slots are distinct."
+    ],
+    [
+      "simulator",
+      "biz/enemy.go",
+      316,
+      330,
+      "Capacity and skill arrays copied separately; blank zero-initialized positions do not establish skill ownership."
+    ],
+    [
+      "comparison",
+      "gmsv/src/include/char_base.h",
+      48,
+      48,
+      "Physical array capacity7."
+    ],
+    [
+      "comparison",
+      "gmsv/src/char/enemy.c",
+      1192,
+      1206,
+      "Enemy creation copies configured capacity and stored slots separately."
+    ],
+    [
+      "comparison",
+      "gmsv/src/char/enemy.c",
+      1644,
+      1667,
+      "Pet creation likewise."
+    ],
+    [
+      "comparison",
+      "gmsv/src/char/char_base.c",
+      1588,
+      1602,
+      "Setter checks physical index, not learning permission."
+    ],
+    [
+      "comparison",
+      "gmsv/src/npc/npc_freepetskillshop.c",
+      274,
+      308,
+      "Special learning code lookup; 754 has no Tb entry."
+    ],
+    [
+      "comparison",
+      "gmsv/src/include/version.h",
+      119,
+      119,
+      "_CFREE_petskill defined in inspected header."
+    ],
+    [
+      "comparison",
+      "gmsv/src/battle/pet_skill.c",
+      428,
+      433,
+      "Macro-dependent E/T illegal flag, not universal T ban."
+    ],
+    [
+      "comparison",
+      "gmsv/src/battle/pet_skill.c",
+      740,
+      775,
+      "PowerBalance modifies battle work values, not full damage formula."
+    ],
+    [
+      "comparison",
+      "gmsv/src/char/enemy.c",
+      2314,
+      2333,
+      "Fusion egg creation sets 7 slots and strips inherited skill52; limited to this path."
+    ]
+  ],
+  "limits": [
+    "Source-qualified community comparison only; no authenticated official deployment or source program execution.",
+    "R88 ZIP materialized but container inspection failed this turn; no new atlas build or real browser verification.",
+    "No official acquisition, skill learning, original species or visual closure."
+  ],
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Integrate R89 source-qualified notes into existing offline atlas when container access permits; continue same-deployment original master/learning/acquisition and remaining visual gaps; preserve browser acceptance gate."
+}
