@@ -1,0 +1,1394 @@
+{
+  "schema": "stoneage.pet.atlas_r96.jp_kr_event_source_lane.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "6d5954796abd41db57454abc3c3e993c2e67e569",
+  "pins": {
+    "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json": "bc0b4920cc5954c8b847d07f1342b3f5674d5b1c",
+    "research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json": "85e99d6fd6a7ca27eeaa3987510a6bcc1d701708",
+    "research/recovered/STONEAGE-PET126G-JP-OPERATOR-PLAYER-ALBUM-2003-2010-CROSSWALK-R1.json": "083a0059ba698a18827b3434a4a72cafebf8df80",
+    "research/recovered/STONEAGE-PET126H-JP2005-GAIAX-DIRECT-OPERATOR-PET-PRESS-R1.json": "ca0154f9f1f94464396b3ac36af6dfa3832e5559",
+    "research/recovered/STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json": "15394100aae36f114f52d009b2c3ac4dc685fd50",
+    "research/pets/PET-ATLAS-R95-INTEGRATED-WEB-ATLAS-R1.json": "f1222c37fdff434d1163c9565b9b187ef47e9da7"
+  },
+  "scope": "Classic PC only; independent historical event evidence lane; no species deduplication",
+  "events": [
+    {
+      "id": "JP070206",
+      "region": "JP",
+      "operator": "GaiaX",
+      "date": "2007-02-06",
+      "url": "https://www.4gamer.net/games/013/G001377/20070206172008/",
+      "grade": "PERIOD_EDITORIAL_FULL_TEXT_RECHECKED",
+      "kind": "PAID_RANDOM_BAG_RATE_PROMOTION",
+      "names": [
+        "カイホーン",
+        "ギルガス",
+        "ファングル",
+        "ドルーザス"
+      ],
+      "start": "2007-02-06 16:00",
+      "end": "2007-02-13 before maintenance",
+      "relative_multiplier": 2,
+      "absolute_rates": null,
+      "raw_sha256": null,
+      "source_ref": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP070727",
+      "region": "JP",
+      "operator": "GaiaX/UTD",
+      "date": "2007-07-27",
+      "url": "https://www.4gamer.net/news/history/2007.07/20070727175656detail.html",
+      "grade": "PERIOD_OPERATOR_RELEASE_REPUBLISHED_FULL_TEXT",
+      "kind": "PAID_RANDOM_LOTTERY_POOL",
+      "names": [
+        "ギガドラン",
+        "ドルーザス",
+        "パンダホーン",
+        "クロウリ",
+        "ムールロス",
+        "ウロボス"
+      ],
+      "start": "2007-07-27 18:00",
+      "end": "2007-07-31 13:00",
+      "price": {
+        "amount": 1000,
+        "currency": "GStone"
+      },
+      "raw_sha256": null,
+      "source_ref": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP070730",
+      "region": "JP",
+      "operator": "UTD",
+      "date": "2007-07-30",
+      "url": "https://www.4gamer.net/news/history/2007.07/20070730194730detail.html",
+      "grade": "PERIOD_OPERATOR_RELEASE_REPUBLISHED_FULL_TEXT",
+      "kind": "PAID_RANDOM_LOTTERY_RATE_CHANGE",
+      "names": [
+        "ギガドラン",
+        "ドルーザス"
+      ],
+      "start": "2007-07-30 18:00",
+      "end": "2007-07-31 13:00",
+      "relative_multiplier": 2,
+      "other_four_rates": "slightly decreased",
+      "absolute_rates": null,
+      "raw_sha256": "0b584c6a5af65b4344f703b20c7676f9accbea9e4c4d5df59e0bf406bebc6e43",
+      "hash_scope": "earlier pinned retrieval",
+      "source_ref": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP080415",
+      "region": "JP",
+      "operator": "Gamania GASH / DigiPark",
+      "date": "2008-04-15",
+      "url": "https://www.4gamer.net/games/013/G001377/20080415033/",
+      "grade": "PERIOD_PLATFORM_OPERATOR_RELEASE_REPUBLISHED_FULL_TEXT",
+      "kind": "RANDOM_PET_ITEM_CAMPAIGN_CANDIDATE",
+      "names": [
+        "ゴルンフット"
+      ],
+      "start": "2008-04-15 16:00",
+      "end": "2008-04-29 23:59",
+      "planned_distribution": "2008-05-13",
+      "item_winner_slots": 20,
+      "guaranteed_named_pet": false,
+      "raw_sha256": null,
+      "source_ref": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP080707",
+      "region": "JP",
+      "operator": "DigiPark",
+      "date": "2008-07-07",
+      "url": "https://www.4gamer.net/games/013/G001377/20080707020/",
+      "grade": "PERIOD_OPERATOR_RELEASE_PINNED",
+      "kind": "QUEST_REWARD_ANNOUNCED",
+      "names": [
+        "リムフィ"
+      ],
+      "quest": "親子の絆",
+      "dungeon": "閉ざされた氷窟",
+      "planned_start": "2008-07-08 16:00",
+      "excluded_story_parent": "リムファン",
+      "source_ref": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP080715",
+      "region": "JP",
+      "operator": "Gamania GASH / DigiPark",
+      "date": "2008-07-15",
+      "url": "https://www.4gamer.net/games/013/G001377/20080715027/",
+      "grade": "PERIOD_PLATFORM_OPERATOR_RELEASE_PINNED",
+      "kind": "DIRECT_CAPTURE_CAMPAIGN",
+      "names": [
+        "フクゥーリ"
+      ],
+      "marketing_ordinal": 200,
+      "start": "2008-07-15 16:00",
+      "end": "2008-07-29 13:00",
+      "capture_location": null,
+      "native_id": null,
+      "source_ref": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP080922",
+      "region": "JP",
+      "operator": "DigiPark",
+      "date": "2008-09-22",
+      "url": "https://www.4gamer.net/games/013/G001377/20080922005/",
+      "grade": "PERIOD_OPERATOR_RELEASE_REPUBLISHED_FULL_TEXT",
+      "kind": "PAID_RANDOM_PET_POOL",
+      "names": [
+        "ナイトゲイル",
+        "クロウテール",
+        "ウロボス",
+        "コギラス",
+        "ペイン",
+        "ガンジャー",
+        "スネイル",
+        "ギガロス",
+        "ギガンボス"
+      ],
+      "start": "2008-09-23 after maintenance",
+      "end": "2008-10-07 before maintenance",
+      "ticket_price": {
+        "amount": 500,
+        "currency": "Gstone"
+      },
+      "marketing_new_name": "ナイトゲイル",
+      "absolute_rates": null,
+      "raw_sha256": null,
+      "source_ref": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP081111",
+      "region": "JP",
+      "operator": "DigiPark",
+      "date": "2008-11-11",
+      "url": "https://www.4gamer.net/games/013/G001377/20081111023/",
+      "grade": "PERIOD_OPERATOR_RELEASE_AND_LATER_OFFICIAL_CAPTURE_PINNED",
+      "kind": "EVOLUTION_INPUT_NOT_NEW_PET",
+      "names": [
+        "ベルガー",
+        "ベルイガー",
+        "ゴルシス",
+        "キングサーベル"
+      ],
+      "location": {
+        "island": "ミライア島",
+        "village": "カラの村",
+        "relative_location": "NORTHWEST_OF_VILLAGE",
+        "dungeon": "進化の洞窟",
+        "npc": "進化Gさん"
+      },
+      "failed_level": 1,
+      "ordinary_success_rate": null,
+      "source_ref": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "KR081117",
+      "region": "KR",
+      "operator": "CJ Internet / Netmarble",
+      "date": "2008-11-17",
+      "url": "https://www.gamemeca.com/view.php?gid=74794",
+      "grade": "PERIOD_MEDIA_OPERATOR_STATEMENT_FULL_TEXT",
+      "kind": "PERMANENT_QUEST_REWARD_ANNOUNCED",
+      "names": [
+        "도에디크"
+      ],
+      "quest": "설녀의 전설",
+      "minimum_level": 80,
+      "raw_sha256": null,
+      "icecastle_nine_membership_verified": false,
+      "icecastle_nine_membership": null,
+      "source_ref": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP091013",
+      "region": "JP",
+      "operator": "DigiPark",
+      "date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "grade": "PERIOD_OPERATOR_RELEASE_REPUBLISHED_FULL_TEXT",
+      "kind": "EVOLVED_PET_REROLL_ELIGIBILITY_NOT_PET_AWARD",
+      "names": [
+        "ベガルガー",
+        "ゴッドサーベル",
+        "ベルロイガー",
+        "ギルシス"
+      ],
+      "raw_sha256": null,
+      "source_ref": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP-2009-HAKUEN",
+      "region": "JP",
+      "date": "2009-04-28",
+      "kind": "PUBLISHED_ACQUISITION_DOCUMENTATION",
+      "names": [
+        "ハクエン"
+      ],
+      "as_published": "白炎チケット400Gstone -> 白炎の袋/交换券，活动至5/12",
+      "source_ids": [
+        "JP2009HAKU"
+      ],
+      "source_records": [
+        {
+          "id": "JP2009HAKU",
+          "date": "2009-04-28",
+          "url": "https://www.4gamer.net/games/013/G001377/20090428039/",
+          "claim": "DigiPark original press text: ハクエン pet released via 白炎チケット (400Gstone) and redemption",
+          "tier": "PUBLISHER_RELEASE_REPRINT",
+          "source_page_original_sha256": null,
+          "licensed_original_art_not_copied": true
+        }
+      ],
+      "source_ref": "research/recovered/STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json",
+      "source_status": "OFFICIAL_GAME_RELEASE_DOCUMENTED",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP-2009-KOKUEN",
+      "region": "JP",
+      "date": "2009-06-23",
+      "kind": "PUBLISHED_ACQUISITION_DOCUMENTATION",
+      "names": [
+        "コクエン"
+      ],
+      "as_published": "黒炎の袋400Gstone -> 随机道具/交换券，活动至7/21",
+      "source_ids": [
+        "JP2009KOKU"
+      ],
+      "source_records": [
+        {
+          "id": "JP2009KOKU",
+          "date": "2009-06-29",
+          "url": "https://www.4gamer.net/games/013/G001377/20090629031/",
+          "claim": "DigiPark first-party post-release text: コクエン new pet sold from 2009-06-23; 黒炎の袋 (400Gstone) and redemption",
+          "tier": "PUBLISHER_RELEASE_REPRINT",
+          "source_page_original_sha256": null,
+          "licensed_original_art_not_copied": true
+        }
+      ],
+      "source_ref": "research/recovered/STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json",
+      "source_status": "OFFICIAL_GAME_RELEASE_DOCUMENTED",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    },
+    {
+      "id": "JP050929-VANREM",
+      "region": "JP",
+      "operator": "GaiaX",
+      "date": "2005-09-29",
+      "kind": "PLANNED_RANDOM_BAG_SALE_ANNOUNCEMENT",
+      "names": [
+        "ヴァンレム"
+      ],
+      "operator_source": {
+        "url": "https://www.value-press.com/pressrelease/2416/",
+        "original_publisher": "株式会社ガイアックス",
+        "originally_displayed_publication_time_jst": "2005-09-29T16:00:00+09:00",
+        "source_grade": "OPERATOR_AUTHORED_PRESS_RELEASE_HOSTED_BY_PRESS_DISTRIBUTOR",
+        "direct_public_text_retrieved_at_research": true,
+        "original_2005_http_bytes_preserved": false,
+        "original_html_sha256": null,
+        "game": "ストーンエイジ",
+        "item_as_written": "不思議な袋(中)",
+        "pet_name_as_written": "ヴァンレム",
+        "pet_level_advertised": 1,
+        "advertised_as_new_pet": true,
+        "official_site_sale_planned": "2005-10-04_AFTER_REGULAR_MAINTENANCE",
+        "hangame_sale_planned": "2005-10_MIDDLE",
+        "official_site_sale_confirmed_from_native_system": false,
+        "hangame_sale_confirmed_from_native_system": false,
+        "customer_received_pet_verified": false
+      },
+      "media_republication": {
+        "url": "https://www.4gamer.net/news/history/2005.09/20050930174934detail.html",
+        "published_jst": "2005-09-30T17:49:00+09:00",
+        "source_grade": "CONTEMPORANEOUS_MEDIA_REPORT_OF_SAME_OPERATOR_ANNOUNCEMENT",
+        "independent_pet_issuance_event": false,
+        "story_date_not_first_actual_grant_date": true
+      },
+      "source_ref": "research/recovered/STONEAGE-PET126H-JP2005-GAIAX-DIRECT-OPERATOR-PET-PRESS-R1.json",
+      "actual_grant_verified": false,
+      "first_live_release_verified": false
+    }
+  ],
+  "rows": [
+    {
+      "id": "r96-event:JP:カイホーン",
+      "region": "JP",
+      "name": "カイホーン",
+      "event_ids": [
+        "JP070206"
+      ],
+      "prior_image_references": [
+        {
+          "name": "カイホーン",
+          "event": "JP070206",
+          "url": "https://www.4gamer.net/news/image/2007.02/20070206172008_1.jpg",
+          "association": "ARTICLE_EXPLICIT_CAPTION",
+          "status": "WEB_RENDERED_MANUALLY_OBSERVED",
+          "description": "red orange quadruped",
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [
+        {
+          "record_id": "jp-hangame-pet-web:position:113",
+          "ordinal": 113,
+          "source_refs": [
+            {
+              "actual_capture": "20040220221717",
+              "dom_cells": [
+                6,
+                7,
+                8,
+                4
+              ],
+              "evidence_role": "SAME_COLUMN_NUMBER_NAME_IMAGE_REFERENCE",
+              "sha256": "b9284c6185fc5a999dd3bf0da3ac9d341e31312dcdf5859ee5a5786eb0cbc9ad",
+              "source": "http://www.hangame.co.jp/publish/sa/chara2-3.asp"
+            }
+          ],
+          "relation": "EXACT_UNICODE_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ギルガス",
+      "region": "JP",
+      "name": "ギルガス",
+      "event_ids": [
+        "JP070206"
+      ],
+      "prior_image_references": [
+        {
+          "name": "ギルガス",
+          "event": "JP070206",
+          "url": "https://www.4gamer.net/news/image/2007.02/20070206172008_2.jpg",
+          "association": "ARTICLE_EXPLICIT_CAPTION",
+          "status": "WEB_RENDERED_MANUALLY_OBSERVED",
+          "description": "yellow horned biped",
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ファングル",
+      "region": "JP",
+      "name": "ファングル",
+      "event_ids": [
+        "JP070206"
+      ],
+      "prior_image_references": [
+        {
+          "name": "ファングル",
+          "event": "JP070206",
+          "url": "https://www.4gamer.net/news/image/2007.02/20070206172008_3.jpg",
+          "association": "ARTICLE_EXPLICIT_CAPTION",
+          "status": "WEB_RENDERED_MANUALLY_OBSERVED",
+          "description": "pale blue-gray quadruped",
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ドルーザス",
+      "region": "JP",
+      "name": "ドルーザス",
+      "event_ids": [
+        "JP070206",
+        "JP070727",
+        "JP070730"
+      ],
+      "prior_image_references": [
+        {
+          "name": "ドルーザス",
+          "event": "JP070206",
+          "url": "https://www.4gamer.net/news/image/2007.02/20070206172008_0.jpg",
+          "association": "ARTICLE_EXPLICIT_CAPTION",
+          "status": "WEB_RENDERED_MANUALLY_OBSERVED",
+          "description": "gray horned biped",
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ギガドラン",
+      "region": "JP",
+      "name": "ギガドラン",
+      "event_ids": [
+        "JP070727",
+        "JP070730"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:パンダホーン",
+      "region": "JP",
+      "name": "パンダホーン",
+      "event_ids": [
+        "JP070727"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [
+        {
+          "record_id": "jp-hangame-pet-web:position:115",
+          "ordinal": 115,
+          "source_refs": [
+            {
+              "actual_capture": "20040220221717",
+              "dom_cells": [
+                6,
+                7,
+                8,
+                6
+              ],
+              "evidence_role": "SAME_COLUMN_NUMBER_NAME_IMAGE_REFERENCE",
+              "sha256": "b9284c6185fc5a999dd3bf0da3ac9d341e31312dcdf5859ee5a5786eb0cbc9ad",
+              "source": "http://www.hangame.co.jp/publish/sa/chara2-3.asp"
+            }
+          ],
+          "relation": "EXACT_UNICODE_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:クロウリ",
+      "region": "JP",
+      "name": "クロウリ",
+      "event_ids": [
+        "JP070727"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [
+        {
+          "record_id": "jp-hangame-pet-web:position:005",
+          "ordinal": 5,
+          "source_refs": [
+            {
+              "actual_capture": "20031214055443",
+              "dom_cells": [
+                0,
+                1,
+                2,
+                4
+              ],
+              "evidence_role": "SAME_COLUMN_NUMBER_NAME_IMAGE_REFERENCE",
+              "sha256": "a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc",
+              "source": "http://www.hangame.co.jp/publish/sa/chara2.asp"
+            }
+          ],
+          "relation": "EXACT_UNICODE_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [
+        {
+          "ordinal": 5,
+          "fan_page": "https://kbpetzukan.iinaa.net/petg0/al5.html",
+          "evidence": "EARLIER_WEB_NAME_PLUS_LATER_FAN_TEXT_ONLY",
+          "relation": "DOCUMENTED_FAN_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ムールロス",
+      "region": "JP",
+      "name": "ムールロス",
+      "event_ids": [
+        "JP070727"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ウロボス",
+      "region": "JP",
+      "name": "ウロボス",
+      "event_ids": [
+        "JP070727",
+        "JP080922"
+      ],
+      "prior_image_references": [
+        {
+          "name": "ウロボス",
+          "event": "JP080922",
+          "url": "https://www.4gamer.net/games/013/G001377/20080922005/TN/016.gif",
+          "association": "ARTICLE_EXPLICIT_TABLE_LABEL",
+          "status": "LINK_RESOLVED_GIF_UNSUPPORTED_RAW_FETCH_DNS_BLOCKED",
+          "description": null,
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ゴルンフット",
+      "region": "JP",
+      "name": "ゴルンフット",
+      "event_ids": [
+        "JP080415"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [
+        {
+          "ordinal": 188,
+          "fan_page": "https://kbpetzukan.iinaa.net/petg18/al188.html",
+          "evidence": "OPERATOR_PROMOTION_PLUS_2010_FAN_ALBUM_NAME",
+          "relation": "DOCUMENTED_FAN_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:リムフィ",
+      "region": "JP",
+      "name": "リムフィ",
+      "event_ids": [
+        "JP080707"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:フクゥーリ",
+      "region": "JP",
+      "name": "フクゥーリ",
+      "event_ids": [
+        "JP080715"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [
+        {
+          "ordinal": 200,
+          "fan_page": "https://kbpetzukan.iinaa.net/petg20/al200.html",
+          "evidence": "2008_OPERATOR_EXPLICIT_200TH_AND_LATER_FAN_ORDINAL_200_TEXT_MATCH_NO_SAME_BUILD_ID",
+          "relation": "DOCUMENTED_FAN_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ナイトゲイル",
+      "region": "JP",
+      "name": "ナイトゲイル",
+      "event_ids": [
+        "JP080922"
+      ],
+      "prior_image_references": [
+        {
+          "name": "ナイトゲイル",
+          "event": "JP080922",
+          "url": "https://www.4gamer.net/games/013/G001377/20080922005/TN/019.gif",
+          "association": "ARTICLE_EXPLICIT_TABLE_LABEL",
+          "status": "LINK_RESOLVED_GIF_UNSUPPORTED_RAW_FETCH_DNS_BLOCKED",
+          "description": null,
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:クロウテール",
+      "region": "JP",
+      "name": "クロウテール",
+      "event_ids": [
+        "JP080922"
+      ],
+      "prior_image_references": [
+        {
+          "name": "クロウテール",
+          "event": "JP080922",
+          "url": "https://www.4gamer.net/games/013/G001377/20080922005/TN/018.gif",
+          "association": "ARTICLE_EXPLICIT_TABLE_LABEL",
+          "status": "LINK_RESOLVED_GIF_UNSUPPORTED_RAW_FETCH_DNS_BLOCKED",
+          "description": null,
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:コギラス",
+      "region": "JP",
+      "name": "コギラス",
+      "event_ids": [
+        "JP080922"
+      ],
+      "prior_image_references": [
+        {
+          "name": "コギラス",
+          "event": "JP080922",
+          "url": "https://www.4gamer.net/games/013/G001377/20080922005/TN/017.gif",
+          "association": "ARTICLE_EXPLICIT_TABLE_LABEL",
+          "status": "LINK_RESOLVED_GIF_UNSUPPORTED_RAW_FETCH_DNS_BLOCKED",
+          "description": null,
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ペイン",
+      "region": "JP",
+      "name": "ペイン",
+      "event_ids": [
+        "JP080922"
+      ],
+      "prior_image_references": [
+        {
+          "name": "ペイン",
+          "event": "JP080922",
+          "url": "https://www.4gamer.net/games/013/G001377/20080922005/TN/013.gif",
+          "association": "ARTICLE_EXPLICIT_TABLE_LABEL",
+          "status": "LINK_RESOLVED_GIF_UNSUPPORTED_RAW_FETCH_DNS_BLOCKED",
+          "description": null,
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ガンジャー",
+      "region": "JP",
+      "name": "ガンジャー",
+      "event_ids": [
+        "JP080922"
+      ],
+      "prior_image_references": [
+        {
+          "name": "ガンジャー",
+          "event": "JP080922",
+          "url": "https://www.4gamer.net/games/013/G001377/20080922005/TN/014.gif",
+          "association": "ARTICLE_EXPLICIT_TABLE_LABEL",
+          "status": "LINK_RESOLVED_GIF_UNSUPPORTED_RAW_FETCH_DNS_BLOCKED",
+          "description": null,
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:スネイル",
+      "region": "JP",
+      "name": "スネイル",
+      "event_ids": [
+        "JP080922"
+      ],
+      "prior_image_references": [
+        {
+          "name": "スネイル",
+          "event": "JP080922",
+          "url": "https://www.4gamer.net/games/013/G001377/20080922005/TN/015.gif",
+          "association": "ARTICLE_EXPLICIT_TABLE_LABEL",
+          "status": "LINK_RESOLVED_GIF_UNSUPPORTED_RAW_FETCH_DNS_BLOCKED",
+          "description": null,
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ギガロス",
+      "region": "JP",
+      "name": "ギガロス",
+      "event_ids": [
+        "JP080922"
+      ],
+      "prior_image_references": [
+        {
+          "name": "ギガロス",
+          "event": "JP080922",
+          "url": "https://www.4gamer.net/games/013/G001377/20080922005/TN/011.gif",
+          "association": "ARTICLE_EXPLICIT_TABLE_LABEL",
+          "status": "LINK_RESOLVED_GIF_UNSUPPORTED_RAW_FETCH_DNS_BLOCKED",
+          "description": null,
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [
+        {
+          "record_id": "jp-hangame-pet-web:position:082",
+          "ordinal": 82,
+          "source_refs": [
+            {
+              "actual_capture": "20031214051259",
+              "dom_cells": [
+                12,
+                13,
+                14,
+                0
+              ],
+              "evidence_role": "SAME_COLUMN_NUMBER_NAME_IMAGE_REFERENCE",
+              "sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+              "source": "http://www.hangame.co.jp/publish/sa/chara2-2.asp"
+            }
+          ],
+          "relation": "EXACT_UNICODE_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ギガンボス",
+      "region": "JP",
+      "name": "ギガンボス",
+      "event_ids": [
+        "JP080922"
+      ],
+      "prior_image_references": [
+        {
+          "name": "ギガンボス",
+          "event": "JP080922",
+          "url": "https://www.4gamer.net/games/013/G001377/20080922005/TN/012.gif",
+          "association": "ARTICLE_EXPLICIT_TABLE_LABEL",
+          "status": "LINK_RESOLVED_GIF_UNSUPPORTED_RAW_FETCH_DNS_BLOCKED",
+          "description": null,
+          "raw_sha256": null,
+          "original_sprite_id": null
+        }
+      ],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [
+        {
+          "ordinal": 84,
+          "earlier_operator_web_name": "ギガンポス",
+          "later_fan_album_name": "ギガンボス",
+          "early_source_archive_capture_utc": "20031214051259",
+          "interpretation": "SAME_ORDINAL_TEXT_DIVERGENCE_NOT_PROVEN_RENAME_OR_SAME_PET_ID",
+          "relation": "FAN_ORDINAL_TEXT_DIVERGENCE_NOT_IDENTITY"
+        }
+      ],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ベルガー",
+      "region": "JP",
+      "name": "ベルガー",
+      "event_ids": [
+        "JP081111"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [
+        {
+          "ordinal": 70,
+          "earlier_operator_web_name": "ベルーガ",
+          "later_fan_album_name": "ベルガー",
+          "early_source_archive_capture_utc": "20031214051259",
+          "interpretation": "SAME_ORDINAL_TEXT_DIVERGENCE_NOT_PROVEN_RENAME_OR_SAME_PET_ID",
+          "relation": "FAN_ORDINAL_TEXT_DIVERGENCE_NOT_IDENTITY"
+        }
+      ],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ベルイガー",
+      "region": "JP",
+      "name": "ベルイガー",
+      "event_ids": [
+        "JP081111"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [
+        {
+          "record_id": "jp-hangame-pet-web:position:071",
+          "ordinal": 71,
+          "source_refs": [
+            {
+              "actual_capture": "20031214051259",
+              "dom_cells": [
+                6,
+                7,
+                8,
+                7
+              ],
+              "evidence_role": "SAME_COLUMN_NUMBER_NAME_IMAGE_REFERENCE",
+              "sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+              "source": "http://www.hangame.co.jp/publish/sa/chara2-2.asp"
+            }
+          ],
+          "relation": "EXACT_UNICODE_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ゴルシス",
+      "region": "JP",
+      "name": "ゴルシス",
+      "event_ids": [
+        "JP081111"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [
+        {
+          "record_id": "jp-hangame-pet-web:position:072",
+          "ordinal": 72,
+          "source_refs": [
+            {
+              "actual_capture": "20031214051259",
+              "dom_cells": [
+                6,
+                7,
+                8,
+                8
+              ],
+              "evidence_role": "SAME_COLUMN_NUMBER_NAME_IMAGE_REFERENCE",
+              "sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+              "source": "http://www.hangame.co.jp/publish/sa/chara2-2.asp"
+            }
+          ],
+          "relation": "EXACT_UNICODE_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:キングサーベル",
+      "region": "JP",
+      "name": "キングサーベル",
+      "event_ids": [
+        "JP081111"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [
+        {
+          "record_id": "jp-hangame-pet-web:position:073",
+          "ordinal": 73,
+          "source_refs": [
+            {
+              "actual_capture": "20031214051259",
+              "dom_cells": [
+                9,
+                10,
+                11,
+                0
+              ],
+              "evidence_role": "SAME_COLUMN_NUMBER_NAME_IMAGE_REFERENCE",
+              "sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+              "source": "http://www.hangame.co.jp/publish/sa/chara2-2.asp"
+            }
+          ],
+          "relation": "EXACT_UNICODE_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:KR:도에디크",
+      "region": "KR",
+      "name": "도에디크",
+      "event_ids": [
+        "KR081117"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ベガルガー",
+      "region": "JP",
+      "name": "ベガルガー",
+      "event_ids": [
+        "JP091013"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ゴッドサーベル",
+      "region": "JP",
+      "name": "ゴッドサーベル",
+      "event_ids": [
+        "JP091013"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ベルロイガー",
+      "region": "JP",
+      "name": "ベルロイガー",
+      "event_ids": [
+        "JP091013"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ギルシス",
+      "region": "JP",
+      "name": "ギルシス",
+      "event_ids": [
+        "JP091013"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ハクエン",
+      "region": "JP",
+      "name": "ハクエン",
+      "event_ids": [
+        "JP-2009-HAKUEN"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [
+        {
+          "ordinal": 219,
+          "fan_page": "https://kbpetzukan.iinaa.net/petg21/al219.html",
+          "evidence": "2009_OPERATOR_NAMED_PET_AND_LATER_FAN_ALBUM_TEXT_MATCH_NO_SAME_BUILD_ID",
+          "relation": "DOCUMENTED_FAN_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:コクエン",
+      "region": "JP",
+      "name": "コクエン",
+      "event_ids": [
+        "JP-2009-KOKUEN"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [
+        {
+          "ordinal": 221,
+          "fan_page": "https://kbpetzukan.iinaa.net/petg22/al221.html",
+          "evidence": "2009_OPERATOR_NAMED_PET_AND_LATER_FAN_ALBUM_TEXT_MATCH_NO_SAME_BUILD_ID",
+          "relation": "DOCUMENTED_FAN_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    },
+    {
+      "id": "r96-event:JP:ヴァンレム",
+      "region": "JP",
+      "name": "ヴァンレム",
+      "event_ids": [
+        "JP050929-VANREM"
+      ],
+      "prior_image_references": [],
+      "early_operator_exact_name_refs": [],
+      "fan_ordinal_divergences": [],
+      "other_fan_refs": [
+        {
+          "ordinal": 143,
+          "fan_page": "https://kbpetzukan.iinaa.net/petg14/al143.html",
+          "evidence": "OPERATOR_ADVERTISEMENT_PLUS_2010_FAN_ALBUM_NAME",
+          "relation": "DOCUMENTED_FAN_NAME_REFERENCE_ONLY"
+        }
+      ],
+      "native_id": null,
+      "original_sprite_id": null,
+      "birth_stats": null,
+      "growth": null,
+      "skills": null,
+      "actual_grant_verified": false,
+      "first_live_release_verified": false,
+      "identity_merge_verified": false
+    }
+  ],
+  "evolution_mask_candidates": [
+    {
+      "input": "ベルガー",
+      "mask": "？？ルガー",
+      "compatible_2009_names": [
+        "ベガルガー"
+      ],
+      "pairing_verified": false
+    },
+    {
+      "input": "ベルイガー",
+      "mask": "？？？イガー",
+      "compatible_2009_names": [
+        "ベルロイガー"
+      ],
+      "pairing_verified": false
+    },
+    {
+      "input": "ゴルシス",
+      "mask": "？？シス",
+      "compatible_2009_names": [
+        "ギルシス"
+      ],
+      "pairing_verified": false
+    },
+    {
+      "input": "キングサーベル",
+      "mask": "？？？サーベル",
+      "compatible_2009_names": [
+        "ゴッドサーベル"
+      ],
+      "pairing_verified": false
+    }
+  ],
+  "summary": {
+    "events": 13,
+    "named_records": 32,
+    "jp": 31,
+    "kr": 1,
+    "event_name_edges": 36,
+    "exact_early_name_rows": 7,
+    "exact_early_name_edges": 7,
+    "fan_divergence_rows": 2,
+    "fan_divergence_edges": 2,
+    "named_image_refs": 13,
+    "new_official_closures": 0
+  },
+  "validation": {
+    "source_pin_match": true,
+    "all_prior_event_edges_exact": true,
+    "all_reverse_event_edges_checked": true,
+    "no_cross_region_join": true,
+    "identity_and_actual_grant_negative_guards": true,
+    "actual_browser": false,
+    "integrated_private_atlas": false
+  },
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "official_species_count": null,
+  "original_assets_published": false,
+  "next": "Integrate this source lane as a separate searchable event evidence tab into actual private R95 ZIP after exact SHA/CRC retrieval, preserving all 3616 previous rows. Verify real browser separately; continue missing client master and acquisition fields."
+}
