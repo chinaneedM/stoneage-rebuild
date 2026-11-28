@@ -1,0 +1,255 @@
+{
+  "schema": "stoneage.pet.atlas_r98.residual_evidence.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "4893493ff518b1af9ff65af10635f7af8f59b6af",
+  "pins": {
+    "research/pets/PET-CN50-CN85-NATIVE-NAME-CROSSWALK-R1.json": "74c0c112fed4597ee8135228625b7c3fea81a245",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-ATLAS-R97-CN50-CONDITIONAL-BRIDGE-R1.json": "9cfa96228d152847efea30603f79978b91e1fb4d"
+  },
+  "sources": {
+    "portal": {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow30.htm",
+      "date": null,
+      "grade": "LEGACY_PORTAL_CATALOGUE_UNDATED",
+      "locator": "rows 231,232,239"
+    },
+    "sina": {
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml",
+      "date": "2003-04-07",
+      "grade": "DATED_PLAYER_CATALOGUE",
+      "locator": "rows 231,232,239"
+    },
+    "drop02": {
+      "url": "https://news.17173.com/z/stoneage/content/2002-10-21/n492_409004.html",
+      "date": "2002-10-21",
+      "grade": "DATED_PLAYER_GUIDE",
+      "locator": "iron ore entry"
+    },
+    "drop03": {
+      "url": "https://news.17173.com/z/stoneage/content/2003-5-7/n864_780815.html",
+      "date": "2003-05-07",
+      "grade": "DATED_PLAYER_GUIDE",
+      "locator": "copper/iron ore entries"
+    },
+    "promo03": {
+      "url": "https://games.sina.com.cn/newgames/2003/12/121610098.shtml?from=wap",
+      "date": "2003-12-16",
+      "grade": "OPERATOR_ANNOUNCEMENT_REPRINT",
+      "locator": "朱雀属性 image and auction announcement"
+    },
+    "panel03": {
+      "url": "https://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F167DT20031216143816.JPG",
+      "date": "2003-12-16",
+      "grade": "PROMOTIONAL_IMAGE_VISUALLY_READ_NOT_NATIVE_ROLL_PROOF",
+      "locator": "PET STATUS level 1, HP 78/78, attack 21, defense 7, agility 11"
+    },
+    "promo04": {
+      "url": "https://news.17173.com/content/2004-1-12/n733_650002.html",
+      "date": "2004-01-12",
+      "grade": "PERIOD_OPERATOR_CAMPAIGN_REPORT",
+      "locator": "30 cards, cap 1000, 7.0 redemption only"
+    },
+    "promo05": {
+      "url": "https://games.sina.com.cn/o/n/2005-04-04/94007.shtml",
+      "date": "2005-04-04",
+      "grade": "PERIOD_COMPANY_CAMPAIGN_REPRINT",
+      "locator": "7.5 skill and reported winner, dispatch planned"
+    }
+  },
+  "rows": [
+    {
+      "ordinal": 287,
+      "number": 231,
+      "name": "史凯勒顿",
+      "elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "graphics": [
+        101158,
+        101282
+      ],
+      "portrait_sha256": "0108a9bd9d87887c8725e56bb7949b2e640a11dbdc53694c555157ae74f9b754",
+      "skills": [
+        "攻击",
+        "防御"
+      ],
+      "capacity": 4,
+      "key": "CN50:OBS-CN50-SLOT-0287",
+      "peer_keys": [
+        "CN85:287",
+        "TW85:sa.exe:287",
+        "TW85:sb.exe:287",
+        "TW85:sc.exe:287",
+        "TW85:sd.exe:287"
+      ],
+      "conditional_template_id": null,
+      "official_same_deployment": false,
+      "official_capture_verified": false,
+      "initial_range": null,
+      "growth_range": null,
+      "notes": [
+        [
+          "portal",
+          "一级未开放、出现地点测试中；不外推后续版本。"
+        ],
+        [
+          "drop03",
+          "伊甸大陆骨架外围，铜矿掉落参考，非一级捕捉证明。"
+        ]
+      ]
+    },
+    {
+      "ordinal": 288,
+      "number": 232,
+      "name": "古斯特",
+      "elements": [
+        20,
+        0,
+        0,
+        80
+      ],
+      "graphics": [
+        101159,
+        101283
+      ],
+      "portrait_sha256": "33d2a6d80066bd8bf4bb1e055ced6fa6daed0b8fb62280a92f949c435d01718c",
+      "skills": [
+        "攻击",
+        "防御"
+      ],
+      "capacity": 4,
+      "key": "CN50:OBS-CN50-SLOT-0288",
+      "peer_keys": [
+        "CN85:288",
+        "TW85:sa.exe:288",
+        "TW85:sb.exe:288",
+        "TW85:sc.exe:288",
+        "TW85:sd.exe:288"
+      ],
+      "conditional_template_id": null,
+      "official_same_deployment": false,
+      "official_capture_verified": false,
+      "initial_range": null,
+      "growth_range": null,
+      "notes": [
+        [
+          "portal",
+          "一级未开放、出现地点测试中。"
+        ],
+        [
+          "drop02",
+          "东方沙漠外通道，12X等级，铁矿来源；不作精确等级或捕捉点。"
+        ],
+        [
+          "drop03",
+          "伊甸大陆骨架通道，铁矿掉落参考；两处地名不自动合并。"
+        ]
+      ]
+    },
+    {
+      "ordinal": 295,
+      "number": 239,
+      "name": "菲奇亚",
+      "elements": [
+        0,
+        0,
+        100,
+        0
+      ],
+      "graphics": [
+        101166,
+        101290,
+        101413
+      ],
+      "portrait_sha256": "7445fe69651177216b5de14b17edad1f9553100027663c42ab869f44d48c9c71",
+      "skills": null,
+      "capacity": null,
+      "key": "CN50:OBS-CN50-SLOT-0295",
+      "peer_keys": [
+        "CN85:295",
+        "TW85:sa.exe:295",
+        "TW85:sb.exe:295",
+        "TW85:sc.exe:295",
+        "TW85:sd.exe:295"
+      ],
+      "conditional_template_id": null,
+      "official_same_deployment": false,
+      "official_capture_verified": false,
+      "initial_range": null,
+      "growth_range": null,
+      "notes": [
+        [
+          "portal",
+          "朱雀；获取未明、出现地点测试中。"
+        ],
+        [
+          "promo03",
+          "7.0华义宣传：纯火、高攻高敏低防；2003-12-22至25竞拍预告。"
+        ],
+        [
+          "panel03",
+          "宣传截图单个Lv1样本 HP78/攻21/防7/敏11；不是上下限、真实抽样或5.0数值。"
+        ],
+        [
+          "promo04",
+          "2004-01-12至02-29，30种超级来吉卡兑换，限1000，只能7.0领取；不证明实际全部发放。"
+        ],
+        [
+          "promo05",
+          "2005-04-04公布首轮朱雀获奖，计划后续统一发放；7.5特殊技能火线猎杀，领取限7.5，非出生技能证明。"
+        ]
+      ],
+      "sample": {
+        "level": 1,
+        "hp": 78,
+        "attack": 21,
+        "defense": 7,
+        "agility": 11,
+        "grade": "PROMO_SINGLE_PANEL"
+      },
+      "conflict": {
+        "other_cn85_ordinal": 414,
+        "template_id": 933,
+        "other_graphics": [
+          101583,
+          101616
+        ],
+        "other_portrait_sha256": "0c450c8ebdb78a1dc99e598e6e35ea7ef39ba11f9d479f13dbbe164926049a7e",
+        "reason": "同名但头像及图号不相交，不复制候选数值"
+      }
+    }
+  ],
+  "source_positions_with_documentary_ref": 18,
+  "conditional_gap": 439,
+  "reverse_gap": 42,
+  "official_closures": 0,
+  "official_species_count": null,
+  "prior_sha256": "5bb7ea36171359221759aa396f77c631fe16b7101c2ee9a3f12fbcfa0b32d5c1",
+  "prior_members": 49339,
+  "private_artifact": {
+    "name": "StoneAge-PET-R98-Residual-Evidence-Atlas.zip",
+    "bytes": 180537891,
+    "sha256": "30ad84b8b5912473661eff369c4da8631266457738abeae72dd0d74d69bb6fbe",
+    "members": 49342,
+    "entrypoint": "START-R98.html",
+    "upload_reported_success": true,
+    "independent_library_readback": false
+  },
+  "validation": {
+    "prior_members_crc_size_unchanged": 49339,
+    "all_zip_crc": "PASS",
+    "prior_index_objects_equal": true,
+    "js_syntax": "PASS",
+    "actual_browser": false,
+    "user_local_inspection": false
+  },
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Verify independent R98 private readback, then rank remaining 421 positions without this documentary lane and 42 reverse gaps; keep 439 conditional master gaps and separate documentary-only evidence. Prioritize distinct names with historical panels or source-master candidates, do not repeat same-name-only links."
+}
