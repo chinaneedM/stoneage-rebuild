@@ -1,0 +1,188 @@
+{
+  "schema": "stoneage.pet-atlas-r53.portal-catalogue-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "47622e463fa343ea4acdf036dab95ef93dca4dd0",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "source_grade": "LEGACY_PC_PORTAL_UNDATED_BUILD_UNVERIFIED",
+  "sources": [
+    {
+      "page": 28,
+      "numbers": [
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224
+      ],
+      "access": "DIRECT_RENDERED",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow28.htm"
+    },
+    {
+      "page": 30,
+      "numbers": [
+        229,
+        230,
+        231,
+        232,
+        237,
+        238,
+        239,
+        240,
+        247,
+        248,
+        249,
+        353
+      ],
+      "access": "DIRECT_RENDERED",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow30.htm"
+    },
+    {
+      "page": 33,
+      "numbers": [
+        245,
+        246,
+        250,
+        251,
+        306
+      ],
+      "access": "FULL_SEARCH_CACHE_DIRECT_OPEN_FAILED",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow33.htm"
+    },
+    {
+      "page": 35,
+      "numbers": [
+        298,
+        299,
+        300,
+        301
+      ],
+      "access": "DIRECT_RENDERED",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow35.htm"
+    }
+  ],
+  "blocked_detail_pages": [
+    29,
+    31,
+    32,
+    34
+  ],
+  "page46": "DIRECT_OPEN_TIMEOUT_SEARCH_SNIPPET_NOT_FULL; NOT EXTRACTED",
+  "summary": {
+    "new_catalogue_positions": 29,
+    "cumulative_catalogue_positions": 245,
+    "birth_range_rows": 4,
+    "birth_mixed_rows": 0,
+    "birth_missing_rows": 21,
+    "birth_scalar_rows": 4,
+    "full_growth_endpoint_rows": 0,
+    "growth_scalar_rows": 0,
+    "partial_growth_rows": 4,
+    "unknown_growth_rows": 25,
+    "lv1_location_reward_rows": 22,
+    "capacity_known": 28,
+    "reference_edges": 98,
+    "linked_positions": 98,
+    "by_lane": {
+      "tw10": 3,
+      "cn50": 25,
+      "tw75": 27,
+      "sina2003": 15,
+      "cn85_original": 28
+    },
+    "by_grade": {
+      "normalized_detail_name": 15,
+      "literal_detail_name": 83
+    },
+    "element_comparison": {
+      "unknown": 58,
+      "equal": 39,
+      "conflict": 1
+    },
+    "unmatched_numbers": [
+      223,
+      248
+    ]
+  },
+  "source_access_counts": {
+    "direct_rendered": 24,
+    "full_search_cache_direct_open_failed": 5
+  },
+  "conflicts": {
+    "element_conflict_number": 247,
+    "element_missing_number": 306,
+    "unknown_skill_capacity": 239,
+    "unknown_acquisition": 239,
+    "source_album_claim": "239 reports album inclusion and alias朱雀, no grant or runtime proof",
+    "raw_encounter_literal": {
+      "number": 229,
+      "level": "12-140",
+      "qualification": "retain as reported, not confirmed capture range"
+    },
+    "calendar_literal": {
+      "number": 240,
+      "value": "91年9-12月",
+      "qualification": "calendar convention not verified"
+    }
+  },
+  "private_files": [
+    [
+      "StoneAge-PET-R53-Portal-Catalogue.zip",
+      5010228,
+      "6f4c23eaca0a66f92442c96c87d0943c3ac8fee19ecbf894a662f460d70de0e6"
+    ],
+    [
+      "R53-portal-catalogue.json",
+      94231,
+      "970998a079e5e0a14504868dbcf5c85945ca5dfced82f46b8d3ed4df4155eb92"
+    ],
+    [
+      "r53-facts.tsv",
+      null,
+      "8df18511982c758e65dbf4708b6e972cf5ef72b5d07872e9cc281696bec2f5bf"
+    ],
+    [
+      "build_r53.py",
+      null,
+      "7fbbeedbf687c6c2ba3738feec3c7846db730da6c25d7f4cfae849e7c04ea34c"
+    ],
+    [
+      "test_r53.py",
+      null,
+      "c457c4a0eef55ea7f1c1fb8a183e20d7af5a1e5ab58bcf976a39d5e4b94f6615"
+    ],
+    [
+      "R53-build.log",
+      null,
+      "2a08c5bb6f4ccd9f782a799fe234e020a90d3d5ac3c5fa6c9b7bc5a26e0c59bc"
+    ],
+    [
+      "R53-browser.log",
+      null,
+      "5484f27bfd47b5bee0029f55a82901be1c62e049441bf4b566945610eb5d5627"
+    ]
+  ],
+  "prior_zip": "c96d7328abad35953cd27d2705bbd47ac6dc7effe69927c5e36c9e5b3d01e8cc",
+  "custody": "private Library /石器时代",
+  "verification": {
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_count": 245,
+    "number_checks": 11,
+    "missing_number_checks": 4,
+    "profile_checks": 3,
+    "requests_aborted": true,
+    "windows_direct_launch": false
+  },
+  "raw_source_bytes_authenticated": false,
+  "official_closures": 0,
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Inspect remaining actual legacy portal pages36 onward, including page46 only on full evidence; map real printed numbers and catalogue links, and avoid guessing sequential rows. Pages29/31/32/34 remain blocked; do not retry same failed requests without new evidence. Original operator/datable independent evidence for remaining fields remains priority. No private-server substitute or blocked bulk retry."
+}

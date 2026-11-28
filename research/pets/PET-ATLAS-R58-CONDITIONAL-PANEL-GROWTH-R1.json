@@ -1,0 +1,125 @@
+{
+  "schema": "stoneage.pet-atlas-r58.conditional-panel-growth-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "03d86f1e1f66b2980390cc4e162579fd7d0dcd21",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "prior_ci": [
+    45996631786,
+    45996631806,
+    45996631864
+  ],
+  "source_pins": {
+    "tools/stoneage_pet_growth_model.py": "29910ff8b5e59fcd1a7ee306dd624ac467769853",
+    "tools/stoneage_pet_detail30_base_panel.py": "364005a85983a93a286873bcd2f94b71a14da06b"
+  },
+  "summary": {
+    "templates": 467,
+    "saved_base_variants": 6,
+    "prior_internal_marginal_matches": 467,
+    "joint_total_tighter_than_summed_marginals": 467,
+    "official_growth_promotions": 0,
+    "allocation_compositions": 286
+  },
+  "method": {
+    "panel_fields": [
+      "HP",
+      "ATK",
+      "DEF",
+      "AGI",
+      "ATK+DEF+AGI"
+    ],
+    "denominator": 2000,
+    "weights": [
+      [
+        80,
+        20,
+        20,
+        20
+      ],
+      [
+        2,
+        20,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        20,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        20
+      ],
+      [
+        4,
+        22,
+        22,
+        22
+      ]
+    ],
+    "float32": "replay C float32 stored intermediates before truncation of each internal increment",
+    "extrema": "nonnegative monotone weights and increments; all-minus-two offsets/lowest rank multiplier for minimum, all-plus-two/highest for maximum; exhaust 286 compositions of ten draws at each endpoint; verify endpoint witnesses",
+    "total": "one shared allocation vector; never sum independent marginal extrema"
+  },
+  "qualification": "Exact extrema of unrounded rational linear baseline projection conditioned on claimed TW75 data and preserved descendant PC model, not actual rounded client panel or original official server growth. No equipment, rebirth, clamps or runtime proof. Offsets fixed per individual; separate saved base variants and rank recalculated. No historical or official field promotion.",
+  "prior_zip": "20d6997af0cee431c2e28e7e6baa04dc6bff1a544bd63d051c887dd62ad37edc",
+  "private_files": [
+    [
+      "StoneAge-PET-R58-Conditional-Growth.zip",
+      5218673,
+      "9f281c55368c51c451b7f6998e645ed721338aca0d668d4871b0407f642432d0"
+    ],
+    [
+      "R58-conditional-growth.json",
+      null,
+      "00fa0eac1e2c272d437b35954f5a4cc5529eee07026d56d26fd1a3474c1ee9ab"
+    ],
+    [
+      "build_r58.py",
+      null,
+      "644cdf6ba9bc487f35ef489ed49312b50785940c959b2c4613f28d71e6a6b589"
+    ],
+    [
+      "test_r58.py",
+      null,
+      "012128594fb3b6e541990df8d6fe9e880a8f50043ebb46be54462ab44677ce2b"
+    ],
+    [
+      "R58-build.log",
+      null,
+      "88d07802503f0c23481d754610552fe1cddc80a0970d205a803e8a2376bef13b"
+    ],
+    [
+      "R58-browser.log",
+      null,
+      "90a59b69d914740c08a85089d19943e3c4517ce1739c7a8d8ff3da5c3e5625da"
+    ]
+  ],
+  "verification": {
+    "prior_zip_hash": "PASS",
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "endpoint_witness_replay": "PASS",
+    "chromium_document_replay": "PASS",
+    "index_entries": 467,
+    "exact_template_checks": 3,
+    "variant_rendering": true,
+    "linked_profiles": 1,
+    "r57_regression": true,
+    "network_requests_aborted": true,
+    "windows_direct_launch": false,
+    "native_motion_retested": false
+  },
+  "source_positions": 6207,
+  "portal_positions_unchanged": 302,
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Compare historical portal growth endpoint reports and individual level-1 samples against conditional model using explicit source-qualified candidate links and rounding/measurement caveats; prioritize authentic original master and actual growth/skill evidence. Do not equate conditional projection with official growth or merge unresolved identity variants."
+}

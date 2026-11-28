@@ -1,0 +1,124 @@
+{
+  "schema": "stoneage.pet-atlas-r63.number-name-audit-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "e169d89f48810a721791d45866fbe88b962d7001",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "prior_ci": [
+    46002950702,
+    46002949347,
+    46002949419
+  ],
+  "source": {
+    "url": "https://news.17173.com/z/stoneage/chongwu/petshow.htm",
+    "lines": [
+      10,
+      80
+    ],
+    "grade": "DIRECT_RENDERED_INDEX_RECHECK"
+  },
+  "summary": {
+    "controls_audited": 45,
+    "grades": {
+      "WHITESPACE_OR_FORMAT_ONLY": 27,
+      "INDEX_MATCH_DETAIL_OTHER_SLOT_CONFLICT": 5,
+      "INDEX_MATCH_DETAIL_VARIANT": 9,
+      "INDEX_DETAIL_AGREE_SLOT_CONFLICT": 4
+    },
+    "reused_sina_reference_edges": 42,
+    "sina_equal_element_edges": 33,
+    "normalization_char_mappings": 3074,
+    "searchable_names_checked": 1211,
+    "context_exceptions": 0,
+    "official_identity_promotions": 0
+  },
+  "conflicts": {
+    "other_slot": [
+      37,
+      38,
+      71,
+      72,
+      322
+    ],
+    "index_detail_agree_slot_conflict": [
+      247,
+      248,
+      258,
+      282
+    ],
+    "index_match_detail_variant": [
+      63,
+      79,
+      162,
+      197,
+      198,
+      200,
+      207,
+      213,
+      223
+    ],
+    "residual_conflict_unchanged": [
+      368,
+      370
+    ]
+  },
+  "qualification": "Original detail, directory and client names remain unchanged; only normalized search and classified cross-source reference evidence. 27 format-only records are not identity conflict; 9 index/detail variants are candidates, not asserted aliases; 9 slot conflicts preserved separately. Reused Sina reports not new independent observations. Same-name references not identity, no native server proof. ICU Traditional-Simplified character map plus NFKC/whitespace/case-folded name lookup; numeric source-key matching unchanged. No automatic merge or official species inference.",
+  "prior_zip": "762b30fdd58f1d450dd7a78b818dba8d2f9ac9a168020d1ce9aabb9c38d2309a",
+  "private_files": [
+    [
+      "StoneAge-PET-R63-Name-Audit.zip",
+      5232217,
+      "fbfa2b285811acfd723edddc94e082d28c44a4f11cdb7ff510ee7d41bc9fc326"
+    ],
+    [
+      "R63-number-name-audit.json",
+      76207,
+      "8d5c72fec7a0c25127e6cb15a4c3865ceeed9a22779b2e541d2983d3817c132d"
+    ],
+    [
+      "build_r63.py",
+      13294,
+      "180633c1a1f41f655c9f099ba17720da5fe5562cfc22b858a425f4c257fe580e"
+    ],
+    [
+      "test_r63.py",
+      3879,
+      "af818590c33dfdbf16bb4cde29a6eed0332226673cbf6e16a07fe4d39ebb0fe7"
+    ],
+    [
+      "R63-build.log",
+      545,
+      "fb6f9f138b94062ed4878e3fd0228ca859c51b9a24f73c059c41fa885d07bea4"
+    ],
+    [
+      "R63-browser.log",
+      180,
+      "1e6e675481bb6d124f8c84182e3d2110d3865f6392eefc86c3be8cd4d6cab339"
+    ]
+  ],
+  "verification": {
+    "prior_zip_hash": "PASS",
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_entries": 45,
+    "classification_filters": 4,
+    "main_search_simplified_traditional": true,
+    "portal_alias_search": true,
+    "whitespace_search": true,
+    "linked_profile": true,
+    "r62_regression": true,
+    "network_requests_aborted": true,
+    "initial_test_failure": "Cached portal record has null line reference; render now handles missing value, clean rerun passed.",
+    "windows_direct_launch": false,
+    "native_motion_retested": false
+  },
+  "source_positions": 6207,
+  "portal_details_unchanged": 338,
+  "residual_detail_missing": 27,
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Prioritize genuine unintegrated original pet-master/skill data or local source-derived visual assets and per-pet completeness, rather than repeating portal name audits. Retain nine substantive numbered conflicts, nine variant candidates and 368/370 residual conflicts; no identity promotion from normalization. Recover raw fusion bytes only when new access evidence exists. Review actual image/action local custody and missing source positions; preserve all provenance."
+}

@@ -1,0 +1,41 @@
+name: PET atlas R74 CN85 two configuration graphic groups
+on:
+  push:
+    branches: [pet-atlas-r24-cn85-compatible-residual-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r74_cn85_configuration_groups.py'
+      - '.github/workflows/pet-atlas-r74-cn85-configuration-groups.yml'
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r74_cn85_configuration_groups --plan-only
+  source:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: sudo apt-get update -qq && sudo apt-get install -y unshield
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r74_cn85_configuration_groups --output "$RUNNER_TEMP/r74" --public-key research/pets/PET-ATLAS-20261127-RECOVERY-PUBLIC.pem
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r74-cn85-private-configuration-groups
+          path: |
+            ${{ runner.temp }}/r74/batch-1/private.enc
+            ${{ runner.temp }}/r74/batch-1/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - if: always()
+        run: rm -rf "$RUNNER_TEMP/r74"

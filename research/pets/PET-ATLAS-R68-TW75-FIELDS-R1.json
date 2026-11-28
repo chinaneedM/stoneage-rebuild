@@ -1,0 +1,134 @@
+{
+  "schema": "stoneage.pet-atlas-r68.tw75-field-receipt.r1",
+  "date": "2026-11-27",
+  "parent": "ab2360d2c697ffeb58a000574f780001480a1415",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "base_tree": "f9a6269907df052e3a4e997ad018c64b318ba23f",
+  "prior_ci": [
+    46010706045,
+    46010706054,
+    46010706041
+  ],
+  "summary": {
+    "templates": 467,
+    "exact_shared_selected_rows": 440,
+    "source_conflicts_or_missing": 27,
+    "conditional_level1_rows": 467,
+    "conditional_growth_rows": 467,
+    "configured_skill_records": 941,
+    "positive_route_profiles": 123,
+    "positive_route_rows": 2473,
+    "pet_flag_1_normal_rect": 2302,
+    "pet_flag_1_inverted_rect": 96,
+    "pet_flag_0_enemy_only": 75,
+    "pet_flag_profiles": 118,
+    "normal_pet_flag_profiles": 117,
+    "inverted_only_template": "TW75-TEMPLATE-322",
+    "reward_profiles": 36,
+    "acquisition_categories": {
+      "pet_flag_1_and_reward": 23,
+      "pet_flag_1_route_only": 95,
+      "reward_only": 13,
+      "enemy_only": 5,
+      "no_saved_positive_route_or_reward": 331
+    },
+    "route_floor_links": 886,
+    "distinct_floor_ids": 281,
+    "map_name_missing_routes": 1057,
+    "distinct_missing_name_floor_ids": 14,
+    "visual_reference_profiles": 438,
+    "animated_reference_profiles": 280,
+    "visual_link_edges": 2271,
+    "unique_visual_assets": 2426,
+    "visual_selected_provider": {
+      "TW85": 330,
+      "TW10": 86,
+      "CN85": 22
+    },
+    "historical_reference_profiles": 164,
+    "other_acquisition_reference_profiles": 371,
+    "historical_growth_profiles": 121,
+    "historical_sample_profiles": 16,
+    "duplicate_normalized_name_positions": 55,
+    "element_sum_exceptions": 2,
+    "community_learning_reference_profiles": 71,
+    "official_closures": 0
+  },
+  "source_pins": {
+    "r15_master_blob": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "r16_growth_blob": "8cb864a78f1ff2b3c89ae1739ac485968d104c10",
+    "r46_acquisition_blob": "dbbd61460cee2edd4ba2722ab90e8889fe5268e2",
+    "ordered_utf16_fnv64_noncryptographic": [
+      "d0ce310f8788a62f",
+      "db33839fef3af7c8",
+      "3902970ca13ca3d7"
+    ],
+    "r67_zip_sha256": "1c1e9d4772317cf2afdda077f49f196dfaa299a899f3387c974ef2639b23e5f2"
+  },
+  "private_files": [
+    [
+      "StoneAge-PET-R68-TW75-Fields.zip",
+      8489438,
+      "6e56f1387c6faa15c6dfe4f5cba92e08bfb421e247b992ff0c5413115096ffdf"
+    ],
+    [
+      "R68-tw75-fields.json",
+      9769537,
+      "0470bc078adae45dd71af4a6eb40d96ff5c5f269fb8c34346c43c0a582bb6fec"
+    ],
+    [
+      "build_r68.py",
+      11546,
+      "310a9dac40c1079b08941777e5149dffcb39ef8ceaa2b9265ce5679c1c76439f"
+    ],
+    [
+      "r68-template.html",
+      8621,
+      "824a1d5a58c3a48c8bb2fe76a40b3d28de5d9ae0c4a2b61f554b14c59025fd6e"
+    ],
+    [
+      "test_r68.py",
+      3793,
+      "52e6c129e0c587f7b2d00e27515d079b7fc0078b2529034ae164576e4d3e3711"
+    ],
+    [
+      "R68-build.log",
+      1372,
+      "3d909d1cfb4e18694048000dd5649098b674a37991d136cb806f2055878c1be3"
+    ],
+    [
+      "R68-browser.log",
+      248,
+      "98649a14d34e3fd0b9ae7a542565623605b11d18e8f4d5d3b0dcbded90e4b929"
+    ]
+  ],
+  "verification": {
+    "prior_r67_full_sha256_crc": true,
+    "remote_projection_noncryptographic_fingerprints_match": true,
+    "exact_row_hash_checks_for_attached_evidence": true,
+    "all_selected_png_decode_and_byte_hash": true,
+    "output_zip_crc": true,
+    "private_library_readback_hash_equal": true,
+    "initial_json_roundtrip_assertion": "integer dictionary keys normalized; corrected comparison to serialized JSON and full rebuild passed",
+    "chromium_zip_document_harness": "PASS",
+    "rendered_profiles": 467,
+    "decoded_image_references": 716,
+    "rendered_route_rows": 2473,
+    "rendered_skill_rows": 941,
+    "filter_counts": true,
+    "normalized_name": true,
+    "template1_sample": true,
+    "step_play_pause": true,
+    "external_requests": 0,
+    "js_errors": 0,
+    "harness_base_csp_only_changed": true,
+    "windows_direct_launch": false,
+    "user_local_inspection": false
+  },
+  "qualification": "Claimed TW75 saved master not authenticated official deployment. All official fields null. Conditional birth and unrounded baseline growth with joint ATK+DEF+AGI total excluding HP; saved skill configuration not innate/learnability proof. Encounter routes only exact saved rows, inverted rectangles preserved; reward script configuration not actual official delivery. Existing cross-source image references separately qualified, not original TW75 visuals. No new source proof or proprietary pixels published. Standalone lightweight supplement; unzip alongside R67 to use navigation to prior galleries. R67 unchanged.",
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Prioritize missing original master, capture/map name, growth, innate/learnability and acquisition evidence; specifically 14 floor IDs missing names (1057 route edges), inverted-only template322, 27 selected master conflicts or absent, 29 templates without visual candidate, 331 without saved positive route/reward. Search evidence before promoting any field; no repeat packaging; user local inspection outstanding."
+}

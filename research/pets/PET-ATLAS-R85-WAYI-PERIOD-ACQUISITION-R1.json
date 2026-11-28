@@ -1,0 +1,261 @@
+{
+  "schema": "stoneage.pet.atlas_r85.wayi_period_acquisition_crosswalk.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "d65f224a0a884b0781da3ffcd6d0ad4d5189908e",
+  "pins": {
+    "r15": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "r71": "67827e6a56c83b0086f4902c3417b682b0f9740c",
+    "r75": "24d4dd169253e936f39bbf68dbd42257845c5fdb",
+    "pet69": "1907642781be40e6f870c22f6371c1832a35bef2",
+    "r84": "23e5dd4884b3698c4005466adecad30218fb158e"
+  },
+  "sources": [
+    {
+      "id": "HUNT",
+      "url": "https://www.games.idv.tw/news.php?nid=236",
+      "publication_date": "2004-12-11",
+      "access": "SEARCH_INDEX_EXTENDED_TEXT",
+      "region": "TW",
+      "operator": "WAYI",
+      "event_start_reported": "2004-12-08",
+      "event_end_reported": "2004-12-22T08:00:00+08:00",
+      "state": "REPORTED_STARTED_REWARD_ADVERTISED",
+      "route": "family leaders collect specified pets for NPC; 230-question minimum eligibility for draw",
+      "reward_names": [
+        "布里薩爾",
+        "巴特",
+        "奈坎特",
+        "哈沃斯"
+      ],
+      "historical_claim": "布里薩爾 had been obtainable in earlier million-prize contest and was subsequently retired; all-water attribute described; exact debut unknown",
+      "actual_delivery_verified": false
+    },
+    {
+      "id": "XMAS",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=18112",
+      "corroborating_url": "https://www.games.idv.tw/news.php?nid=239",
+      "publication_date": "2004-12-14",
+      "corroborating_publication_date": "2004-12-15",
+      "access": "SEARCH_INDEX_TEXT_DIRECT_403",
+      "region": "TW",
+      "operator": "WAYI",
+      "state": "ADVERTISED_REWARD",
+      "route": "used stone egg serial draw; separate crystal collection reward route for 布里薩爾",
+      "reward_names": [
+        "奈坎特",
+        "奈宇羅",
+        "布里薩爾"
+      ],
+      "prior_source_blob": "1907642781be40e6f870c22f6371c1832a35bef2",
+      "not_new_independent_event": true,
+      "actual_delivery_verified": false
+    },
+    {
+      "id": "VIP",
+      "url": "https://www.games.idv.tw/news.php?nid=247",
+      "publication_date": "2004-12-22",
+      "access": "SEARCH_INDEX_EXTENDED_TEXT",
+      "region": "TW",
+      "operator": "WAYI",
+      "event_start_reported": "2004-12-22",
+      "event_end_reported": "2004-12-31",
+      "state": "ADVERTISED_MEMBERSHIP_BENEFIT",
+      "route": "VIP membership, no lottery advertised, includes 女王蜂沃克比",
+      "reward_names": [
+        "沃克比"
+      ],
+      "actual_delivery_verified": false
+    },
+    {
+      "id": "TGS",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=18890",
+      "publication_date": "2005-02-17",
+      "access": "SEARCH_INDEX_TEXT",
+      "region": "TW",
+      "operator": "WAYI",
+      "state": "ADVERTISED_EXHIBITION_PRIZE",
+      "route": "physical capsule machine",
+      "reward_names": [
+        "火牛坎奈特"
+      ],
+      "alias_candidate": "奈坎特",
+      "actual_delivery_verified": false
+    },
+    {
+      "id": "APRIL",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=19443",
+      "publication_date": "2005-04-04",
+      "event_date_inferred": "2005-04-02",
+      "event_date_basis": "article says previous Saturday",
+      "access": "SEARCH_INDEX_EXTENDED_TEXT",
+      "region": "TW",
+      "operator": "WAYI",
+      "state": "POST_EVENT_OPERATOR_REPORTED_PRIZE_HANDOUT",
+      "route": "launch event capsule draw",
+      "reward_names": [
+        "火牛坎奈特",
+        "水魔獸"
+      ],
+      "alias_candidate": "奈坎特",
+      "actual_delivery_verified": false,
+      "qualification": "Article reports prizes sent out, but no individual claim log or native ID; 水魔獸 not linked to an exact template."
+    }
+  ],
+  "rows": [
+    {
+      "template_id": 1177,
+      "master_name": "布里薩爾",
+      "master_row_sha256": "caf5b5d91a5300bb292199603f99524fcee10906a103ee5046a15c2215de372e",
+      "master_graphic": 101866,
+      "master_elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "client_join_status": "TW85_NATIVE_GRAPHIC_OTHER_NAME",
+      "r71_missing_visual": true,
+      "event_ids": [
+        "HUNT",
+        "XMAS"
+      ],
+      "source_elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "identity_grade": "NAME_AND_ELEMENT_REFERENCE",
+      "official_same_deployment_verified": false,
+      "official_acquisition_closed": false
+    },
+    {
+      "template_id": 1181,
+      "master_name": "巴特",
+      "master_row_sha256": "0862cb2427be374de72151fe283778e8926d598f8ac94ce76257982574af237f",
+      "master_graphic": 101870,
+      "master_elements": [
+        70,
+        30,
+        0,
+        0
+      ],
+      "client_join_status": "TW85_NATIVE_GRAPHIC_OTHER_NAME",
+      "r71_missing_visual": true,
+      "event_ids": [
+        "HUNT"
+      ],
+      "source_elements": null,
+      "identity_grade": "NAME_REFERENCE_ONLY",
+      "official_same_deployment_verified": false,
+      "official_acquisition_closed": false
+    },
+    {
+      "template_id": 177,
+      "master_name": "哈沃斯",
+      "master_row_sha256": "7301c5c38db162942a2c25a5a75c83381f85355775b0abd251ca8e0e291b01af",
+      "master_graphic": 101767,
+      "master_elements": [
+        0,
+        0,
+        90,
+        10
+      ],
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "r71_missing_visual": false,
+      "event_ids": [
+        "HUNT"
+      ],
+      "source_elements": null,
+      "identity_grade": "NAME_REFERENCE_ONLY",
+      "official_same_deployment_verified": false,
+      "official_acquisition_closed": false
+    },
+    {
+      "template_id": 1186,
+      "master_name": "奈坎特",
+      "master_row_sha256": "46644ac9393a83dc817262df543b84b62b13ae03aecef420cbcb182cb7d6ffb5",
+      "master_graphic": 101881,
+      "master_elements": [
+        0,
+        40,
+        60,
+        0
+      ],
+      "client_join_status": "TW85_NATIVE_GRAPHIC_OTHER_NAME",
+      "r71_missing_visual": true,
+      "event_ids": [
+        "HUNT",
+        "XMAS",
+        "TGS",
+        "APRIL"
+      ],
+      "source_elements": null,
+      "identity_grade": "NAME_REFERENCE_ONLY",
+      "official_same_deployment_verified": false,
+      "official_acquisition_closed": false
+    },
+    {
+      "template_id": 1187,
+      "master_name": "奈宇羅",
+      "master_row_sha256": "250cb22a52587535d94173e11ce7794d85922803989a4dfca58a929c910ba0df",
+      "master_graphic": 101882,
+      "master_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "client_join_status": "TW85_NATIVE_GRAPHIC_OTHER_NAME",
+      "r71_missing_visual": true,
+      "event_ids": [
+        "XMAS"
+      ],
+      "source_elements": null,
+      "identity_grade": "NAME_REFERENCE_ONLY",
+      "official_same_deployment_verified": false,
+      "official_acquisition_closed": false
+    },
+    {
+      "template_id": 1178,
+      "master_name": "沃克比",
+      "master_row_sha256": "e7c6e2b4715dbf135bc6dd7caea9d22a78899c794cda8c93dd88708ab6b42b11",
+      "master_graphic": 101867,
+      "master_elements": [
+        0,
+        0,
+        70,
+        30
+      ],
+      "client_join_status": "TW85_NATIVE_GRAPHIC_OTHER_NAME",
+      "r71_missing_visual": true,
+      "event_ids": [
+        "VIP"
+      ],
+      "source_elements": null,
+      "identity_grade": "NAME_REFERENCE_ONLY",
+      "official_same_deployment_verified": false,
+      "official_acquisition_closed": false
+    }
+  ],
+  "summary": {
+    "source_events": 5,
+    "known_prior_event": 1,
+    "master_name_candidates": 6,
+    "r71_missing_visual_candidates": 5,
+    "element_reference_matches": 1,
+    "post_event_report": 1,
+    "official_closures": 0
+  },
+  "limitations": [
+    "Search index/extended indexed text only, not authenticated HTML or official logs; GNN 18112 and games.idv 239 direct 403.",
+    "No claim of novelty against entire source registry; PET69 explicitly retains XMAS event.",
+    "Names in period articles are not original template IDs; 坎奈特/奈坎特 candidate alias only; water monster unresolved.",
+    "No newly extracted original client data, original pixels or viewer build."
+  ],
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Prioritize period operator sources or actual original master/visual gaps, including five R71 positions; no repetitive community screens or duplicate original transfers. Preserve R24 browser acceptance and R74 blocked source gates."
+}

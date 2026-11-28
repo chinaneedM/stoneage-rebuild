@@ -1,0 +1,115 @@
+{
+  "schema": "stoneage.pet-atlas-r69.route-evidence-receipt.r1",
+  "date": "2026-11-27",
+  "parent": "4d4d1d16e2081e871c65e69fac4dbd1c7e611fad",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "base_tree": "f9a6269907df052e3a4e997ad018c64b318ba23f",
+  "prior_ci": [
+    46011718392,
+    46011718402,
+    46011718537
+  ],
+  "summary": {
+    "templates": 467,
+    "routes": 2473,
+    "prior_missing_map_name_routes": 1057,
+    "additional_map_header_candidate_routes": 1056,
+    "affected_profiles": 76,
+    "prior_missing_floor_ids": 14,
+    "additional_header_floor_ids": 13,
+    "remaining_missing_floor_id": 997,
+    "remaining_missing_routes": 1,
+    "conflicting_floor_200_routes": 563,
+    "original_inverted_route_rows": 96,
+    "inverted_profile_count": 27,
+    "inverted_source_area_count": 12,
+    "static_replay_areas_with_selected_coordinates": 12,
+    "template_322_inverted_routes": 6,
+    "official_capture_verified": false,
+    "official_field_closures": 0
+  },
+  "source_pins": {
+    "r68_sha256": "6e56f1387c6faa15c6dfe4f5cba92e08bfb421e247b992ff0c5413115096ffdf",
+    "map_headers_blob": "3b2bbe6d374a875baa8934d3ed8b7eca45e7b328",
+    "floor_projection_blob": "fa15a2a93ed820160571aef28294c029d5196666",
+    "world20_blob": "f7203fd28bc1f8cb9d1edf08d08579123df053e9",
+    "comparison_repo": "gavinlinasd/StoneAge",
+    "comparison_commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "encount_c_blob": "97cc5c61fdad8146b653c8c48ec928c3692a308e",
+    "util_c_blob": "c1e0530194839585281288750fd37a566997f812",
+    "source_projection_fnv64_noncryptographic": {
+      "map_headers": "cfadefd92ba64578",
+      "inverted_areas": "07b089ad8c305508"
+    }
+  },
+  "qualification": "Later community comparator map headers only. Floor200 has two conflicting names; 30x30 candidate does not intersect any of563 rectangles under zero-based diagnostic bounds, 800x1200 candidate contains them; this is not same-deployment identity. Map997 remains missing. Comparator encount.c 231-234 normalizes endpoint order, 280-287 parses priority, 398-421 chooses positive highest priority with first-in-table tie; util.c 1399-1411 inclusive endpoints. Static counterfactual over all660 preserved WORLD20 source areas; no original runtime, passability, actual capture, official map or original field proof. All original R68 route values/fields retained; source-scope classification unchanged. Template322's six inverted-only paths have geometrically selected coordinates under comparator, not authenticated captures.",
+  "private_files": [
+    [
+      "StoneAge-PET-R69-TW75-Route-Evidence.zip",
+      10353039,
+      "3c179fa244d4850f8962b6da34c2b90b4197205abc4c864e5ada22e7c8ec1ef6"
+    ],
+    [
+      "R69-tw75-route-evidence.json",
+      10434645,
+      "5b716dbf27432bc5d9a00dcea68f52934b17cd8dda5b9345f7f90360c6e87ce0"
+    ],
+    [
+      "build_r69.py",
+      11444,
+      "3eb3c3bfc2cb947e4cd7a0e3e5d3c7e1fe614676b210cc4408d0942e3506a011"
+    ],
+    [
+      "r69-template.html",
+      9946,
+      "5b06c990e908b2f78e831f166de9832a0c6e0866fcc676320186243b6ee32742"
+    ],
+    [
+      "test_r69.py",
+      3474,
+      "19f7a29c2016a971d0e0bd186b81252fb4a331b0131526e9032e32437ca77f96"
+    ],
+    [
+      "R69-build.log",
+      647,
+      "912ef594200fd9841988092a8bc5dcba88b7854fb275594f463a2c646438c0bc"
+    ],
+    [
+      "R69-browser.log",
+      268,
+      "f6414d0b235fe27ffe87263c42be624706d5863b5a7f29a1630b8c05faf12e1c"
+    ]
+  ],
+  "verification": {
+    "prior_zip_sha256_crc": true,
+    "all_prior_members_byte_equal": true,
+    "original_route_fields_equal": true,
+    "source_projection_fingerprints_equal": true,
+    "output_crc": true,
+    "private_library_readback_sha256_equal": true,
+    "initial_json_roundtrip_assertion": "Integer map keys normalized on JSON serialization; corrected comparison, rebuilt and verified. Area660 SHA transcription corrected and full projection fingerprints independently matched.",
+    "chromium_zip_document_harness": "PASS",
+    "profiles": 467,
+    "rendered_routes": 2473,
+    "new_header_refs": 1056,
+    "decoded_images": 716,
+    "filters": [
+      76,
+      27,
+      1
+    ],
+    "normalized_map_name_search": true,
+    "template322_sample": true,
+    "floor997_missing": true,
+    "floor200_conflict_visible": true,
+    "external_requests": 0,
+    "js_errors": 0,
+    "harness_base_csp_only_changed": true,
+    "windows_direct_launch": false,
+    "user_local_inspection": false
+  },
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Prioritize actual missing pet field evidence: 27 selected master conflicts/absences, 29 no qualified visual reference, original skill/acquisition proofs and source-qualified roster beyond existing lanes. Floor997 only if genuinely new source; avoid repeated map or visual packaging. Preserve conditional field boundary and no PET closure."
+}

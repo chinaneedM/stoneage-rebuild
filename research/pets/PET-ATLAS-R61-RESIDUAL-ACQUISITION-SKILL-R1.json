@@ -1,0 +1,137 @@
+{
+  "schema": "stoneage.pet-atlas-r61.residual-acquisition-and-skill-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "ede8e499da7c5c33a55e9349f39dfbb8ef11242b",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "prior_ci": [
+    46000729459,
+    46000729486,
+    46000729530
+  ],
+  "sources": [
+    {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-15/5848.shtml?from=wap",
+      "date": "2003-05-15",
+      "lines": [
+        133,
+        270
+      ],
+      "grade": "DATED_RENDERED_RECIPE_TABLE_SUBSET",
+      "prior_full_raw_source_sha256": "b60650b407fc8c8ad46658663d4662c792db4ff0ff16a574e9c2e8cd6cd",
+      "raw_bytes_reverified": false
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2003-8-14/n314_231133.html?_platform=PC",
+      "date": "2003-08-14",
+      "lines": [
+        21,
+        27
+      ],
+      "grade": "DATED_PLAYER_FAMILY_LEARNABILITY_CLAIM"
+    }
+  ],
+  "summary": {
+    "portal_details_unchanged": 338,
+    "residual_index_names": 27,
+    "residual_names_with_candidate_references": 25,
+    "residual_name_reference_edges": 293,
+    "residual_without_refs": [
+      368,
+      370
+    ],
+    "recipe_outputs": 8,
+    "rendered_recipe_lines": 138,
+    "within_output_duplicate_lines": 8,
+    "distinct_ordered_output_sequences": 130,
+    "multiple_output_sequences": 4,
+    "two_input_lines": 7,
+    "prior_panels_reused": 8,
+    "skill_reports": 8,
+    "learnability_claims": 12,
+    "element_conflicts_reviewed": 6,
+    "element_conflicts_with_prior_corroboration": 3,
+    "official_closures": 0
+  },
+  "multi_output_pairs": [
+    {
+      "outputs": [
+        272,
+        274
+      ],
+      "sequences": 2
+    },
+    {
+      "outputs": [
+        276,
+        279
+      ],
+      "sequences": 2
+    }
+  ],
+  "qualification": "138 rendered recipe lines are a subset, not independent new source or full prior raw table. Retain exact ordering, repeats, two-input records and shared-output alternatives; no deterministic recipe or probability inferred. All eight July single-panel samples reused, not newly observed. 25/27 residual names linked only by exact/ICU normalized name; no original detail recovered and all 27 remain missing. Eight special talent reports agree with claimed TW75 configured slots/capacity; August player claim of learnability does not establish innate skills or official runtime. Existing corroboration favors one side of 3 element conflicts; all 6 remain unresolved. No identity promotion.",
+  "prior_zip": "0c1145d127fbe4ffac0ac5f54e6512bfb1cd7247d96078971baab6da23344f0e",
+  "private_files": [
+    [
+      "StoneAge-PET-R61-Residual-References.zip",
+      5158171,
+      "7b54068e896618ea88adcd68a77f52ef8bd9ef48dc9a51118c6ec0b41a094af2"
+    ],
+    [
+      "R61-residual-references.json",
+      100175,
+      "6f574646d0ae59f89ac5e53a1f7d98af6c1e3756822b8838b93954c5c137441f"
+    ],
+    [
+      "r61-recipes.txt",
+      4755,
+      "e8e165d9a99ee26fd675c9e70d7ba7a0c54404dec51fdf8a085b9029bf448fe4"
+    ],
+    [
+      "build_r61.py",
+      14011,
+      "8bf43886514d2d66619d926291c3d014dcc7f54632de28d61cd42efe8ef7647f"
+    ],
+    [
+      "test_r61.py",
+      3203,
+      "acbab23070617876c7e2591f12072e9ca2946df2715b1022f83313df6196e75e"
+    ],
+    [
+      "R61-build.log",
+      1055,
+      "c29d0f86b5d4b1dfbd6f2096f02cf4b396eec404945bf33557cec48f30499574"
+    ],
+    [
+      "R61-browser.log",
+      164,
+      "366b693e342a2be796a7aaf6b20afedf3d7f8ff3482d58196e9f155b04e19d64"
+    ]
+  ],
+  "verification": {
+    "prior_zip_hash": "PASS",
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_entries": 41,
+    "recipe_filter": 8,
+    "ordered_collision": true,
+    "skill_ids": [
+      503,
+      600
+    ],
+    "element_conflicts": 6,
+    "missing_residual": true,
+    "linked_profile": true,
+    "r60_regression": true,
+    "network_requests_aborted": true,
+    "windows_direct_launch": false,
+    "native_motion_retested": false
+  },
+  "source_positions": 6207,
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Prioritize genuinely new classic-PC original master or dated evidence for residual 347–370, especially 368 and 370 without name references. Recover full fusion table through verified preserved raw bytes if accessible; distinguish prior raw counts and rendered subset. Seek original acquisition/skill evidence and actual growth data, no repeated mobile/private-server search or guessing missing portal detail."
+}

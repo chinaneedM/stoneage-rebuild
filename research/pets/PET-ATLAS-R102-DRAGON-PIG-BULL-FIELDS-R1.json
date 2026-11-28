@@ -1,0 +1,639 @@
+{
+  "schema": "stoneage.pet.atlas_r102.dragon_pig_bull_fields.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "6ef9c063224ad47a57b78e34bf340dab1b5d172c",
+  "pins": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json": "0005e7d7943907c01024f5dd24132b126e4bb3f3",
+    "research/pets/PET-ATLAS-R101-REVERSE-TEMPLATE-AUDIT-R1.json": "ce2bea4fb5352738d076e70c4901accbd898b6d9",
+    "research/pets/PET-ATLAS-R75-TW75-1187-PANEL-CONFLICT-R1.json": "24d4dd169253e936f39bbf68dbd42257845c5fdb"
+  },
+  "rows": [
+    {
+      "template_id": 1177,
+      "name": "布里薩爾",
+      "family": "圣龙系",
+      "client_keys": [
+        "CN85:471",
+        "TW85:sa.exe:471",
+        "TW85:sb.exe:471",
+        "TW85:sd.exe:471"
+      ],
+      "client_graphics": {
+        "CN85": [
+          101673
+        ],
+        "TW85": [
+          101110,
+          101673,
+          101776,
+          101824,
+          101867
+        ]
+      },
+      "decoded_portrait_sha256": "f4d374ee1bc92c0b36e5279a00a70ea2334e798ecf86cf281e005a3d26a7f4b9",
+      "master_graphic": 101866,
+      "master_other_name": {
+        "sa.exe": "奧斯卡",
+        "sb.exe": "奧斯卡",
+        "sd.exe": "奧斯卡"
+      },
+      "master_row_sha256": "caf5b5d91a5300bb292199603f99524fcee10906a103ee5046a15c2215de372e",
+      "master_capacity": 6,
+      "master_configured_skills": [],
+      "master_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_url": "https://welovesa.com/pet.php?pet_id=415&pet_type=33",
+      "source_grade": "UNDATED_COMMUNITY_CATALOGUE_AND_SUBMITTED_NUMERIC_ROWS",
+      "elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "site_capacity": 6,
+      "site_birth": [
+        [
+          55,
+          63
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      "site_growth": [
+        [
+          1.624,
+          10.74
+        ],
+        [
+          1.576,
+          2.23
+        ],
+        [
+          1.421,
+          1.694
+        ],
+        [
+          1.556,
+          1.78
+        ]
+      ],
+      "site_acquisition": "转转乐活动、商城积分兑换",
+      "site_skills": [
+        "攻击",
+        "防御"
+      ],
+      "displayed_zero_rebirth_level1_rows": 15,
+      "distinct_numeric_tuples": 15,
+      "zero_growth_rows": 1,
+      "sample_ranges": [
+        [
+          55,
+          100
+        ],
+        [
+          11,
+          20
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          22
+        ],
+        [
+          9.38,
+          10.74
+        ],
+        [
+          2,
+          4.38
+        ],
+        [
+          1.42,
+          2.95
+        ],
+        [
+          1.56,
+          4.34
+        ],
+        [
+          5.1,
+          11.67
+        ]
+      ],
+      "range_conflict_fields": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "official_same_deployment": false,
+      "official_birth_growth_verified": false,
+      "official_acquisition_verified": false,
+      "conditional_template_link_added": false
+    },
+    {
+      "template_id": 1182,
+      "name": "布伊酷",
+      "family": "布伊系",
+      "client_keys": [
+        "CN85:481",
+        "TW85:sa.exe:481",
+        "TW85:sb.exe:481",
+        "TW85:sd.exe:481"
+      ],
+      "client_graphics": {
+        "CN85": [
+          101877
+        ],
+        "TW85": [
+          101120,
+          101683,
+          101786,
+          101834,
+          101877,
+          101898
+        ]
+      },
+      "decoded_portrait_sha256": "3435b260725458370467a9a9c49241b5f840363d646eefdb971827ab461847c3",
+      "master_graphic": 101876,
+      "master_other_name": {
+        "sa.exe": "懷沃夫",
+        "sb.exe": "懷沃夫",
+        "sd.exe": "懷沃夫"
+      },
+      "master_row_sha256": "857ea382bb238722ca669c9902df0fb5cd12f6aa3c6bfe8a0430ceb9b3ecc652",
+      "master_capacity": 6,
+      "master_configured_skills": [
+        1,
+        2
+      ],
+      "master_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_url": "https://welovesa.com/pet.php?pet_id=425&pet_type=2",
+      "source_grade": "UNDATED_COMMUNITY_CATALOGUE_AND_SUBMITTED_NUMERIC_ROWS",
+      "elements": [
+        0,
+        90,
+        10,
+        0
+      ],
+      "site_capacity": null,
+      "site_birth": [
+        [
+          51,
+          54
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          5,
+          8
+        ]
+      ],
+      "site_growth": [
+        [
+          10.719,
+          11.515
+        ],
+        [
+          2.09,
+          2.235
+        ],
+        [
+          1.62,
+          1.773
+        ],
+        [
+          1.17,
+          1.299
+        ]
+      ],
+      "site_acquisition": "2012春节活动任务",
+      "site_skills": [
+        "攻击",
+        "防御"
+      ],
+      "displayed_zero_rebirth_level1_rows": 6,
+      "distinct_numeric_tuples": 6,
+      "zero_growth_rows": 0,
+      "sample_ranges": [
+        [
+          51,
+          78
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          10.72,
+          12.5
+        ],
+        [
+          2.09,
+          2.37
+        ],
+        [
+          1.62,
+          1.86
+        ],
+        [
+          1.17,
+          1.4
+        ],
+        [
+          4.88,
+          5.64
+        ]
+      ],
+      "range_conflict_fields": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "official_same_deployment": false,
+      "official_birth_growth_verified": false,
+      "official_acquisition_verified": false,
+      "conditional_template_link_added": false
+    },
+    {
+      "template_id": 1186,
+      "name": "奈坎特",
+      "family": "牛人",
+      "client_keys": [
+        "CN85:484",
+        "TW85:sa.exe:484",
+        "TW85:sb.exe:484",
+        "TW85:sd.exe:484"
+      ],
+      "client_graphics": {
+        "CN85": [
+          101837
+        ],
+        "TW85": [
+          101123,
+          101686,
+          101789,
+          101837,
+          101880,
+          101901
+        ]
+      },
+      "decoded_portrait_sha256": "1ffef26f7ec0292eaeb51fc1bdc35faf684bf069d976d013f5a21af69e444ebd",
+      "master_graphic": 101881,
+      "master_other_name": {
+        "sa.exe": "奈宇羅",
+        "sb.exe": "奈宇羅",
+        "sd.exe": "奈宇羅"
+      },
+      "master_row_sha256": "46644ac9393a83dc817262df543b84b62b13ae03aecef420cbcb182cb7d6ffb5",
+      "master_capacity": 6,
+      "master_configured_skills": [
+        1,
+        2,
+        640
+      ],
+      "master_comparison_status": "SAME_ID_DIFFERENT_TAIL",
+      "source_url": "https://welovesa.com/pet.php?pet_id=428&pet_type=44&trans=0",
+      "source_grade": "UNDATED_COMMUNITY_CATALOGUE_AND_SUBMITTED_NUMERIC_ROWS",
+      "elements": [
+        0,
+        40,
+        60,
+        0
+      ],
+      "site_capacity": 6,
+      "site_birth": [
+        [
+          60,
+          93
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          5,
+          10
+        ]
+      ],
+      "site_growth": [
+        [
+          10.176,
+          11.758
+        ],
+        [
+          2.304,
+          2.95
+        ],
+        [
+          1.63,
+          2.123
+        ],
+        [
+          1.058,
+          1.686
+        ]
+      ],
+      "site_acquisition": "台湾盒子包；大陆2011年积分兑换",
+      "site_skills": [
+        "攻击",
+        "防御",
+        "撼甲一击"
+      ],
+      "displayed_zero_rebirth_level1_rows": 33,
+      "distinct_numeric_tuples": 27,
+      "zero_growth_rows": 0,
+      "sample_ranges": [
+        [
+          59,
+          93
+        ],
+        [
+          15,
+          19
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          10.73,
+          15.07
+        ],
+        [
+          2.51,
+          2.99
+        ],
+        [
+          1.62,
+          2.12
+        ],
+        [
+          1.06,
+          1.88
+        ],
+        [
+          5.5,
+          6.79
+        ]
+      ],
+      "range_conflict_fields": [
+        0,
+        4,
+        5,
+        6,
+        7
+      ],
+      "official_same_deployment": false,
+      "official_birth_growth_verified": false,
+      "official_acquisition_verified": false,
+      "conditional_template_link_added": false
+    },
+    {
+      "template_id": 1187,
+      "name": "奈宇羅",
+      "family": "牛人",
+      "client_keys": [
+        "CN85:485",
+        "TW85:sa.exe:485",
+        "TW85:sb.exe:485",
+        "TW85:sd.exe:485"
+      ],
+      "client_graphics": {
+        "CN85": [
+          101124
+        ],
+        "TW85": [
+          101124,
+          101687,
+          101790,
+          101838,
+          101881,
+          101902
+        ]
+      },
+      "decoded_portrait_sha256": "c5edb0c062efc3cbb636608f551711f1c6b7e26776fb0268ddaddc2b2d71dd8c",
+      "master_graphic": 101882,
+      "master_other_name": {
+        "sa.exe": "卡芙娜",
+        "sb.exe": "卡芙娜",
+        "sd.exe": "卡芙娜"
+      },
+      "master_row_sha256": "250cb22a52587535d94173e11ce7794d85922803989a4dfca58a929c910ba0df",
+      "master_capacity": 6,
+      "master_configured_skills": [],
+      "master_comparison_status": "SAME_ID_DIFFERENT_TAIL",
+      "source_url": "https://welovesa.com/pet.php/pet.php?pet_id=429&pet_type=44",
+      "source_grade": "UNDATED_COMMUNITY_CATALOGUE_AND_SUBMITTED_NUMERIC_ROWS",
+      "elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "site_capacity": 6,
+      "site_birth": [
+        [
+          55,
+          84
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          6,
+          14
+        ]
+      ],
+      "site_growth": [
+        [
+          9.859,
+          11.792
+        ],
+        [
+          2.363,
+          2.947
+        ],
+        [
+          1.759,
+          2.152
+        ],
+        [
+          1.164,
+          1.825
+        ]
+      ],
+      "site_acquisition": "台湾盒子包；大陆2011年积分兑换",
+      "site_skills": [
+        "攻击",
+        "防御",
+        "撼甲一击"
+      ],
+      "displayed_zero_rebirth_level1_rows": 21,
+      "distinct_numeric_tuples": 21,
+      "zero_growth_rows": 0,
+      "sample_ranges": [
+        [
+          55,
+          84
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          9.97,
+          13.81
+        ],
+        [
+          2.36,
+          2.99
+        ],
+        [
+          1.84,
+          2.14
+        ],
+        [
+          1.21,
+          1.83
+        ],
+        [
+          5.82,
+          6.5
+        ]
+      ],
+      "range_conflict_fields": [
+        4,
+        5
+      ],
+      "official_same_deployment": false,
+      "official_birth_growth_verified": false,
+      "official_acquisition_verified": false,
+      "conditional_template_link_added": false
+    }
+  ],
+  "summary": {
+    "names": 4,
+    "client_positions": 16,
+    "sample_rows": 75,
+    "distinct_tuples": 69,
+    "zero_growth_rows": 1,
+    "range_conflict_fields": 21,
+    "conditional_gap": 439,
+    "reverse_gap": 42,
+    "r98_r99_r100_r102_documentary_positions": 69
+  },
+  "period_source": {
+    "url": "https://games.sina.com.cn/o/n/2011-02-22/1433476670.shtml",
+    "date": "2011-02-22",
+    "grade": "OPERATOR_PROMOTIONAL_REPRINT",
+    "named_templates": [
+      1186,
+      1187
+    ],
+    "acquisition": "points exchange advertised available",
+    "fire_bull_element": [
+      0,
+      40,
+      60,
+      0
+    ],
+    "earth_bull_exact_ratio": null,
+    "skill_label": "撼甲一击",
+    "actual_receipt_verified": false
+  },
+  "prior_r101": {
+    "bytes": 182293415,
+    "sha256": "f0220643fa884d4ca54edb06e134605d23549296fce5ce0fced1d53f691c8c5f",
+    "members": 49351,
+    "independent_readback": true
+  },
+  "private_artifact": {
+    "name": "StoneAge-PET-R102-Dragon-Pig-Bull-Fields.zip",
+    "bytes": 182886533,
+    "sha256": "61fbd3b66fa3e4be60765a83850ff75c4940e2c97412216e7457523f1f3ec4ac",
+    "members": 49354,
+    "entrypoint": "START-R102.html",
+    "independent_readback": true
+  },
+  "validation": {
+    "prior_members_crc_size_equal": 49351,
+    "all_zip_crc": "PASS",
+    "prior_structured_objects_equal": true,
+    "local_href_img_targets": "PASS",
+    "js_syntax": "PASS",
+    "dom_double_positive_cards": 20,
+    "dom_double_negative_cards": 1,
+    "actual_browser": false,
+    "user_local_inspection": false
+  },
+  "limits": [
+    "Four name-based master comparisons, not identity; same-name client portrait equality does not prove original master linkage. Graphic conflicts remain.",
+    "Four community catalogue pages undated; samples not original RNG bounds, reborn/non-level1 excluded, one all-zero growth row retained for birth only. Outliers retained; 0.005 growth rounding tolerance.",
+    "布伊酷 site skill capacity blank; no inferred value. 2011 dated operator reprint corroborates two named bulls, skill and points exchange; no first release or account receipt proof.",
+    "R75 earlier 1187 panel conflict not overwritten. No new original pixels or source master.",
+    "R96 full display projection independent check and browser acceptance open."
+  ],
+  "official_closures": 0,
+  "official_species_count": null,
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Continue remaining 11 graphic/name conflicts (15 total, four examined this unit; six prior R99) and non-name role cases using independent dated source and original graphic evidence. Prioritize as yet unintegrated template1145/1147 and client residuals, preserve 439/42 strict conditional gaps. Do not repeat four profiles without new evidence."
+}

@@ -1,0 +1,219 @@
+{
+  "schema": "stoneage.pet.atlas_r91.quest_role_references.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "801a5db8c68604952f5b4f302445119f3f33cc4a",
+  "prior_ci": [
+    46100363017,
+    46100363116,
+    46100363069
+  ],
+  "source_pins": {
+    "r72": "5db528e2663ec0da2fa397d4de849a131b7d9f74",
+    "r73": "19ee6316b43c4c9d205368f4abdd5d5803b4cf77",
+    "hf58": "05abda998bd2ee7c7f24101468f14de96a1dbcea",
+    "comparison_master": "a19a508975e3a982fada323861b35b2edab79349",
+    "comparison_header": "e19b5251378c3a3310454ac05b357f63ce9dd38b",
+    "comparison_commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56"
+  },
+  "historical_sources": [
+    {
+      "id": "FUSION03",
+      "date": "2003-05-19",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-19/6507.shtml",
+      "lines": [
+        24,
+        24
+      ],
+      "grade": "DATED_PLAYER_GUIDE",
+      "finding": "Names of 12 of 14 residual positions appear in fusion exclusion examples; not exhaustive or official deployment proof."
+    },
+    {
+      "id": "MARE02",
+      "date": "2002-05-20",
+      "url": "https://news.17173.com/z/stoneage/content/2002-5-20/n855_771416.html",
+      "lines": [
+        31,
+        32
+      ],
+      "grade": "DATED_PLAYER_GUIDE",
+      "finding": "Level1 quest companion with necklace; cannot choose between two stored same-name templates."
+    },
+    {
+      "id": "HUMAN03",
+      "date": "2003-09-22",
+      "url": "https://news.17173.com/z/stoneage/content/2003-9-22/n60_976875.html",
+      "lines": [
+        17,
+        29
+      ],
+      "grade": "DATED_PLAYER_GUIDE",
+      "finding": "Two named human quest companions trained to level30; exchange requirements described."
+    },
+    {
+      "id": "TIME03",
+      "date": "2003-06-03",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10619.shtml",
+      "lines": [
+        31,
+        42
+      ],
+      "grade": "DATED_PORTAL_GUIDE",
+      "finding": "Three named quest figures have separate encounter, capture and return stages."
+    },
+    {
+      "id": "ZOO02",
+      "date": "2002-05-25",
+      "url": "https://news.17173.com/z/stoneage/content/2002-5-25/n686_602272.html",
+      "lines": [
+        18,
+        25
+      ],
+      "grade": "DATED_PLAYER_GUIDE",
+      "finding": "Zoo return and conflicting naming context; no automatic name merge."
+    }
+  ],
+  "rows": [
+    [
+      401,
+      100454,
+      307,
+      1
+    ],
+    [
+      718,
+      100451,
+      509,
+      1
+    ],
+    [
+      719,
+      100401,
+      510,
+      1
+    ],
+    [
+      720,
+      100432,
+      511,
+      1
+    ],
+    [
+      854,
+      100853,
+      642,
+      1
+    ],
+    [
+      905,
+      100825,
+      689,
+      1
+    ],
+    [
+      913,
+      100015,
+      697,
+      1
+    ],
+    [
+      914,
+      100018,
+      698,
+      1
+    ],
+    [
+      953,
+      101281,
+      737,
+      1
+    ],
+    [
+      961,
+      101280,
+      745,
+      1
+    ],
+    [
+      962,
+      101279,
+      746,
+      1
+    ],
+    [
+      966,
+      100821,
+      750,
+      1
+    ],
+    [
+      1042,
+      100908,
+      825,
+      0
+    ],
+    [
+      1145,
+      101489,
+      916,
+      0
+    ]
+  ],
+  "row_columns": [
+    "template_id",
+    "graphic",
+    "comparison_master_line",
+    "historical_fusion_exclusion_name_match"
+  ],
+  "comparison_last_field_literal_all": -1,
+  "summary": {
+    "templates": 467,
+    "role_references": 14,
+    "fusion_named_positions": 12,
+    "fusion_not_listed_in_checked_text": 2,
+    "strict_visual_gaps": 29,
+    "named_visual_gaps": 14,
+    "official_closures": 0
+  },
+  "private_artifact": {
+    "name": "StoneAge-PET-R91-Quest-Role-References.zip",
+    "bytes": 21539809,
+    "sha256": "aeb34f245cf5550e854bc2ce72cfc34343ec0f0a938d8679ced7ee96a560796f",
+    "entrypoint": "gallery-r91-tw75-quest-role-references.html",
+    "prior_sha256": "8cb96b63d97fc50a06c953496976530ae7ec7493fd6ea6e238e4e63caaeb1b1a",
+    "addon_sha256": "b4d2d2edc29cc0c5ee582f82f6bee43c6b8afeda87bcd71c5b7494bc109b7e20",
+    "build_script_sha256": "3fab4ea4e00071610f70098d1ae2269b86b880427463c0871e76325098bfe97b",
+    "test_script_sha256": "68992e5ded03b8b7ae8f2f006a773354bdc81337032c64c1d539715b4ada887e",
+    "build_receipt_sha256": "101a548f85c2a18fcb9160c480baa84bd286c86f2fb56197dce1ca34f304b3ad",
+    "logic_receipt_sha256": "b27a0dffe67a22e3c4371c54a8878462c7325ac233f00afea323f8cfdd05bf8c",
+    "library_readback_byte_identical": true
+  },
+  "validation": {
+    "crc": "PASS",
+    "prior_members_byte_identical": 3371,
+    "output_members": 3374,
+    "prior_structured_fields_identical": true,
+    "full_profile_row_hash_matches": 14,
+    "js_syntax": "PASS",
+    "node_vm_dom_doubles": "PASS",
+    "positive_profiles": 14,
+    "negative_profiles": 453,
+    "integrated_show_samples": 16,
+    "filter_counts": 17,
+    "prior_r90_positive": 52,
+    "prior_r90_negative": 415,
+    "actual_browser": false,
+    "user_local_inspection": false
+  },
+  "limits": [
+    "Historical guides directly rendered, not authenticated raw page bytes; novelty versus full historical registry not established.",
+    "Twelve positions include duplicate-name template variants, not twelve distinct species.",
+    "Last field -1 in all fourteen comparison rows is a literal; runtime fusion permission not established. Two unlisted positions are not permission evidence.",
+    "No new pixels, no reduction of strict visual gaps or official roster/field closure.",
+    "Existing TW75 candidate component, not complete cross-version atlas."
+  ],
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Seek original qualified name-to-image material and actual official master/skill/acquisition evidence, especially 14 named gaps and 29 strict visual gaps. Do not repeat role references without new evidence. R24 actual browser/user inspection gate remains open."
+}

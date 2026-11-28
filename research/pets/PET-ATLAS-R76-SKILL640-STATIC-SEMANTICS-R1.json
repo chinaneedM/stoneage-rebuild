@@ -1,0 +1,130 @@
+{
+  "schema": "stoneage.pet.atlas_r76.skill640_static_semantics.r1",
+  "date": "2026-11-27",
+  "parent": "5a987fe93f6bf292eed2dccf5d299fcbe41fab8c",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "comparison": {
+    "repo": "gavinlinasd/StoneAge",
+    "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "pins": {
+      "gmsv/data/petskill2.txt": "83d2daeb9e57b089a304f127361f88514386b870",
+      "gmsv/data/petskill.txt": "846d379f0c7977b3e74d5a5a9580a35a85cafc51",
+      "gmsv/data/skillcode.txt": "44c59d8498c42a685bbf2ab0049b2f9cdeef04a2",
+      "gmsv/src/battle/pet_skill.c": "a510c713ba3cb6c85a6738040928299b3d93ce88",
+      "gmsv/src/battle/battle.c": "df5a04b94cbd7bbdab0da3cf91f9b0fa01327c6c",
+      "gmsv/src/battle/battle_event.c": "76ecf3ffee0595b48daf5eea26e96cb170290d90",
+      "gmsv/src/include/version.h": "af6c866fd609a39e2960236275f6bf39e7f47b2c"
+    }
+  },
+  "skill": {
+    "id": 640,
+    "literal_name": "憾甲一击",
+    "historical_name": "撼甲一击",
+    "definition_line": 149,
+    "legacy_table_id_present": false,
+    "kind_code": "Re",
+    "listed_cost": 10000,
+    "free_condition_present": false,
+    "options": {
+      "status_threshold": 20,
+      "attack_percent": 30,
+      "defense_percent": -50
+    },
+    "handler": "PETSKILL_Regret",
+    "macro_enabled_line": 546
+  },
+  "pet_refs": [
+    {
+      "template": 1186,
+      "name": "奈坎特",
+      "code_line": 113,
+      "code": "Re&",
+      "same_source_code_gate_match": true,
+      "full_master_conflict": true
+    },
+    {
+      "template": 1187,
+      "name": "奈宇羅",
+      "code_line": 114,
+      "code": "Re&",
+      "same_source_code_gate_match": true,
+      "full_master_conflict": true
+    }
+  ],
+  "static_semantics": [
+    {
+      "path": "gmsv/src/battle/pet_skill.c",
+      "lines": [
+        2117,
+        2148
+      ],
+      "claim": "Fixed strength plus truncated 30% increment; fixed toughness plus truncated -50% increment; assigns battle command."
+    },
+    {
+      "path": "gmsv/src/battle/battle.c",
+      "lines": [
+        8379,
+        8407
+      ],
+      "claim": "Adjusted primary target; second target only if primary slot in 5..9 or 15..19 and corresponding slot minus5 has a valid index."
+    },
+    {
+      "path": "gmsv/src/battle/battle_event.c",
+      "lines": [
+        1211,
+        1216
+      ],
+      "claim": "Overrides target defense with fixed toughness; not zero defense."
+    },
+    {
+      "path": "gmsv/src/battle/battle_event.c",
+      "lines": [
+        1708,
+        1712
+      ],
+      "claim": "Secondary command scales damage by 0.8 at this stage."
+    },
+    {
+      "path": "gmsv/src/battle/battle_event.c",
+      "lines": [
+        7140,
+        7184
+      ],
+      "claim": "Both command branches attempt status12 with threshold20; successful check and living target set status work value2 and clear battle command."
+    },
+    {
+      "path": "gmsv/src/battle/battle_event.c",
+      "lines": [
+        5165,
+        5206
+      ],
+      "claim": "Status check uses RAND(1,100), rejects invalid/dead targets and existing abnormal status on ordinary path; strict rand_num < Success, hence 19 of 100 possible integer outcomes if uniform inclusive and no earlier gate; not observed probability."
+    }
+  ],
+  "period_reference": {
+    "url": "https://games.sina.com.cn/o/n/2011-02-22/1433476670.shtml",
+    "date": "2011-02-22",
+    "grade": "DATED_PORTAL_PROMOTION_TEXT",
+    "claim": "Both named cow pets associated with 撼甲一击; does not specify original numeric implementation or learning rules.",
+    "already_referenced_in_r71": true
+  },
+  "limits": [
+    "No compile/run or new original official bytes.",
+    "Static comparator is not authenticated official server or actual learnability.",
+    "Threshold20 is not guaranteed 20% observed chance; RNG implementation and downstream runtime not audited.",
+    "No full damage formula, official skill effect, official acquisition, or cross-source identity promotion."
+  ],
+  "r74": {
+    "corrected_run": 46019855149,
+    "conclusion": "failure",
+    "bytes": 0,
+    "predecessor_run": 46019841786,
+    "predecessor_status": "in_progress",
+    "predecessor_conclusion": null
+  },
+  "official_closures": 0,
+  "strict67": "unchanged",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Check predecessor R74 only for actually produced material; no further repeat download. Verify source-specific skill semantics independently and seek dated official learning/acquisition evidence; integrate only qualified references into private atlas."
+}

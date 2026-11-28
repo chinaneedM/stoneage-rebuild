@@ -1,0 +1,207 @@
+{
+  "schema": "stoneage.pet.atlas_r77.special_skill_shop_receipt.r1",
+  "date": "2026-11-27",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "base_tree": "f9a6269907df052e3a4e997ad018c64b318ba23f",
+  "parent": "b53e89709e2d4f651cf414ea959ef4cd9a5b4113",
+  "prior_ci": [
+    46020717843,
+    46020717832,
+    46020717870
+  ],
+  "source": {
+    "repo": "gavinlinasd/StoneAge",
+    "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "tree": "33f71a5f804480cec28edee4bd6a6d1851ba2dab",
+    "prefix": "gmsv/data/npc/freeshop/",
+    "template_blob": "1d0cb216803dbbebedaa97d001b90fdb9399d572",
+    "create_blob": "15d26a596019c565385db8456ea5a9adaf79be42",
+    "skill_table_blob": "83d2daeb9e57b089a304f127361f88514386b870",
+    "skillcode_blob": "44c59d8498c42a685bbf2ab0049b2f9cdeef04a2",
+    "handler_blob": "4cb21a6581fd9a657476319401c01b36473dae0d",
+    "eventaction_blob": "85010d54104dfff9d386b30c2ba33dbe26d1e4e6",
+    "prior_r42_blob": "7a10def57468d75eff98c67602a18942a8095d53",
+    "prior_r43_blob": "02b8fffb120ba8ecf637ce2174fa48cf13a66a60",
+    "map_header_receipt_blob": "3b2bbe6d374a875baa8934d3ed8b7eca45e7b328",
+    "map_2000_blob": "62b948ee1b4a45e870afa0a5bbb086916abeb6c7"
+  },
+  "shops": [
+    {
+      "id": "01",
+      "floor": 4035,
+      "xy": [
+        7,
+        6
+      ],
+      "configured_slots": 7,
+      "blob": "545289dd4b86a94d0519d7d0b6c83d45590c6e27",
+      "rate": 1
+    },
+    {
+      "id": "02",
+      "floor": 3036,
+      "xy": [
+        7,
+        6
+      ],
+      "configured_slots": 1,
+      "blob": "2cf0a269480e2ab2cfc333fe4e2e1d3dc32f4c5c",
+      "rate": 1
+    },
+    {
+      "id": "03",
+      "floor": 7405,
+      "xy": [
+        16,
+        16
+      ],
+      "configured_slots": 1,
+      "blob": "538bb74da63c706bc5c3e5e84ee6ac79b7236121",
+      "rate": 1
+    },
+    {
+      "id": "04",
+      "floor": 1003,
+      "xy": [
+        19,
+        20
+      ],
+      "configured_slots": 2,
+      "blob": "7a9e60c7b8f8c5260034b24eebc555694621d504",
+      "rate": 1
+    },
+    {
+      "id": "05",
+      "floor": 2000,
+      "xy": [
+        72,
+        38
+      ],
+      "configured_slots": 31,
+      "blob": "1a6fa9092822a31fc48098c928f72e0b7646329a",
+      "rate": 1
+    },
+    {
+      "id": "55",
+      "floor": 2000,
+      "xy": [
+        72,
+        40
+      ],
+      "configured_slots": 30,
+      "blob": "9cd050731a105621114684b99e3fa9fe103e0f51",
+      "rate": 1
+    },
+    {
+      "id": "06",
+      "floor": 5103,
+      "xy": [
+        21,
+        13
+      ],
+      "configured_slots": 8,
+      "blob": "1dc79258da92aad045e6ff80a28dcc83a8fcf0d3",
+      "rate": 1
+    },
+    {
+      "id": "66",
+      "floor": 103,
+      "xy": [
+        16,
+        6
+      ],
+      "configured_slots": 3,
+      "blob": "2f9014d898f7c3e2253cdefd94a5c5ae79dbe73f",
+      "rate": 1
+    },
+    {
+      "id": "08",
+      "floor": 4000,
+      "xy": [
+        92,
+        49
+      ],
+      "configured_slots": 11,
+      "blob": "111f55c48a2c8f32d75e8c52239fbb53288ac5bc",
+      "rate": 1
+    }
+  ],
+  "summary": {
+    "templates": 467,
+    "shops": 9,
+    "configured_slots": 94,
+    "distinct_shop_skill_pairs": 93,
+    "distinct_skills": 72,
+    "defined_skills": 67,
+    "gated_with_matches": 45,
+    "gated_no_matches": 11,
+    "blank_kind_code": 11,
+    "undefined_skills": 5,
+    "prior_exact_bridge_profiles": 71,
+    "profiles_with_shop_gate_match": 71,
+    "profile_shop_skill_links": 108,
+    "conflict_only_profiles": 2,
+    "official_closures": 0
+  },
+  "undefined_ids": [
+    585,
+    586,
+    587,
+    588,
+    589
+  ],
+  "duplicate_slot": {
+    "shop": "05",
+    "skill": 612
+  },
+  "skill640": {
+    "shop_ids": [
+      "55",
+      "08"
+    ],
+    "comparison_pet_ids": [
+      1186,
+      1187
+    ],
+    "base_cost": 10000,
+    "rate": 1,
+    "atlas_exact_bridge": false
+  },
+  "verification": {
+    "prior_zip_sha256": "d9880fe4af44fb182a99466acc7a90a7b5dc76645854bac6ab4e84acc2645258",
+    "prior_members": 2717,
+    "all_prior_members_byte_identical": true,
+    "prior_rows_unchanged": 467,
+    "new_members": 3,
+    "zip_crc_pass": true,
+    "private_zip_retrieved_byte_identical": true,
+    "browser": "Isolated Chromium ZIP-document replay PASS: 467 total, 71 linked profiles, 108 rendered rows, 2 conflict profiles, R75/R76 display, R73 preview/index filters 12/2, old template1 65 routes, no JS errors, external requests or failed local requests. Direct file:// blocked by host administrator; harness-only base/CSP modification; actual package unchanged. Windows launch and user inspection unverified."
+  },
+  "private_files": {
+    "zip": {
+      "name": "StoneAge-PET-R77-TW75-Skill-Learning.zip",
+      "bytes": 14270432,
+      "sha256": "4580d8a60efd45a7926254dd78b6272dd01ea331f45df476a6167540dbac8ecf"
+    },
+    "json": {
+      "name": "R77-skill-learning.json",
+      "bytes": 24730,
+      "sha256": "f85b41c359e6864de89594856f25061602d6b9f0f5fef12cacbe0cb7bd4a7d1d"
+    },
+    "build_sha256": "202a2f417f8349f7df416e2597885eb2eceff9bb9bad48e42f67fe9d47a673a3",
+    "test_sha256": "8f7097e6092a3eab92856351d44dfa3e55f359d712a6b65b43e0193bf6511423",
+    "browser_log_sha256": "dd0eed9b95772d9cedd2fb5633d8159ef31a1aad80aee1a21425f23d64940a7d"
+  },
+  "qualification": [
+    "Directly read 9 active create blocks and corresponding arguments; commented block excluded. Not entire NPC tree coverage, official deployment or actual transaction proof.",
+    "Skill table code gate first literal substring; only prior R43 exact bridge profiles linked. 1186/1187 separately conflict-only; no official learning or birth promotion.",
+    "Five undefined IDs retained, menu filtering and raw selection indexing differ; no actual client selection or exploitation inference.",
+    "Only map2000 pinned same comparison header; other map names not inferred.",
+    "2016 indexed skill report describes conflicting defense and wider species list; direct fetch403; not accepted as source or official correction. 2005 indexed learning list also direct403. No new official source bytes.",
+    "No new original pixels or original master. R74 corrected source failure zero bytes; predecessor not accepted; no repeated acquisition."
+  ],
+  "strict67": "unchanged",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Continue genuine original master/skill/acquisition evidence and remaining visual identity gaps; R74 predecessor only if actual successful artifact. No repetitive gallery repackaging; maintain integrated private atlas and qualified source fields."
+}

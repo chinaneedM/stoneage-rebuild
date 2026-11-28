@@ -1,0 +1,95 @@
+{
+  "schema": "stoneage.pet.atlas_r95.integrated_web_atlas.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "5576b6478a125eb1bd344640ae022193afd219d9",
+  "prior_ci": [
+    46102361338,
+    46102361341,
+    46102361309
+  ],
+  "pins": {
+    "r94_receipt": "69433fb2ef11651bdccbba4ae7dfe3f3e9168e7a",
+    "jp_catalog": "85e99d6fd6a7ca27eeaa3987510a6bcc1d701708",
+    "r39": "c3c84e9bf82a314bf8771db1e1bda4a8b22f2ebe",
+    "r38": "e6318f40b462ee6963a5c4700c8f759ac320920c",
+    "jp_projection_fnv_utf16": "1f80d73a",
+    "kr_paths_fnv_utf16": "a4207b4d",
+    "r94_zip": "3650c5bba2a02d09d797bdab71ebc65db9e71997d07fbc826b30fe099872d7f8",
+    "r39_zip": "8e1d62848cb474c3727129d64b40e32bd68fe4623b0e1e7008cbb8fe698e3ca5",
+    "r38_zip": "94403c832abafa6cc52922b712353f812a494d1356bb2b1dda38fc1104ae6e85"
+  },
+  "summary": {
+    "source_positions": 3616,
+    "prior_client_template_positions": 3333,
+    "web_rows": 283,
+    "jp_named_web_positions": 124,
+    "kr_anonymous_image_paths": 159,
+    "local_web_gifs": 25,
+    "web_gif_frames": 42,
+    "historical_hash_only": 45,
+    "without_verified_hash": 213,
+    "without_local_image": 258,
+    "jp": {
+      "local": 11,
+      "historical_hash_only": 27,
+      "no_verified_hash": 86
+    },
+    "kr": {
+      "local": 14,
+      "historical_hash_only": 18,
+      "no_cdx_match": 127
+    },
+    "client_positions_without_conditional_ref": 446,
+    "reverse_unlinked_templates": 42,
+    "official_closures": 0
+  },
+  "private_artifact": {
+    "name": "StoneAge-PET-R95-Integrated-Web-Atlas.zip",
+    "bytes": 178300426,
+    "sha256": "292a33766d3879e07d23e0b3bb2c1bf9d2072a542014b7dc9128dae91e8dfe47",
+    "entrypoint": "START-R95.html",
+    "index_sha256": "45eeed7dcf42c21a4da4c39586c88d8a0d14ffa9931b85ae8b8055f5b96ebe7f",
+    "web_receipt_sha256": "345974898e2b842d69c01d3c7d5ac49c145f2ca6accdbcbe0c89513ac45b076b",
+    "build_script_sha256": "5988d68f496588660651743e8f33bef2d33393b973a800e3fa01a050f72e1b55",
+    "test_script_sha256": "eb80179270347a61d98ac4e099ac05b75084c3b829c9deb6e90782e566996346",
+    "build_receipt_sha256": "838c53ea66101bf43bdba392a737a1f919576aa2cb2f623f6180163620cce42f",
+    "logic_receipt_sha256": "12fd6aad54190db14073d1edf6a4d0bebc288091560518be75bfcf3c22668a6f",
+    "library_readback_byte_identical": true
+  },
+  "validation": {
+    "three_input_archive_sha256_crc": "PASS",
+    "jp_catalog_projection_and_kr_path_projection_match": true,
+    "projection_kind": "FNV diagnostic only",
+    "all_25_gif_bytes_match_r38_r39_and_receipt_sha256": true,
+    "all_gif_frames_decode": true,
+    "prior_members_byte_identical": 49329,
+    "output_members": 49334,
+    "prior_structured_rows_fields_equal": true,
+    "output_crc": "PASS",
+    "independent_library_readback_crc": "PASS",
+    "js_syntax": "PASS",
+    "node_vm_dom_doubles": {
+      "cards": 3616,
+      "exact_id": 3616,
+      "filter_counts": 16,
+      "web_images": 25,
+      "web_missing_local": 258,
+      "hash_deeplink": true,
+      "search": true
+    },
+    "initial_overlap_assertion": "25 GIF files already exist byte-identically in R94; reused rather than duplicated; final clean rebuild passed.",
+    "actual_browser": false,
+    "user_local_inspection": false
+  },
+  "limits": [
+    "No new original image bytes retrieved; 25 prior private GIF members reused. Historical SHA does not imply locally accessible image.",
+    "Japanese named web positions and Korean anonymous image paths are independent evidence entities; no species count or native client identity promotion.",
+    "R94 client association gap446 and reverse gap42 unchanged; strict29/name14/strict67 unchanged.",
+    "Only JP/KR web source records added; later named historical event records still separate. No original assets public, no official closure."
+  ],
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Integrate existing source-qualified later named JP/KR event records and actual acquisition context without same-name merge; pursue available official source identity/master fields for446 client gaps and42 reverse gaps. Avoid repetitive repackaging without new substantive fields. Actual browser/user acceptance remains open."
+}

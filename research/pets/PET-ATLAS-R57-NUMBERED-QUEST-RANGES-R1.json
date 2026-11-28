@@ -1,0 +1,115 @@
+{
+  "schema": "stoneage.pet-atlas-r57.numbered-quest-ranges-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "f547f8d9351d3bdb5e01970ac24b29deaa573998",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "prior_ci": [
+    45995634425,
+    45995634467,
+    45995635089
+  ],
+  "sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2003-9-19/n439_356117.html?_platform=PC",
+      "date": "2003-09-19",
+      "lines": [
+        18,
+        31
+      ],
+      "grade": "DATED_PLAYER_NUMBERED_ENCOUNTER"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2003-9-16/n445_361305.html",
+      "date": "2003-09-16",
+      "lines": [
+        14,
+        20
+      ],
+      "grade": "DATED_PLAYER_QUEST_GUIDE"
+    },
+    {
+      "url": "https://games.sina.com.cn/z/sta/2003-11-21/71680.shtml?from=wap",
+      "date": "2003-11-21",
+      "lines": [
+        24,
+        24
+      ],
+      "grade": "DATED_PLAYER_COMPILATION_RANGE_UNVERIFIED"
+    }
+  ],
+  "summary": {
+    "reports": 15,
+    "numbered_encounters": 12,
+    "quest_reward": 1,
+    "reported_range_pairs": 2,
+    "range_conflicts": 1,
+    "portal_positions": 13,
+    "linked_positions": 30,
+    "reference_edges": 30,
+    "by_lane": {
+      "tw75": 15,
+      "cn85_original": 15
+    },
+    "unmatched": []
+  },
+  "source_overlap": "November and December maritime compilations share the same fifteen entries; do not count as independent samples. Two prior hf86 bird reports not repeated.",
+  "qualification": "All 12 portal numbers and names match R55; no same-deployment original identity or capture closure. Quest guide corroborates reported level-1 reward, not official runtime. 培罗多 claimed HP63–75 conflicts with sample56; both retained. Both claimed ranges are player reports, not theory extrema.",
+  "prior_zip": "693b4bb4465f71d972aa658b0c1e02a310a66b117f87269636e391b089f14297",
+  "private_files": [
+    [
+      "StoneAge-PET-R57-Numbered-Quest-Ranges.zip",
+      5017088,
+      "20d6997af0cee431c2e28e7e6baa04dc6bff1a544bd63d051c887dd62ad37edc"
+    ],
+    [
+      "R57-numbered-quest-ranges.json",
+      null,
+      "fbba4a96a1ae028452dc49ef90ef1a3d45364ac82352edc72268cd9a5e5661b9"
+    ],
+    [
+      "r57-facts.tsv",
+      null,
+      "611d4c5717484cb079701d45acbfd348eb75e9cd0c7f1db1743fd3f7e684317e"
+    ],
+    [
+      "build_r57.py",
+      null,
+      "7835615be9fffd9274b1ca0af2c49275c4999c2bd03c4ad21ebac4a4bb1cdaec"
+    ],
+    [
+      "test_r57.py",
+      null,
+      "397e9c5819799ecea5f6f47d9c7ca2df338ce39bfd33dcffe7244dc36cf21742"
+    ],
+    [
+      "R57-build.log",
+      null,
+      "725068446a7c8c6f3105e3aa85fb4482439c4a3e3a86df82d12e80e5534785b0"
+    ],
+    [
+      "R57-browser.log",
+      null,
+      "65f9e90be348f001bd28047695dd3ee750ac9b97bd8f5bd51f1f5f0d0190b009"
+    ]
+  ],
+  "verification": {
+    "prior_zip_hash": "PASS",
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "standalone_checks": 5,
+    "legacy_combined_checks": 3,
+    "linked_profiles": 2,
+    "network_requests_aborted": true,
+    "windows_direct_launch": false,
+    "native_motion_retested": false
+  },
+  "source_positions": 6207,
+  "portal_positions_unchanged": 302,
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Prioritize genuinely new original pet master and dated independent evidence for remaining birth/growth/skills and acquisition; avoid further counting the same 7.0 compilation. Continue actual per-pet profile integration; preserve unresolved range contradiction and no official closure."
+}

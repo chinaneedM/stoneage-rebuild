@@ -1,0 +1,40 @@
+name: PET R43 derived learning-code matrix handoff
+on:
+  push:
+    branches: [pet-atlas-r24-cn85-compatible-residual-20261127]
+    paths: ['.github/workflows/pet-atlas-r43-derived-matrix.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify pinned derived evidence and export
+        run: |
+          test "$(git hash-object research/pets/PET-ATLAS-R42-COMMUNITY-LEARNING-CODE-GATE-R1.json)" = 7a10def57468d75eff98c67602a18942a8095d53
+          python - <<'PY'
+          import json, pathlib, collections
+          p=pathlib.Path('research/pets/PET-ATLAS-R42-COMMUNITY-LEARNING-CODE-GATE-R1.json')
+          d=json.loads(p.read_bytes())
+          first={}
+          for x in d['code_rows']:
+              first.setdefault(x['pet'],x)
+          assert len(first)==237 and len(d['code_rows'])==253
+          assert len(d['skill_rows'])==282
+          for s in d['skill_rows']:
+              code=s['kind_code']
+              expected=None if code is None else [{'pet_id':k,'first_code_line':v['line']} for k,v in first.items() if code in v['code']]
+              assert expected==s['code_gate_matches']
+          assert sum(len(s['code_gate_matches'] or []) for s in d['skill_rows'])==1554
+          print('R43_MATRIX_REPLAY=PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r43-derived-matrix
+          path: |
+            research/pets/PET-ATLAS-R42-COMMUNITY-LEARNING-CODE-GATE-R1.json
+            research/pets/PET-ATLAS-R43-SAME-SOURCE-LEARNING-IDENTITY-BRIDGE-R1.json
+          retention-days: 7
+          if-no-files-found: error

@@ -1,0 +1,344 @@
+{
+  "schema": "stoneage.pet.atlas_r97.cn50_conditional_bridge.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "0419d7012cc98f4b4cb535ac8aa0a7fb266b93e9",
+  "pins": {
+    "research/pets/PET-CN50-CN85-NATIVE-NAME-CROSSWALK-R1.json": "74c0c112fed4597ee8135228625b7c3fea81a245",
+    "research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json": "0005e7d7943907c01024f5dd24132b126e4bb3f3",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-ATLAS-R94-INTEGRATED-ATLAS-R1.json": "69433fb2ef11651bdccbba4ae7dfe3f3e9168e7a",
+    "research/pets/PET-ATLAS-R95-INTEGRATED-WEB-ATLAS-R1.json": "f1222c37fdff434d1163c9565b9b187ef47e9da7"
+  },
+  "rows": [
+    {
+      "client_key": "CN50:OBS-CN50-SLOT-0223",
+      "native_source": {
+        "ordinal": 223,
+        "slot": 102,
+        "face": 28147,
+        "name": "梅尔顿 "
+      },
+      "later_source": {
+        "face": 28147,
+        "name": "梅尔顿 ",
+        "slot": 102,
+        "ordinal": 223
+      },
+      "bridge_key": "TW85:sa.exe:223",
+      "client_graphics": [
+        100862,
+        101218
+      ],
+      "bridge_graphics": [
+        100862,
+        101218
+      ],
+      "template_id": 767,
+      "template_name": "梅爾頓",
+      "template_graphic": 100862,
+      "template_row_sha256": "e46a283bc6ca4a876d71519ceb82fd70e399fcd8dbb9fc8dfd89f95c0c1b8253",
+      "portrait_sha256": "da33e6c3aea04ecfa23d030b9301009b5fcf458abe827a77108c56869062234c",
+      "grade": "DIRECT_NAME_GRAPHIC_PORTRAIT",
+      "source_grade": "EXACT_SHARED_TEMPLATE_ROW",
+      "configured_skill_ids": [
+        1,
+        2
+      ],
+      "saved_positive_routes": 0,
+      "official_same_deployment": false,
+      "official_acquisition_verified": false
+    },
+    {
+      "client_key": "CN50:OBS-CN50-SLOT-0328",
+      "native_source": {
+        "ordinal": 328,
+        "slot": 271,
+        "face": 28395,
+        "name": "奥普萨斯"
+      },
+      "later_source": {
+        "face": 28395,
+        "name": "奥普萨斯",
+        "slot": 271,
+        "ordinal": 328
+      },
+      "bridge_key": "TW85:sa.exe:328",
+      "client_graphics": [
+        101323,
+        101464
+      ],
+      "bridge_graphics": [
+        101323,
+        101467
+      ],
+      "template_id": 1009,
+      "template_name": "奧普薩斯",
+      "template_graphic": 101467,
+      "template_row_sha256": "7df840308342743607f74ff935179a34cdab4b698da052bcdcc77b6854aae130",
+      "portrait_sha256": "5b368715e65b9f664fbb3ec1201009fed0ef9b78ce5ffeec12136eda0a9d47c5",
+      "grade": "TRANSITIVE_LATER_CARRIER_GRAPHIC_PORTRAIT",
+      "source_grade": "EXACT_SHARED_TEMPLATE_ROW",
+      "configured_skill_ids": [
+        1,
+        2
+      ],
+      "saved_positive_routes": 0,
+      "official_same_deployment": false,
+      "official_acquisition_verified": false
+    },
+    {
+      "client_key": "CN50:OBS-CN50-SLOT-0331",
+      "native_source": {
+        "ordinal": 331,
+        "slot": 274,
+        "face": 28397,
+        "name": "拉佛洛斯"
+      },
+      "later_source": {
+        "face": 28397,
+        "name": "拉佛洛斯",
+        "slot": 274,
+        "ordinal": 331
+      },
+      "bridge_key": "TW85:sa.exe:331",
+      "client_graphics": [
+        101326,
+        101467
+      ],
+      "bridge_graphics": [
+        101326,
+        101464
+      ],
+      "template_id": 1012,
+      "template_name": "拉佛洛斯",
+      "template_graphic": 101464,
+      "template_row_sha256": "85513136e54c710a4c5c9a3d1b63b8d46c36f01d20ffdde4597d3a49ef976d4a",
+      "portrait_sha256": "91a1af81470aafe833c313b82804157cb130d83ea4fb6a61259daff565d06f7a",
+      "grade": "TRANSITIVE_LATER_CARRIER_GRAPHIC_PORTRAIT",
+      "source_grade": "EXACT_SHARED_TEMPLATE_ROW",
+      "configured_skill_ids": [
+        1,
+        2
+      ],
+      "saved_positive_routes": 0,
+      "official_same_deployment": false,
+      "official_acquisition_verified": false
+    },
+    {
+      "client_key": "CN50:OBS-CN50-SLOT-0358",
+      "native_source": {
+        "ordinal": 358,
+        "slot": 301,
+        "face": 28425,
+        "name": "查洛奇斯"
+      },
+      "later_source": {
+        "face": 28425,
+        "name": "查洛奇斯",
+        "slot": 301,
+        "ordinal": 358
+      },
+      "bridge_key": "TW85:sa.exe:358",
+      "client_graphics": [
+        101353,
+        101497
+      ],
+      "bridge_graphics": [
+        101353,
+        101497,
+        101607
+      ],
+      "template_id": 1056,
+      "template_name": "查洛奇斯",
+      "template_graphic": 101607,
+      "template_row_sha256": "12d033e9cea9e89a1f4351503dee515104a3bc98ef5a359575f0597ab27c0f67",
+      "portrait_sha256": "da038884aa82a88ad00e273e42d3593c22a916dd8f45196182ced26451892f7c",
+      "grade": "TRANSITIVE_LATER_CARRIER_GRAPHIC_PORTRAIT",
+      "source_grade": "EXACT_SHARED_TEMPLATE_ROW",
+      "configured_skill_ids": [
+        1,
+        2
+      ],
+      "saved_positive_routes": 0,
+      "official_same_deployment": false,
+      "official_acquisition_verified": false
+    },
+    {
+      "client_key": "CN50:OBS-CN50-SLOT-0359",
+      "native_source": {
+        "ordinal": 359,
+        "slot": 302,
+        "face": 28426,
+        "name": "查洛可利"
+      },
+      "later_source": {
+        "face": 28426,
+        "name": "查洛可利",
+        "slot": 302,
+        "ordinal": 359
+      },
+      "bridge_key": "TW85:sa.exe:359",
+      "client_graphics": [
+        101354,
+        101498
+      ],
+      "bridge_graphics": [
+        101354,
+        101498,
+        101608
+      ],
+      "template_id": 1057,
+      "template_name": "查洛可利",
+      "template_graphic": 101608,
+      "template_row_sha256": "796c3998557ba8c6b252704b33546969a7e4d6cf4e075cc32b574cadd6cce8c8",
+      "portrait_sha256": "33734d8f8df66f15fa75f57ea77fb12ecc98f4430fe1ea5e7c36feb40b7ee349",
+      "grade": "TRANSITIVE_LATER_CARRIER_GRAPHIC_PORTRAIT",
+      "source_grade": "EXACT_SHARED_TEMPLATE_ROW",
+      "configured_skill_ids": [
+        1,
+        2
+      ],
+      "saved_positive_routes": 0,
+      "official_same_deployment": false,
+      "official_acquisition_verified": false
+    },
+    {
+      "client_key": "CN50:OBS-CN50-SLOT-0360",
+      "native_source": {
+        "ordinal": 360,
+        "slot": 303,
+        "face": 28427,
+        "name": "查洛毕尔"
+      },
+      "later_source": {
+        "face": 28427,
+        "name": "查洛毕尔",
+        "slot": 303,
+        "ordinal": 360
+      },
+      "bridge_key": "TW85:sa.exe:360",
+      "client_graphics": [
+        101355,
+        101499
+      ],
+      "bridge_graphics": [
+        101355,
+        101499,
+        101609
+      ],
+      "template_id": 1058,
+      "template_name": "查洛畢爾",
+      "template_graphic": 101609,
+      "template_row_sha256": "fcbe0f4ec62c468dc695597affb6ab378820b4febd42489ab1fbf856ad72c460",
+      "portrait_sha256": "11684734b11373fb26aee08a2882cebad65a3148ec4b75063a3187ea2316f704",
+      "grade": "TRANSITIVE_LATER_CARRIER_GRAPHIC_PORTRAIT",
+      "source_grade": "EXACT_SHARED_TEMPLATE_ROW",
+      "configured_skill_ids": [
+        1,
+        2
+      ],
+      "saved_positive_routes": 0,
+      "official_same_deployment": false,
+      "official_acquisition_verified": false
+    },
+    {
+      "client_key": "CN50:OBS-CN50-SLOT-0361",
+      "native_source": {
+        "ordinal": 361,
+        "slot": 304,
+        "face": 28428,
+        "name": "查洛比克"
+      },
+      "later_source": {
+        "face": 28428,
+        "name": "查洛比克",
+        "slot": 304,
+        "ordinal": 361
+      },
+      "bridge_key": "TW85:sa.exe:361",
+      "client_graphics": [
+        101000,
+        101356,
+        101500
+      ],
+      "bridge_graphics": [
+        101000,
+        101356,
+        101500,
+        101610
+      ],
+      "template_id": 1059,
+      "template_name": "查洛比克",
+      "template_graphic": 101610,
+      "template_row_sha256": "e1667558452f3c380ee39fd71c472094fdeb543c7afd09530b5163747672280b",
+      "portrait_sha256": "be6ac271b5e04a6597c17e36035753559a88973b93dd3532a471b82de9a8333e",
+      "grade": "TRANSITIVE_LATER_CARRIER_GRAPHIC_PORTRAIT",
+      "source_grade": "EXACT_SHARED_TEMPLATE_ROW",
+      "configured_skill_ids": [
+        1,
+        2
+      ],
+      "saved_positive_routes": 0,
+      "official_same_deployment": false,
+      "official_acquisition_verified": false
+    }
+  ],
+  "summary": {
+    "client_positions": 2866,
+    "client_gap_before": 446,
+    "client_gap_after_conditional": 439,
+    "cn50_positions": 305,
+    "cn50_ref_before": 295,
+    "cn50_ref_after": 302,
+    "direct": 1,
+    "transitive": 6,
+    "conditional_edges": 2583,
+    "reverse_gap": 42,
+    "source_positions": 3616,
+    "official_closures": 0
+  },
+  "scan": {
+    "gaps_scanned": 446,
+    "any_byte_identical_portrait_peer": 406,
+    "normalized_name_graphic_portrait_peer": 394,
+    "existing_qualified_target_unique": 7
+  },
+  "private_artifacts": {
+    "r96": {
+      "bytes": 178859878,
+      "sha256": "25719965381799e6f1d0f4807e3a46999f46d51b007aa8223716accc0a491819",
+      "members": 49336,
+      "independent_library_readback": true
+    },
+    "r97": {
+      "name": "StoneAge-PET-R97-Conditional-Bridge-Atlas.zip",
+      "bytes": 179973028,
+      "sha256": "5bb7ea36171359221759aa396f77c631fe16b7101c2ee9a3f12fbcfa0b32d5c1",
+      "members": 49339,
+      "entrypoint": "START-R97.html",
+      "independent_library_readback": true
+    }
+  },
+  "validation": {
+    "prior_members_crc_size_unchanged": 49336,
+    "zip_crc": "PASS",
+    "all_467_fields_unchanged": true,
+    "three_filter_counts_pass": true,
+    "seven_card_branches_pass": true,
+    "js_syntax": "PASS",
+    "actual_browser": false,
+    "user_local_inspection": false,
+    "r96_full_display_projection_independent_check": false
+  },
+  "limits": [
+    "Decoded portrait PNG SHA equality is not original RD or same deployment proof.",
+    "One direct and six transitive conditional references only; no official stat/acquisition promotion.",
+    "Search normalization and shared graphic keys are not unique native species IDs.",
+    "Actual browser and user inspection open; R96 full display projection independent check outstanding."
+  ],
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Investigate remaining 439 client positions and 42 reverse gaps by separate source-qualified named/master/dated acquisition evidence; prioritize three CN50 residuals and actual source graphic conflicts rather than repeat this scan. Complete R96 displayed projection check and authorized real browser acceptance separately."
+}

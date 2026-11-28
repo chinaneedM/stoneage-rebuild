@@ -1,0 +1,45 @@
+name: PET atlas R38 exact JP KR archived GIF private custody
+on:
+  push:
+    branches: [pet-atlas-r24-cn85-compatible-residual-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r38_web_gif_custody.py'
+      - '.github/workflows/pet-atlas-r38-web-gif-custody.yml'
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r38_web_gif_custody --plan-only
+  source:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        region: [JP, KR]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r38_web_gif_custody --region ${{ matrix.region }} --output "$RUNNER_TEMP/r38" --public-key research/pets/PET-ATLAS-20261127-RECOVERY-PUBLIC.pem
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r38-private-${{ matrix.region }}
+          path: |
+            ${{ runner.temp }}/r38/private.enc
+            ${{ runner.temp }}/r38/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - if: always()
+        run: rm -rf "$RUNNER_TEMP/r38"

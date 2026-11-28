@@ -1,0 +1,120 @@
+{
+  "schema": "stoneage.pet-atlas-r66.tw10-full-actions-fields-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "7e3ed7f9e3cc9796d291a60cd8e790ddc7ee0f60",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "base_tree": "f9a6269907df052e3a4e997ad018c64b318ba23f",
+  "prior_ci": [
+    46008258926,
+    46008258804,
+    46008258811
+  ],
+  "summary": {
+    "named_positions": 124,
+    "sequences": 6944,
+    "frame_positions": 70236,
+    "original_portraits": 120,
+    "missing_original_portraits": 4,
+    "later_portrait_candidates": 8,
+    "unique_motion_bitmaps": 29891,
+    "unique_png_members": 30019,
+    "template_rows": 121,
+    "template_edges": 152,
+    "distinct_template_refs": 152,
+    "route_edges": 2338,
+    "configured_skill_edges": 309,
+    "period_element_rows": 103,
+    "period_acquisition_rows": 10,
+    "mainland_period_element_rows": 119,
+    "official_promotions": 0
+  },
+  "inputs": [
+    [
+      "StoneAge-PET-R65-CN50-Visual-Gallery.zip",
+      35142501,
+      "55304a4be294437ec19468be0f1b87fb3c52d3365bea5e1c04e4794184717adb"
+    ],
+    [
+      "StoneAge-PET-R5-Part-4.zip",
+      124383558,
+      "18906ef13ccf1864246202e2719133310bf93a186d67b37577765890d246385f"
+    ]
+  ],
+  "private_files": [
+    [
+      "StoneAge-PET-R66-TW10-Full-Actions.zip",
+      122663538,
+      "ff6cbf25fd5c6c5adc93c7b9c50f7ed602467f84da1e6d5e244cc568c2158d5e"
+    ],
+    [
+      "R66-tw10-all-actions-fields.json",
+      8986485,
+      "26456efa5980dcb677b50b14ff0926a776c9b31783d395d72f77cd4274425436"
+    ],
+    [
+      "build_r66.py",
+      6092,
+      "2282fd314fc1d6e9bd06dc8ecbe129247505eb0d71771bff72f0ba55867b1c2f"
+    ],
+    [
+      "r66-template.html",
+      6687,
+      "3e560e435d9e1b18349bb7542bc3a5b493c9a38cfc369f0258f67c0f2b47e9b6"
+    ],
+    [
+      "test_r66.py",
+      3563,
+      "881224dc6af60fabee69afbf29f8e89cbeb7c2d5919bb95fde594c42be67bd09"
+    ],
+    [
+      "R66-build.log",
+      570,
+      "f20a5f869ca1433a4d6368c75b5d338a317e2dc166623bbe83c2f4460e23be58"
+    ],
+    [
+      "R66-browser.log",
+      294,
+      "c3333945fb4e113ce14f1f17e3bb138619b7dd0eee4894b010eef664d1f92033"
+    ]
+  ],
+  "qualification": "Certified TW10 retail client named local positions, not official live species. All 6944 retained source sequence records and 70236 frame positions have physical archived PNG path; all 30019 selected PNGs independently decoded, member CRC and byte/pixel digests recorded, source archive hash pinned. Reused existing source custody; original RD bytes not re-decoded. 4 original portraits missing, substitute original pose and 8 separately labeled later carrier candidates. All 152 previously recorded conditional TW75 graphic/element links verified against original source positions, R58 template row hashes match. 121 positions with conditional birth/growth values, configured skill and route evidence, not same deployment, not actual acquisition/innate or learnability. 103 period element,10 period acquisition,119 CN2003 reference positions. No new historical source, no identity promotion. Archive is 3-lane viewer with full TW10 action assets only, CN50/CN85 limited preview, other lanes full actions need older asset volumes.",
+  "verification": {
+    "prior_r65_zip_crc": true,
+    "r5_part4_pinned_sha256_selected_members_crc": true,
+    "all_sequence_counts_and_spr_metadata_replayed": true,
+    "all_30019_png_decoded": true,
+    "all_output_selected_png_hashes_match": true,
+    "output_zip_crc": true,
+    "prior_6207_rows_index_exact_bytes": true,
+    "all_prior_files_exact_except_two_gallery_navigation_links": true,
+    "private_library_download_byte_equal": true,
+    "chromium_zip_document_replay": "PASS",
+    "all_124_rows": true,
+    "decoded_image_references": 256,
+    "selectable_sequence_options": 6944,
+    "pages": 11,
+    "filters": {
+      "missing_original_portrait": 4,
+      "with_template": 121,
+      "no_template": 3,
+      "period_acquisition": 10
+    },
+    "normalized_search": true,
+    "exact_id": true,
+    "sequence_direction_change": true,
+    "step_play_pause": true,
+    "conditional_Lv1_growth_routes_sample": true,
+    "missing_portrait_candidate_sample": true,
+    "external_requests": 0,
+    "js_errors": 0,
+    "harness_csp_base_only_changed": true,
+    "windows_direct_launch": false,
+    "native_runtime_retested": false,
+    "user_local_inspection": false
+  },
+  "official_closures": 0,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Prioritize new original master/skills/acquisition/growth evidence. Taiwan 8.5 named grid compact preview using existing same-carrier visual custody and per-record conditions; do not repeat TW10 all-action packing. Source-bound unresolved fields and original runtime caveats remain, user local inspection outstanding."
+}

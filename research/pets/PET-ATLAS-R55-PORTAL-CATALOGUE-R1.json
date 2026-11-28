@@ -1,0 +1,170 @@
+{
+  "schema": "stoneage.pet-atlas-r55.portal-catalogue-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "6b37d79b9bce07d535415fb56134729ab6d2b5c4",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "source_grade": "LEGACY_PC_PORTAL_UNDATED_BUILD_UNVERIFIED",
+  "source": {
+    "page": 48,
+    "url": "https://news.17173.com/z/stoneage/chongwu/petshow48.htm",
+    "access": "DIRECT_RENDERED",
+    "rendered_lines": 585,
+    "record_lines": [
+      8,
+      578
+    ],
+    "physical_records": 40,
+    "numbers": [
+      307,
+      346
+    ],
+    "heading": "6.0海贼王遗迹",
+    "heading_is_family": false,
+    "prior_rendered_line_count": 2158,
+    "raw_source_bytes_authenticated": false,
+    "terminal_catalogue_boundary_proven": false
+  },
+  "summary": {
+    "new_catalogue_positions": 40,
+    "cumulative_catalogue_positions": 302,
+    "birth_missing_rows": 40,
+    "unknown_growth_rows": 40,
+    "lv1_location_reward_rows": 11,
+    "capacity_known": 40,
+    "element_known": 38,
+    "element_missing": 2,
+    "reference_edges": 80,
+    "linked_positions": 78,
+    "by_lane": {
+      "tw75": 40,
+      "cn85_original": 40
+    },
+    "by_grade": {
+      "literal_detail_name": 66,
+      "normalized_detail_name": 10,
+      "quarantined_duplicate_detail_name": 4
+    },
+    "element_comparison": {
+      "equal": 35,
+      "conflict": 3,
+      "unknown": 42
+    },
+    "unmatched_numbers": []
+  },
+  "cumulative": {
+    "birth_range_rows": 111,
+    "full_growth_endpoint_rows": 73,
+    "partial_growth_rows": 31,
+    "lv1_location_reward_rows": 212,
+    "capacity_known": 300
+  },
+  "conflicts": [
+    {
+      "number": 310,
+      "portal": "earth1 wind9",
+      "tw75": "earth1 water9"
+    },
+    {
+      "number": 330,
+      "portal": "earth2 wind8",
+      "tw75": "earth8 wind2"
+    },
+    {
+      "number": 335,
+      "portal": "fire2 wind8",
+      "tw75": "fire8 wind2"
+    }
+  ],
+  "duplicate_name_quarantine": [
+    321,
+    322
+  ],
+  "missing_elements": [
+    345,
+    346
+  ],
+  "acquisition_reports": {
+    "sea_location": [
+      328,
+      329,
+      333,
+      338,
+      339,
+      340,
+      342,
+      343
+    ],
+    "equipment_condition": [
+      339,
+      340,
+      342
+    ],
+    "historical_gift": [
+      335,
+      345,
+      346
+    ],
+    "verified_capture": false,
+    "calendar_convention_verified": false
+  },
+  "prior_zip": "f9c29170d0471f9dabdeb6c9d83cf8bdcdb53441ad2ae3dc6d0d8d05e5fbd734",
+  "private_files": [
+    [
+      "StoneAge-PET-R55-Portal-Catalogue.zip",
+      5014820,
+      "d12e3bc9b03bdc8eb6f34de574b8d5b3ced2a21c44385267a0a12d630c3a3509"
+    ],
+    [
+      "R55-portal-catalogue.json",
+      null,
+      "f92456b0b20af2db54b0b2e7eda36894143cbd354c7eee514a20dcf66ecc1e2a"
+    ],
+    [
+      "r55-facts.tsv",
+      null,
+      "c17c3f8c39f4d3f1ffa73515362ee35234b4978328cba958a1954edd9e9fd3a3"
+    ],
+    [
+      "build_r55.py",
+      null,
+      "9afb4a64758195a4b0f61d68843b82cbf707dda32906ec4c499e4379202df7ee"
+    ],
+    [
+      "test_r55.py",
+      null,
+      "3fbbdc00403004e5b37bab3eb965f1a89a80a6d6c2465738dd6f05839b62ed9e"
+    ],
+    [
+      "R55-build.log",
+      null,
+      "4d7c414c0f03d3cbefa0281cca867086a77caa3993a087e9c2d082ed3a7caccc"
+    ],
+    [
+      "R55-browser.log",
+      null,
+      "e6fe193c3dc14c075c7c6499716af38645d0ec97d80197d297b9767c5cef7a36"
+    ]
+  ],
+  "custody": "private Library /石器时代",
+  "verification": {
+    "prior_zip_hash": "PASS",
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_count": 302,
+    "number_checks": 10,
+    "duplicate_name_search": true,
+    "profile_checks": 2,
+    "requests_aborted": true,
+    "shipped_csp_preserved": true,
+    "windows_direct_launch": false,
+    "native_motion_retested": false
+  },
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "official_closures": 0,
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Inspect actual index links or later pages only with positive evidence; independently corroborate sea location/equipment and gift reports with dated operator evidence; keep blocked pages and unresolved birth/growth/identity. No repeated bulk retry; no final catalogue boundary assumed."
+}

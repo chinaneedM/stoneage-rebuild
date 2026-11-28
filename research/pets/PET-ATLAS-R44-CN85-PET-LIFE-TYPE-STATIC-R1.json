@@ -1,0 +1,187 @@
+{
+  "schema": "stoneage.pet-atlas-r44.cn85-pet-life-type-static-r1",
+  "date": "2026-11-27",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "b60928ef33c6145807681d05c857609b8cb03591",
+  "source": {
+    "archive_sha256": "747dfd8d44274d5d128c2784ed32462eb1930861160003445ec6f7cfe827e843",
+    "directory_receipt_blob": "1f07c9ad89d4506abf31ca8c8927b747a56c253a",
+    "transfer_receipt_blob": "a6ed895e5b6b18ebaa1c02e809da5a17937dd176",
+    "member": "Files\\bin\\petlifetype.bin",
+    "bytes": 303,
+    "sha256": "1439771b03afbaefa06b08d87586b3fca260a37f021bb483909201fd9cc15bad",
+    "member_bytes_available_this_unit": false,
+    "private_R18_envelope_sha256": "a20ead31a9e13be0c853619dddd9811856105efbe207bdac7d2bdd787ec5435b",
+    "authentication": "RSA-OAEP/AES-GCM, inner CRC and all member hashes verified locally"
+  },
+  "programs": [
+    {
+      "file": "sa_25_payment.exe",
+      "bytes": 950272,
+      "sha256": "14743ece3931bcae6ae5b442ee949d85c7526c36d485a1bee92e6e99ca29f14a",
+      "filename_va": "0x4a8358",
+      "dispatch_calls": [
+        "0x40aefc",
+        "0x40afe5"
+      ],
+      "parser": "0x40ae50",
+      "tokenizer": "0x40add0",
+      "line_transform": "0x40acf0",
+      "table_base": "0x0ed2aea0",
+      "display_function": "0x466400",
+      "display_case_3": "0x4665c3",
+      "display_case_4": "0x466625",
+      "display_table_refs": [
+        "0x466613",
+        "0x466679"
+      ],
+      "format_va": "0x4a8428",
+      "record_stride": 132,
+      "record_valid": "0x0ed78870",
+      "record_time": "0x0ed78878",
+      "record_type": "0x0ed78880",
+      "spans": [
+        [
+          "0x40acf0",
+          "0x40adc8",
+          "25b1973b12a839203bd2fa4cf9a302648f29a2fa90f3a23b1796f7e74089e0a5"
+        ],
+        [
+          "0x40add0",
+          "0x40ae43",
+          "747d3f8a9c498b8a78a2347d73ec53f604516066572ebf9989e35eadb3c3bf7f"
+        ],
+        [
+          "0x40ae50",
+          "0x40aed2",
+          "e9514f69ba24f8bd928969c1c7e35389ca9c817252b87633fb51f8dd97c65807"
+        ],
+        [
+          "0x40aee0",
+          "0x40af2b",
+          "69f30d050221efeea2c2ebfb7d3ef269b9102535ed8adcb466aae30ef29a6732"
+        ],
+        [
+          "0x40af30",
+          "0x40b040",
+          "9c6b94171f4270f3ce8b1f3232668cb78cef0c8c009198786a8df610a9099a1f"
+        ],
+        [
+          "0x466400",
+          "0x466691",
+          "3793c3f5c7c8d2f8942f30873013a6d57e9314076a126f18f02937bd44071713"
+        ],
+        [
+          "0x4667c0",
+          "0x4667d4",
+          "2c7442fc961c75e5edcf8594edb7eb5e5dc44bce7a3ccdf8266ffcb9e8d22c2f"
+        ]
+      ]
+    },
+    {
+      "file": "sa_85_free.exe",
+      "bytes": 1060864,
+      "sha256": "88b7b453b63c310b41f6373a9adacdd2f39fb2125283a203e126e4d79dee539c",
+      "filename_va": "0x4bf408",
+      "dispatch_calls": [
+        "0x40d97c",
+        "0x40da65"
+      ],
+      "parser": "0x40d8d0",
+      "tokenizer": "0x40d850",
+      "line_transform": "0x40d770",
+      "table_base": "0x0ed8d260",
+      "display_function": "0x4782f0",
+      "display_case_3": "0x4784b3",
+      "display_case_4": "0x478515",
+      "display_table_refs": [
+        "0x478503",
+        "0x478569"
+      ],
+      "format_va": "0x4bf2b4",
+      "record_stride": 2912,
+      "record_valid": "0x0eddeb8e",
+      "record_time": "0x0eddf66c",
+      "record_type": "0x0eddf674",
+      "spans": [
+        [
+          "0x40d770",
+          "0x40d848",
+          "c576f367c68abbccff639f9b8a30910cda668c78312369db464337c201033549"
+        ],
+        [
+          "0x40d850",
+          "0x40d8c3",
+          "747d3f8a9c498b8a78a2347d73ec53f604516066572ebf9989e35eadb3c3bf7f"
+        ],
+        [
+          "0x40d8d0",
+          "0x40d952",
+          "c38d771c3088f758bbc141594c857b84d163e78ee75529d4858e6b0b706d3ef5"
+        ],
+        [
+          "0x40d960",
+          "0x40d9ab",
+          "e485c70f50593bb7ab8892789e7364b64354b197a65f0c64eb7d7fe3a2d9d7fc"
+        ],
+        [
+          "0x40d9b0",
+          "0x40dac0",
+          "68ffac44cff8aa2bab42a975e1f32911b21dd6b3ff6002ec573fd25ed227c9b0"
+        ],
+        [
+          "0x4782f0",
+          "0x478581",
+          "7473fa334704a67a6d4cf6518698fbf7bc4f886cfeac743d42f95d2316bfd9ed"
+        ],
+        [
+          "0x4786b0",
+          "0x4786c4",
+          "c118215a0ee2b369524c0da43e943a00ad391898efd364697e3f86f042afedc7"
+        ]
+      ]
+    }
+  ],
+  "findings": {
+    "separator": 9,
+    "index_upper_exclusive": 1024,
+    "negative_index_guard_observed": false,
+    "slot_stride_bytes": 256,
+    "second_token": "NUL-terminated string copied",
+    "file_path_line_transform": "byte transform precedes tab-token parsing in disk reader; other dispatcher receives supplied string",
+    "display": "cases 3 and 4 choose direct pet slot or ordinal among valid records, require nonnegative time and nonzero type, format indexed string with %s",
+    "adjacent_cases": "cases 1 and 2 render time or expiry, with original day/hour/minute and expired literals",
+    "classification": "STATIC_LIFETIME_TYPE_LABEL_LOOKUP_NOT_ENCYCLOPEDIA_DESCRIPTION_PROOF",
+    "index_is_species_id": false,
+    "actual_label_values_recovered": 0,
+    "actual_descriptions_recovered": 0,
+    "runtime_verified": false
+  },
+  "inventory": {
+    "cn85_receipt_entries": 759,
+    "tw1_disc_files": 411,
+    "tw1_core_files": 383,
+    "tw1_named_master_candidates": 0,
+    "scope": "filename-level bounded review; no absence claim for compressed or embedded resources",
+    "cn85_gui_candidates": [
+      "PetList.bin",
+      "PetStatus.bin",
+      "PetMail.bin",
+      "PetStore.bin"
+    ],
+    "cn85_nested_archive": "DefaultComponent\\yy-45.7z",
+    "nested_inspected": false
+  },
+  "r43_private_zip": {
+    "bytes": 4972008,
+    "sha256": "5f0c0734cfea116c6204b4ccd9e6f56e1d57fdc7581427667ead9a26c0844ebf",
+    "crc": "PASS",
+    "new_atlas_generated": false
+  },
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "official_closures": 0,
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Recover exact 303-byte authenticated member if retained without repeating blocked large-archive transfers; replay disk transform on it with explicit bounds and extract labels separately, then inspect exact GUI or nested archive if safely available. Seek actual per-pet original descriptions, preserve unknowns; do not substitute labels or reuse community ID-only joins."
+}

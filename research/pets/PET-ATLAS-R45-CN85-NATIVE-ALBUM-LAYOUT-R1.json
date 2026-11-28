@@ -1,0 +1,238 @@
+{
+  "schema": "stoneage.pet-atlas-r45.cn85-native-album-layout-r1",
+  "date": "2026-11-27",
+  "parent": "0345988d1b9577ecc07b938dd0eb019c28396600",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "source_pins": {
+    "PET122": "a6ed895e5b6b18ebaa1c02e809da5a17937dd176",
+    "PET124": "17a42f4de1d9e508b580c88de70bb012d7e03c9b",
+    "R44": "7890335446997ee4751d34db31c99d54aace713a"
+  },
+  "private_replay": {
+    "report": "R45-native-album-layout.json",
+    "sha256": "6794d05eaddb47be7c55159ad4d5a0531406cab3a526b7b214404e80a54958b3",
+    "script": "audit_r45_album_layout.py",
+    "script_sha256": "334561883b7d328b5eeabe3b6b8ac71eb74919e1acdec08d9c7b1569d82b600f",
+    "status": "PASS",
+    "custody": "private Library /石器时代",
+    "outer_sha256": "a20ead31a9e13be0c853619dddd9811856105efbe207bdac7d2bdd787ec5435b",
+    "inner_sha256": "862155837ce468e4d319d9b7e6971c5d975a57235c2d5b50fd98cf7b40dcca48",
+    "authenticated_members": 11,
+    "petlifetype_or_album_payload_in_envelope": false
+  },
+  "programs": [
+    {
+      "file": "sa_25_payment.exe",
+      "sha256": "14743ece3931bcae6ae5b442ee949d85c7526c36d485a1bee92e6e99ca29f14a",
+      "table_va": "0x4cd0a8",
+      "album_base": "0x45e02a0",
+      "writer": "0x44c400",
+      "initializer": "0x44c4f0",
+      "registration": "0x44d56a",
+      "photo": "0x453eec",
+      "selection": "0x45a11c",
+      "display": "0x45a2ed",
+      "live_numeric_base": "0xed78800",
+      "live_stride": 132,
+      "spans": [
+        [
+          "0x44c400",
+          "0x44c4e8",
+          "de6254394bdb131ca796a6e470686a994213b2f0ff7ac9aa5469db539bdf353a"
+        ],
+        [
+          "0x44c4f0",
+          "0x44c9bb",
+          "d58ea90578a0d6007e42d2910b55be25da9b6bcdef46e9784a60f75173491581"
+        ],
+        [
+          "0x44d56a",
+          "0x44d5c5",
+          "617e9495a2a77e49e5d11974821d51af4c5718c372ee4c34a0fddaeb89dfa7dc"
+        ],
+        [
+          "0x453eec",
+          "0x454040",
+          "b96774b0ffa8206105a8dec340e40e7c52c27744916b650612469bc0eda484d3"
+        ],
+        [
+          "0x45a11c",
+          "0x45a136",
+          "576aaf4c59df2bc2afb37b984b38ba9fd44493c3c891c7a4b609c57ef120b620"
+        ],
+        [
+          "0x45a2ed",
+          "0x45a74d",
+          "92680362017e43727285042fbf57655bc1b684a32a743799ca9dfd8237e9b1d6"
+        ]
+      ]
+    },
+    {
+      "file": "sa_85_free.exe",
+      "sha256": "88b7b453b63c310b41f6373a9adacdd2f39fb2125283a203e126e4d79dee539c",
+      "table_va": "0x4e6f80",
+      "album_base": "0x463efa8",
+      "writer": "0x457c60",
+      "initializer": "0x457d50",
+      "registration": "0x458dca",
+      "photo": "0x462a94",
+      "selection": "0x469db0",
+      "display": "0x469f6c",
+      "live_numeric_base": "0xeddeb18",
+      "live_stride": 2912,
+      "spans": [
+        [
+          "0x457c60",
+          "0x457d48",
+          "bcdae35b215eb97480696528d271206ac403eb72d5c7d46b6836b2605def50ce"
+        ],
+        [
+          "0x457d50",
+          "0x45821b",
+          "818eeaf05c54df07d6c6d603cb1fbc94e46b13ec755f0041e2cf456e2c9789d5"
+        ],
+        [
+          "0x458dca",
+          "0x458e25",
+          "e84b0b56eef81c22158f066e6d99a50792ea354a4d170cebdceda8c744c38e16"
+        ],
+        [
+          "0x462a94",
+          "0x462be0",
+          "98b23762b7039b3179cab4551445f76f292d12173cbcf39523657363938f97b8"
+        ],
+        [
+          "0x469db0",
+          "0x469dca",
+          "638689ac0bfb0bb1f8d8468114daf000fd42efc2e5c49ebd0b5840ae4236d431"
+        ],
+        [
+          "0x469f6c",
+          "0x46a3cc",
+          "9c17dc88c355484cd0336a8e6a5055ee21b20be6d4f53a529460361c6067ba5f"
+        ]
+      ]
+    }
+  ],
+  "layout": {
+    "file": "data\\album_47.dat",
+    "compiled_rows": 627,
+    "compiled_row_bytes": 28,
+    "compiled_table_sha256": "16effcc4f71814a2d2aa1a00b05d1eafd42efe731bff51e792736be5964ef26d",
+    "empty_rows": 57,
+    "slot_range": [
+      0,
+      569
+    ],
+    "logical_slots": 570,
+    "record_bytes": 80,
+    "block_header_bytes": 16,
+    "block_bytes": 45616,
+    "source_member_bytes": 4515984,
+    "compatible_blocks": 99,
+    "header_content_not_read": true,
+    "fields": [
+      {
+        "offset": 0,
+        "bytes": 17,
+        "role": "compiled_name"
+      },
+      {
+        "offset": 17,
+        "bytes": 17,
+        "role": "instance_label_or_compiled_fallback"
+      },
+      {
+        "offset": 34,
+        "bytes": 2,
+        "role": "not_interpreted"
+      },
+      {
+        "offset": 36,
+        "bytes": 4,
+        "role": "compiled_portrait_alias"
+      },
+      {
+        "offset": 40,
+        "bytes": 4,
+        "live_relative_offset": 32,
+        "role": "numeric_display"
+      },
+      {
+        "offset": 44,
+        "bytes": 4,
+        "live_relative_offset": 12,
+        "role": "numeric_display"
+      },
+      {
+        "offset": 48,
+        "bytes": 4,
+        "live_relative_offset": 36,
+        "role": "numeric_display"
+      },
+      {
+        "offset": 52,
+        "bytes": 4,
+        "live_relative_offset": 44,
+        "role": "numeric_display"
+      },
+      {
+        "offset": 56,
+        "bytes": 4,
+        "live_relative_offset": 40,
+        "role": "numeric_display"
+      },
+      {
+        "offset": 60,
+        "bytes": 4,
+        "live_relative_offset": 52,
+        "role": "bar_display_with_factor_0_8"
+      },
+      {
+        "offset": 64,
+        "bytes": 4,
+        "live_relative_offset": 56,
+        "role": "bar_display_with_factor_0_8"
+      },
+      {
+        "offset": 68,
+        "bytes": 4,
+        "live_relative_offset": 60,
+        "role": "bar_display_with_factor_0_8"
+      },
+      {
+        "offset": 72,
+        "bytes": 4,
+        "live_relative_offset": 64,
+        "role": "bar_display_with_factor_0_8"
+      },
+      {
+        "offset": 76,
+        "bytes": 4,
+        "role": "state"
+      }
+    ],
+    "states": {
+      "0": "initial",
+      "1": "first seen compiled name",
+      "2": "photo completion copy",
+      "3": "photo selection and persistent write; conditional UI path accepts state>=2"
+    },
+    "native_field_labels_independently_verified": false
+  },
+  "boundaries": {
+    "native_program_executed": false,
+    "original_album_bytes_read": false,
+    "private_account_or_nickname_data_read": false,
+    "petlifetype_member_recovered": false,
+    "original_encyclopedia_descriptions_recovered": 0,
+    "official_field_closures": 0,
+    "raw_instance_values_are_species_defaults": false,
+    "prior_atlas_changed": false,
+    "source_positions": 6207,
+    "strict67": "UNCHANGED",
+    "pet": "ACTIVE",
+    "npc": "LOCKED"
+  },
+  "next": "Use actual same-source UI/field witnesses to qualify nine display values; do not access personal album records. Reopen exact small petlifetype or GUI member only if retained or independently available without repeated full-archive download. Seek original encyclopedia prose independently; preserve unknowns and R25 source gate."
+}

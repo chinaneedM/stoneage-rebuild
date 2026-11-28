@@ -1,0 +1,188 @@
+{
+  "schema": "stoneage.pet-atlas-r54.portal-catalogue-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "b939ae3cf2dce7eeb5d2f6210b3ffe4327e488d8",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "source_grade": "LEGACY_PC_PORTAL_UNDATED_BUILD_UNVERIFIED",
+  "sources": [
+    {
+      "page": 43,
+      "numbers": [
+        280,
+        281,
+        282,
+        283
+      ],
+      "family": "乌龟",
+      "access": "DIRECT_RENDERED",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow43.htm"
+    },
+    {
+      "page": 44,
+      "numbers": [
+        284,
+        285,
+        286,
+        287,
+        288
+      ],
+      "family": "飞龙",
+      "access": "DIRECT_RENDERED",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow44.htm"
+    },
+    {
+      "page": 45,
+      "numbers": [
+        289,
+        290,
+        291,
+        292
+      ],
+      "family": "河豚",
+      "access": "DIRECT_RENDERED",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow45.htm"
+    },
+    {
+      "page": 46,
+      "numbers": [
+        293,
+        294,
+        295,
+        296
+      ],
+      "family": "剑龙",
+      "access": "FULL_SEARCH_CACHE_DIRECT_OPEN_FAILED_PREVIOUS_ROUND",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow46.htm"
+    }
+  ],
+  "blocked_direct_pages": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    47
+  ],
+  "prior_blocked_pages": [
+    29,
+    31,
+    32,
+    34
+  ],
+  "index_direct": "TIMEOUT",
+  "page48": {
+    "url": "https://news.17173.com/z/stoneage/chongwu/petshow48.htm",
+    "status": "DIRECT_RENDERED_PARTIAL_READ_NOT_EXTRACTED",
+    "heading": "6.0海贼王遗迹",
+    "total_rendered_lines": 2158,
+    "observed_first_number": 307,
+    "observed_last_number": 346,
+    "complete_row_count_not_asserted": true
+  },
+  "summary": {
+    "new_catalogue_positions": 17,
+    "cumulative_catalogue_positions": 262,
+    "birth_range_rows": 0,
+    "birth_mixed_rows": 0,
+    "birth_missing_rows": 17,
+    "birth_scalar_rows": 0,
+    "full_growth_endpoint_rows": 0,
+    "growth_scalar_rows": 0,
+    "partial_growth_rows": 0,
+    "unknown_growth_rows": 17,
+    "lv1_location_reward_rows": 17,
+    "capacity_known": 17,
+    "reference_edges": 48,
+    "linked_positions": 48,
+    "by_lane": {
+      "cn50": 16,
+      "tw75": 16,
+      "cn85_original": 16
+    },
+    "by_grade": {
+      "literal_detail_name": 40,
+      "normalized_detail_name": 8
+    },
+    "element_comparison": {
+      "unknown": 32,
+      "equal": 15,
+      "conflict": 1
+    },
+    "unmatched_numbers": [
+      282
+    ]
+  },
+  "source_access_counts": {
+    "direct_rendered": 13,
+    "full_search_cache": 4
+  },
+  "conflict": {
+    "number": 295,
+    "name": "西顿克尔",
+    "portal": "火6风4",
+    "tw75": "火8风2",
+    "qualification": "retain both; no merge"
+  },
+  "all_17_hatched_report": true,
+  "actual_hatching_recipe_verified": false,
+  "private_files": [
+    [
+      "StoneAge-PET-R54-Portal-Catalogue.zip",
+      5008930,
+      "f9c29170d0471f9dabdeb6c9d83cf8bdcdb53441ad2ae3dc6d0d8d05e5fbd734"
+    ],
+    [
+      "R54-portal-catalogue.json",
+      null,
+      "6a23b9c779030217a39bb762650cc5fb253325385920c15b1865c624846bf1f7"
+    ],
+    [
+      "r54-facts.tsv",
+      null,
+      "323539866f16e00f35cce30950b6681ad9140be426f8dbef476d2a80a5794e6a"
+    ],
+    [
+      "build_r54.py",
+      null,
+      "e6b67e9159fe79b6eec55249b890370c3e5818ea7f391276b4e5a47870d0c4db"
+    ],
+    [
+      "test_r54.py",
+      null,
+      "5b84b7160aa3d6cb3b1120bd4d3376b8cce7df0a03d5cbda97f1d4550df135f5"
+    ],
+    [
+      "R54-build.log",
+      null,
+      "c0a4cb76f3f2bf9a0f1c67191953f0a3d75b0a21bab4f9f5eefd2d7b632eccb3"
+    ],
+    [
+      "R54-browser.log",
+      null,
+      "d215380bc9f22afb98fc6b6964db7eb25221156983e00b48e981c3f892ba3249"
+    ]
+  ],
+  "prior_zip": "6f4c23eaca0a66f92442c96c87d0943c3ac8fee19ecbf894a662f460d70de0e6",
+  "custody": "private Library /石器时代",
+  "verification": {
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_count": 262,
+    "number_checks": 8,
+    "missing_number_checks": 3,
+    "profile_checks": 3,
+    "requests_aborted": true,
+    "windows_direct_launch": false
+  },
+  "raw_source_bytes_authenticated": false,
+  "official_closures": 0,
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Extract actual complete page48 in bounded line windows; page has 2158 rendered lines, witnessed 307 and346 endpoints, check physical rows and missing elements explicitly. Then inspect actual later links and independent dated/operator source. Keep blocked pages29/31/32/34/36–42/47 unresolved; no repeated failed requests without positive access evidence. Do not infer the catalogue terminal boundary."
+}

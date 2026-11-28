@@ -1,0 +1,606 @@
+{
+  "schema": "stoneage.pet-atlas-r46.cn85-album-K-crosswalk-r1",
+  "date": "2026-11-27",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "3ba867e698ccc5c5f1e8ee0a0a3bd8fddd6b80e8",
+  "R45_blob": "b69848cb6abb5be07abec5c92909f7923e1ef9cd",
+  "early_reference_blobs": [
+    "d04c9442e7c16f7bff99f597cb99228dcd63f584",
+    "afdf6c440379f9e59a8d98b651c3c2aa27b0990c",
+    "3bbf843e9d7475f6ba2584ad3e283ac9bc2c16c5"
+  ],
+  "private_replay": {
+    "report": "R46-album-K-crosswalk.json",
+    "sha256": "d4b07bd7738b9af2b64515f8d59cdfb707a9124f24da1dc0d630e85f05130f92",
+    "script": "audit_r46_album_k.py",
+    "script_sha256": "7edd1aba4e8f0b08379f3500658bbc18288e95fd7070cf327a10c4bb5a11853d",
+    "status": "PASS",
+    "custody": "private Library /石器时代"
+  },
+  "programs": [
+    {
+      "program": "sa_25_payment.exe",
+      "sha256": "14743ece3931bcae6ae5b442ee949d85c7526c36d485a1bee92e6e99ca29f14a",
+      "base": "0xed78800",
+      "stride": 132,
+      "dispatcher": "0x4610de",
+      "K_handler": "0x461a94",
+      "name_tokens": [
+        21,
+        22
+      ],
+      "spans": [
+        [
+          "0x4610de",
+          "0x4610fd",
+          "d11ee782620fd7b7a06a9eda8c80ca84981047cf1da478a9a40838661fe27386"
+        ],
+        [
+          "0x461a94",
+          "0x461b2f",
+          "d8b8ccb1f80988f56780d8a9335f6df9069bb71dc10767a185e064765541564c"
+        ],
+        [
+          "0x461b2f",
+          "0x461c69",
+          "caa519f169622f5fb1a19b203f294479e6c244472350ea6c599e8737b792db4f"
+        ],
+        [
+          "0x461d96",
+          "0x461fc7",
+          "284bdd403544f2e804d08b6b3d12c01fcc2fd353666a27dc87db649ddce05ff2"
+        ],
+        [
+          "0x453f91",
+          "0x45400c",
+          "25b44405721a86f3dfed302ea79a59245d82393584f4653502cbdfdee6cc56d6"
+        ],
+        [
+          "0x45a2ed",
+          "0x45a74d",
+          "92680362017e43727285042fbf57655bc1b684a32a743799ca9dfd8237e9b1d6"
+        ],
+        [
+          "0x454123",
+          "0x454550",
+          "a9cd052efffd0e42ba6a23c389311d801bbcd5d4f7e4aa47dfd45d566ab295db"
+        ]
+      ],
+      "full_and_delta": [
+        {
+          "token": 2,
+          "field_from_early_lineage": "graphic_id",
+          "live_relative_offset": 4,
+          "full_write": "0x461b3e",
+          "delta_mask": 2,
+          "delta_write": "0x461dbb"
+        },
+        {
+          "token": 3,
+          "field_from_early_lineage": "hp",
+          "live_relative_offset": 8,
+          "full_write": "0x461b4e",
+          "delta_mask": 4,
+          "delta_write": "0x461dd7"
+        },
+        {
+          "token": 4,
+          "field_from_early_lineage": "max_hp",
+          "live_relative_offset": 12,
+          "full_write": "0x461b5e",
+          "delta_mask": 8,
+          "delta_write": "0x461df3"
+        },
+        {
+          "token": 5,
+          "field_from_early_lineage": "mp",
+          "live_relative_offset": 16,
+          "full_write": "0x461b6e",
+          "delta_mask": 16,
+          "delta_write": "0x461e0f"
+        },
+        {
+          "token": 6,
+          "field_from_early_lineage": "max_mp",
+          "live_relative_offset": 20,
+          "full_write": "0x461b7e",
+          "delta_mask": 32,
+          "delta_write": "0x461e2b"
+        },
+        {
+          "token": 7,
+          "field_from_early_lineage": "exp",
+          "live_relative_offset": 24,
+          "full_write": "0x461b91",
+          "delta_mask": 64,
+          "delta_write": "0x461e47"
+        },
+        {
+          "token": 8,
+          "field_from_early_lineage": "max_exp",
+          "live_relative_offset": 28,
+          "full_write": "0x461ba1",
+          "delta_mask": 128,
+          "delta_write": "0x461e66"
+        },
+        {
+          "token": 9,
+          "field_from_early_lineage": "level",
+          "live_relative_offset": 32,
+          "full_write": "0x461bb1",
+          "delta_mask": 256,
+          "delta_write": "0x461e85"
+        },
+        {
+          "token": 10,
+          "field_from_early_lineage": "attack",
+          "live_relative_offset": 36,
+          "full_write": "0x461bc1",
+          "delta_mask": 512,
+          "delta_write": "0x461ea4"
+        },
+        {
+          "token": 11,
+          "field_from_early_lineage": "defense",
+          "live_relative_offset": 40,
+          "full_write": "0x461bd1",
+          "delta_mask": 1024,
+          "delta_write": "0x461ec3"
+        },
+        {
+          "token": 12,
+          "field_from_early_lineage": "quick",
+          "live_relative_offset": 44,
+          "full_write": "0x461be1",
+          "delta_mask": 2048,
+          "delta_write": "0x461ee2"
+        },
+        {
+          "token": 13,
+          "field_from_early_lineage": "ai",
+          "live_relative_offset": 48,
+          "full_write": "0x461bf4",
+          "delta_mask": 4096,
+          "delta_write": "0x461f01"
+        },
+        {
+          "token": 14,
+          "field_from_early_lineage": "earth",
+          "live_relative_offset": 52,
+          "full_write": "0x461c04",
+          "delta_mask": 8192,
+          "delta_write": "0x461f20"
+        },
+        {
+          "token": 15,
+          "field_from_early_lineage": "water",
+          "live_relative_offset": 56,
+          "full_write": "0x461c14",
+          "delta_mask": 16384,
+          "delta_write": "0x461f3f"
+        },
+        {
+          "token": 16,
+          "field_from_early_lineage": "fire",
+          "live_relative_offset": 60,
+          "full_write": "0x461c24",
+          "delta_mask": 32768,
+          "delta_write": "0x461f5e"
+        },
+        {
+          "token": 17,
+          "field_from_early_lineage": "wind",
+          "live_relative_offset": 64,
+          "full_write": "0x461c34",
+          "delta_mask": 65536,
+          "delta_write": "0x461f7d"
+        },
+        {
+          "token": 18,
+          "field_from_early_lineage": "max_skill_slots",
+          "live_relative_offset": 68,
+          "full_write": "0x461c44",
+          "delta_mask": 131072,
+          "delta_write": "0x461f9c"
+        },
+        {
+          "token": 19,
+          "field_from_early_lineage": "rename_flag",
+          "live_relative_offset": 114,
+          "full_write": "0x461c57",
+          "delta_mask": 262144,
+          "delta_write": "0x461fbb"
+        }
+      ],
+      "album_join": [
+        {
+          "album_offset": 40,
+          "token": 9,
+          "field_from_early_lineage": "level",
+          "photo_read": "0x453f91",
+          "photo_write": "0x453f97",
+          "album_display_read": "0x45a326",
+          "live_status_read": "0x454123"
+        },
+        {
+          "album_offset": 44,
+          "token": 4,
+          "field_from_early_lineage": "max_hp",
+          "photo_read": "0x453f9d",
+          "photo_write": "0x453fa3",
+          "album_display_read": "0x45a35f",
+          "live_status_read": "0x45420d"
+        },
+        {
+          "album_offset": 48,
+          "token": 10,
+          "field_from_early_lineage": "attack",
+          "photo_read": "0x453fa9",
+          "photo_write": "0x453faf",
+          "album_display_read": "0x45a398",
+          "live_status_read": "0x4542e5"
+        },
+        {
+          "album_offset": 52,
+          "token": 12,
+          "field_from_early_lineage": "quick",
+          "photo_read": "0x453fb5",
+          "photo_write": "0x453fbb",
+          "album_display_read": "0x45a3d4",
+          "live_status_read": "0x45448f"
+        },
+        {
+          "album_offset": 56,
+          "token": 11,
+          "field_from_early_lineage": "defense",
+          "photo_read": "0x453fc1",
+          "photo_write": "0x453fc7",
+          "album_display_read": "0x45a407",
+          "live_status_read": "0x4543ba"
+        },
+        {
+          "album_offset": 60,
+          "token": 14,
+          "field_from_early_lineage": "earth",
+          "photo_read": "0x453fcd",
+          "photo_write": "0x453fd3",
+          "album_display_read": "0x45a43a",
+          "live_status_read": "0x454245"
+        },
+        {
+          "album_offset": 64,
+          "token": 15,
+          "field_from_early_lineage": "water",
+          "photo_read": "0x453fd9",
+          "photo_write": "0x453fdf",
+          "album_display_read": "0x45a4be",
+          "live_status_read": "0x45431a"
+        },
+        {
+          "album_offset": 68,
+          "token": 16,
+          "field_from_early_lineage": "fire",
+          "photo_read": "0x453fe5",
+          "photo_write": "0x453ffb",
+          "album_display_read": "0x45a53f",
+          "live_status_read": "0x4543ef"
+        },
+        {
+          "album_offset": 72,
+          "token": 17,
+          "field_from_early_lineage": "wind",
+          "photo_read": "0x453feb",
+          "photo_write": "0x454006",
+          "album_display_read": "0x45a5c0",
+          "live_status_read": "0x4544c4"
+        }
+      ]
+    },
+    {
+      "program": "sa_85_free.exe",
+      "sha256": "88b7b453b63c310b41f6373a9adacdd2f39fb2125283a203e126e4d79dee539c",
+      "base": "0xeddeb18",
+      "stride": 2912,
+      "dispatcher": "0x4714de",
+      "K_handler": "0x471ead",
+      "name_tokens": [
+        22,
+        23
+      ],
+      "spans": [
+        [
+          "0x4714de",
+          "0x4714f6",
+          "7aea70e6d127723a5afaad03a994790a57c573857c36d273ccd01a1298e62bb5"
+        ],
+        [
+          "0x471ead",
+          "0x471f48",
+          "5dd6d2af0756863285bf7a8ae5904b82afc18829ffb93c0b336c46ab2d8cb62a"
+        ],
+        [
+          "0x471f48",
+          "0x472092",
+          "d2a6ad5559f5e51d7c78e70f4dff471069c670d7b94c8c0b5bab94d0f48461d2"
+        ],
+        [
+          "0x4721c6",
+          "0x4723f7",
+          "8d56859a539492df7d46815d0748e9bac9b764304c819dafdf48fda6d881425e"
+        ],
+        [
+          "0x462b31",
+          "0x462bac",
+          "2b30a4e2a6785b7cfa5798f577a8b9d246a194cf593aaa5324b6d9d4ad78f466"
+        ],
+        [
+          "0x469f6c",
+          "0x46a3cc",
+          "9c17dc88c355484cd0336a8e6a5055ee21b20be6d4f53a529460361c6067ba5f"
+        ],
+        [
+          "0x462cc3",
+          "0x463100",
+          "814a3fe999f522b9a5b739ff61c8435ae12082ba3172acf4cf086f97a4b25f14"
+        ]
+      ],
+      "full_and_delta": [
+        {
+          "token": 2,
+          "field_from_early_lineage": "graphic_id",
+          "live_relative_offset": 4,
+          "full_write": "0x471f57",
+          "delta_mask": 2,
+          "delta_write": "0x4721eb"
+        },
+        {
+          "token": 3,
+          "field_from_early_lineage": "hp",
+          "live_relative_offset": 8,
+          "full_write": "0x471f67",
+          "delta_mask": 4,
+          "delta_write": "0x472207"
+        },
+        {
+          "token": 4,
+          "field_from_early_lineage": "max_hp",
+          "live_relative_offset": 12,
+          "full_write": "0x471f77",
+          "delta_mask": 8,
+          "delta_write": "0x472223"
+        },
+        {
+          "token": 5,
+          "field_from_early_lineage": "mp",
+          "live_relative_offset": 16,
+          "full_write": "0x471f87",
+          "delta_mask": 16,
+          "delta_write": "0x47223f"
+        },
+        {
+          "token": 6,
+          "field_from_early_lineage": "max_mp",
+          "live_relative_offset": 20,
+          "full_write": "0x471f97",
+          "delta_mask": 32,
+          "delta_write": "0x47225b"
+        },
+        {
+          "token": 7,
+          "field_from_early_lineage": "exp",
+          "live_relative_offset": 24,
+          "full_write": "0x471faa",
+          "delta_mask": 64,
+          "delta_write": "0x472277"
+        },
+        {
+          "token": 8,
+          "field_from_early_lineage": "max_exp",
+          "live_relative_offset": 28,
+          "full_write": "0x471fba",
+          "delta_mask": 128,
+          "delta_write": "0x472296"
+        },
+        {
+          "token": 9,
+          "field_from_early_lineage": "level",
+          "live_relative_offset": 32,
+          "full_write": "0x471fca",
+          "delta_mask": 256,
+          "delta_write": "0x4722b5"
+        },
+        {
+          "token": 10,
+          "field_from_early_lineage": "attack",
+          "live_relative_offset": 36,
+          "full_write": "0x471fda",
+          "delta_mask": 512,
+          "delta_write": "0x4722d4"
+        },
+        {
+          "token": 11,
+          "field_from_early_lineage": "defense",
+          "live_relative_offset": 40,
+          "full_write": "0x471fea",
+          "delta_mask": 1024,
+          "delta_write": "0x4722f3"
+        },
+        {
+          "token": 12,
+          "field_from_early_lineage": "quick",
+          "live_relative_offset": 44,
+          "full_write": "0x471ffa",
+          "delta_mask": 2048,
+          "delta_write": "0x472312"
+        },
+        {
+          "token": 13,
+          "field_from_early_lineage": "ai",
+          "live_relative_offset": 48,
+          "full_write": "0x47200d",
+          "delta_mask": 4096,
+          "delta_write": "0x472331"
+        },
+        {
+          "token": 14,
+          "field_from_early_lineage": "earth",
+          "live_relative_offset": 52,
+          "full_write": "0x47201d",
+          "delta_mask": 8192,
+          "delta_write": "0x472350"
+        },
+        {
+          "token": 15,
+          "field_from_early_lineage": "water",
+          "live_relative_offset": 56,
+          "full_write": "0x47202d",
+          "delta_mask": 16384,
+          "delta_write": "0x47236f"
+        },
+        {
+          "token": 16,
+          "field_from_early_lineage": "fire",
+          "live_relative_offset": 60,
+          "full_write": "0x47203d",
+          "delta_mask": 32768,
+          "delta_write": "0x47238e"
+        },
+        {
+          "token": 17,
+          "field_from_early_lineage": "wind",
+          "live_relative_offset": 64,
+          "full_write": "0x47204d",
+          "delta_mask": 65536,
+          "delta_write": "0x4723ad"
+        },
+        {
+          "token": 18,
+          "field_from_early_lineage": "max_skill_slots",
+          "live_relative_offset": 68,
+          "full_write": "0x47205d",
+          "delta_mask": 131072,
+          "delta_write": "0x4723cc"
+        },
+        {
+          "token": 19,
+          "field_from_early_lineage": "rename_flag",
+          "live_relative_offset": 120,
+          "full_write": "0x472070",
+          "delta_mask": 262144,
+          "delta_write": "0x4723eb"
+        }
+      ],
+      "album_join": [
+        {
+          "album_offset": 40,
+          "token": 9,
+          "field_from_early_lineage": "level",
+          "photo_read": "0x462b31",
+          "photo_write": "0x462b37",
+          "album_display_read": "0x469fa5",
+          "live_status_read": "0x462cc3"
+        },
+        {
+          "album_offset": 44,
+          "token": 4,
+          "field_from_early_lineage": "max_hp",
+          "photo_read": "0x462b3d",
+          "photo_write": "0x462b43",
+          "album_display_read": "0x469fde",
+          "live_status_read": "0x462dad"
+        },
+        {
+          "album_offset": 48,
+          "token": 10,
+          "field_from_early_lineage": "attack",
+          "photo_read": "0x462b49",
+          "photo_write": "0x462b4f",
+          "album_display_read": "0x46a017",
+          "live_status_read": "0x462e85"
+        },
+        {
+          "album_offset": 52,
+          "token": 12,
+          "field_from_early_lineage": "quick",
+          "photo_read": "0x462b55",
+          "photo_write": "0x462b5b",
+          "album_display_read": "0x46a053",
+          "live_status_read": "0x46302f"
+        },
+        {
+          "album_offset": 56,
+          "token": 11,
+          "field_from_early_lineage": "defense",
+          "photo_read": "0x462b61",
+          "photo_write": "0x462b67",
+          "album_display_read": "0x46a086",
+          "live_status_read": "0x462f5a"
+        },
+        {
+          "album_offset": 60,
+          "token": 14,
+          "field_from_early_lineage": "earth",
+          "photo_read": "0x462b6d",
+          "photo_write": "0x462b73",
+          "album_display_read": "0x46a0b9",
+          "live_status_read": "0x462de5"
+        },
+        {
+          "album_offset": 64,
+          "token": 15,
+          "field_from_early_lineage": "water",
+          "photo_read": "0x462b79",
+          "photo_write": "0x462b7f",
+          "album_display_read": "0x46a13d",
+          "live_status_read": "0x462eba"
+        },
+        {
+          "album_offset": 68,
+          "token": 16,
+          "field_from_early_lineage": "fire",
+          "photo_read": "0x462b85",
+          "photo_write": "0x462b9b",
+          "album_display_read": "0x46a1be",
+          "live_status_read": "0x462f8f"
+        },
+        {
+          "album_offset": 72,
+          "token": 17,
+          "field_from_early_lineage": "wind",
+          "photo_read": "0x462b8b",
+          "photo_write": "0x462ba6",
+          "album_display_read": "0x46a23f",
+          "live_status_read": "0x463064"
+        }
+      ]
+    }
+  ],
+  "semantic_grade": "CROSS_VERSION_K_TOKEN_POSITION_AND_NATIVE_DISPLAY_CONCORDANCE_NOT_SAME_DEPLOYMENT_SERVER_SENDER",
+  "first18_tokens_matched": true,
+  "full_name_token_difference": {
+    "TW1": [
+      20,
+      21
+    ],
+    "payment": [
+      21,
+      22
+    ],
+    "free": [
+      22,
+      23
+    ],
+    "full_protocol_compatibility": false,
+    "extra_numeric_semantics_not_asserted": true
+  },
+  "original_species_defaults_recovered": 0,
+  "original_album_payload_read": false,
+  "native_execution": false,
+  "original_encyclopedia_descriptions_recovered": 0,
+  "official_closures": 0,
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Prioritize actual per-pet original prose and acquisition/birth/growth sources; keep album schema as verified static crosswalk, not per-species data. Seek retained original small GUI/label members only on positive access evidence; do not repeat blocked bulk transfer."
+}
