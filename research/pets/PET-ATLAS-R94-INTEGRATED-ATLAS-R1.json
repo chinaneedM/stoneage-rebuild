@@ -1,0 +1,110 @@
+{
+  "schema": "stoneage.pet.atlas_r94.integrated_atlas.r1",
+  "date": "2026-11-28",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "0928a19a1f3822811bd371bd032cc19cc5c66046",
+  "prior_ci": [
+    46101517910,
+    46101517890,
+    46101517896
+  ],
+  "pins": {
+    "r93_receipt": "71b8eb1ad4117ebcfec9622ed40c39253bbf4061",
+    "r65": "25109dbde4420887bcdd7f872afa486d29463ab3",
+    "r67": "c3ba0a0607b4f1309e320c3993e463cb9407276d",
+    "r68": "b907910286864242c8b91bf48356ecdf85d7808b",
+    "r67_zip": "1c1e9d4772317cf2afdda077f49f196dfaa299a899f3387c974ef2639b23e5f2",
+    "r93_zip": "7ea3f814b745bb75b700c4214c8b0b977e6edf779932b1111221098f966b8794"
+  },
+  "summary": {
+    "source_positions": 3333,
+    "historical_index_retained": 6207,
+    "source_lanes": {
+      "TW10": {
+        "positions": 124,
+        "with_template": 121,
+        "edges": 139
+      },
+      "CN50": {
+        "positions": 305,
+        "with_template": 295,
+        "edges": 318
+      },
+      "TW75": {
+        "positions": 467,
+        "conditional_master_profiles": 467
+      },
+      "TW85": {
+        "positions": 1889,
+        "with_template": 1603,
+        "edges": 1695
+      },
+      "CN85": {
+        "positions": 548,
+        "with_template": 401,
+        "edges": 424
+      }
+    },
+    "client_positions_with_conditional_ref": 2420,
+    "client_positions_without_conditional_ref": 446,
+    "reverse_linked_templates": 425,
+    "reverse_unlinked_templates": 42,
+    "conditional_edges": 2576,
+    "portrait_or_pose": 3333,
+    "pose_only": 21,
+    "cn50_ordinal_mismatches": 256,
+    "cn50_unique_name_graphic_set_joins": 305,
+    "cn50_independent_source_pointer_checks": 305,
+    "strict_visual_gaps": 29,
+    "named_visual_gaps": 14,
+    "official_closures": 0
+  },
+  "private_artifact": {
+    "name": "StoneAge-PET-R94-Integrated-Atlas.zip",
+    "bytes": 177270011,
+    "sha256": "3650c5bba2a02d09d797bdab71ebc65db9e71997d07fbc826b30fe099872d7f8",
+    "entrypoint": "START-R94.html",
+    "index_sha256": "ed7cd038a4d0ff7e60b4ee6dc4fa675c3f2e8c420107391a73fabfb5373e7b54",
+    "cn50_crosswalk_sha256": "abc8e1a092cc4b89613b6878cc203b4c9e42fd11d437879ad149fa22e8576ac3",
+    "build_script_sha256": "2c3642339d0156f8b3050b142402c59a538ffaea21002a85ab2b2ade7f2ed597",
+    "test_script_sha256": "1bf5dff3e8cd80a9e640fd923b5db331517f57e614ead9218ce69593f194cb76",
+    "build_receipt_sha256": "0ecbe67bd67cdc1dfb3a010e2e12ee2f2b41a0d08e0e84fb82e8f79a2ab54c81",
+    "logic_receipt_sha256": "8531639fd96f2461539e907f9f6010718761399736c9f18e74f743fcabd729ed",
+    "library_readback_byte_identical": true
+  },
+  "validation": {
+    "both_inputs_sha256_crc": "PASS",
+    "preserved_members_byte_identical": 49321,
+    "output_members": 49329,
+    "output_crc": "PASS",
+    "output_library_readback_crc": "PASS",
+    "all_hub_image_paths_and_detail_targets_present": true,
+    "all_conditional_master_row_hashes_and_graphics_match": true,
+    "js_syntax": "PASS",
+    "node_vm_dom_doubles": {
+      "hub_cards": 3333,
+      "filter_counts": 10,
+      "exact_id_filter_cases": 3333,
+      "negative_cases": 5,
+      "normalized_search": "PASS"
+    },
+    "actual_browser": false,
+    "user_local_inspection": false,
+    "initial_failures": [
+      "CN50 raw ordinal and compact index mismatch: fixed with unique exact name+graphic-set and independent source pointer joins.",
+      "Initial expected edge count338 corrected to318 by actual R32 rows.",
+      "Reverse map contained empty entries: corrected metric from467 keys to425 nonempty linked templates; test rerun passed."
+    ]
+  },
+  "limits": [
+    "The hub contains five source lanes, not official species or whole historical PC roster; original 6207-row index retained separately.",
+    "TW10 R32 strict name/graphic links only (139); earlier broader 152 graphic/element alternative links preserved in original gallery, not promoted into strict hub relation.",
+    "All fields displayed as source-separated conditional references; no fabricated official capacity, capture, learning or species identity.",
+    "CN50/CN85/TW85 hub and galleries have previews; full actions may require earlier separate asset volumes. No new original pixels or official field closures.",
+    "Actual browser and user acceptance remain open; no proprietary pixel data published in public Git."
+  ],
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "strict67": "UNCHANGED",
+  "next": "Use R94 integrated hub as actual candidate; focus on real field/roster gaps: 446 client positions without qualified conditional template link, 42 TW75 templates without these reverse links, original same-deployment evidence, and historical JP/KR/other official sources not yet represented as full visual lanes. Add available source-qualified per-profile data; do not repeat R86/R92/R93 action integration or R94 join correction. Complete permitted actual browser/user inspection before acceptance; no merge."
+}
